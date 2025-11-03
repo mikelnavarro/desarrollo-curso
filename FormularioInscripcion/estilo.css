@@ -4,7 +4,8 @@
 
 
 form {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     margin: 1.5rem 2.5rem;
     padding: 2rem;
     border-radius: 2.0rem;
@@ -17,7 +18,8 @@ h1, h2 {
     font-family: 'Times News Roman', 'Arial';
     color: black;
 }
-
+label {
+}
 input[type=text], input[type=date] {
     margin: 2.0rem;
     padding: 1rem;
@@ -29,7 +31,6 @@ input[type=text], input[type=date] {
     border-style: none;
     border-radius: 2.3rem;
     color: white;
-    font-size: medium;
     font-weight: bold;
     background-color: rgb(72, 72, 255);
     padding: 1rem;
@@ -44,7 +45,8 @@ input[type=text], input[type=date] {
 #submitButton:hover, #otro:hover {
     background-color: rgb(25, 25, 248);
     cursor: pointer;
-    font-size: larger;
+    width: 70%;
+    height: 70%;
     transition: 0.2s;
 }
 
@@ -65,7 +67,7 @@ input[type=text], input[type=date] {
     width: 25%;
 }
 
-#otraCosa {
+#Texto1 {
     display: grid;
     grid-column-start: 1;
     grid-row-start: 2;

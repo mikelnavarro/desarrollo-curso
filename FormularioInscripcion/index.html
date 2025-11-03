@@ -10,14 +10,22 @@
   <body>
 
     <form action="loquesea.php" id="miform" onsubmit="return checkForm()">
+        <input type="hidden" id="gnum" name="gnum">
         <label for="nombre">Nombre: </label>
         <input type="text" id="nombre" name="nombre">
         <label for="primerapellido">Apellido: </label>
         <input type="text" id="primerapellido" name="primerapellido">
+        <label for="segundoapellido">Apellido: </label>
+        <input type="text" id="segundoapellido" name="segundoapellido">
+        <label for="nif">DNI (NIF): </label>
+        <input type="text" id="nif" name="nif"
+        pattern="[0-9](8)[A-Z](1)">
+
+
         <input type="submit" id="otro" value="Pon Texto 1">
         <input type="submit" id="submitButton" value="Pon Texto 2">
       </form>
-    <div id="otraCosa"></div>
+    <div id="Texto1"></div>
     <div id="texto"></div>
   </body>
 </html>
