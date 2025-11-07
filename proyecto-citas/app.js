@@ -7,8 +7,9 @@ const nombreInput = document.getElementById("nombre");
 const apellidoInput = document.getElementById("primerapellido");
 const dniInput = document.getElementById("dni");
 const listaCitas = document.getElementById("lista-citas");
-
-
+const buttonLimpiarLocal = document.getElementById("limpiarLocal");
+const buttonBorrar = document.getElementById("borrarPersona");
+const inputDniBorrar = document.getElementById("dniBorrar");
 
 // Creamos el Array
 let arrayPersonas = [];
@@ -46,7 +47,7 @@ function mostrarPersonas() {
   arrayPersonas.forEach((p) => {
     const div = document.createElement("div");
     // Después de crear el element div
-    div.textContent = `${p.nombre} - ${p.apellido} - ${p.dni}`;
+    div.textContent = `${p.nombre} ${p.apellido} - ${p.dni}`;
     // Agregamos al elemento padre appendChild(div); que se encarga de añadir
     listaCitas.appendChild(div);
   });
@@ -73,3 +74,26 @@ formulario.addEventListener("submit", function (e) {
 // Ejecutamos la carga inicial al arrancar
 cargarDesdeLocalStorage();
 mostrarPersonas();
+
+// Llamar a funcion
+buttonBorrar.addEventListener("click", function(e) {
+  e.preventDefault();
+
+  borrarPersona();
+})
+
+function borrarPersona() {
+
+  let eliminarDni = inputDniBorrar.value.trim();
+
+  arrayPersonas = arrayPersonas.filter(p => p.dni !== eliminarDni);
+  guardarEnLocalStorage();
+  mostrarPersonas();
+}
+// Como limpiamos el LocalStorage
+// Limpiar
+buttonLimpiarLocal.addEventListener("click", function(e) {
+  
+  e.preventDefault();
+  localStorage.removeItem("arrayPersonas");
+})

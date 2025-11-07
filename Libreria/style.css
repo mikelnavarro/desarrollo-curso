@@ -88,7 +88,7 @@ header {
 }
 
 .carrusel {
-  background-image: url('image/carousel.png');
+  background-image: url("image/carousel.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,10 +100,10 @@ header ul li img {
   width: 40%;
   align-items: left;
 }
+
 header ul li {
   list-style: none;
 }
-
 
 #lista-datos {
   display: block;
@@ -123,23 +123,41 @@ header ul li {
   padding: 1.4rem;
 }
 
-
-
-#nombre, #pag {
+#nombre,
+#pag {
   display: block;
   background-color: #ffffff;
   padding: 0.3rem;
-  margin: 1.0rem;
+  margin: 1rem;
   align-items: center;
   border-style: none;
 }
+
 #section {
   background-color: rgb(130, 130, 255);
 }
+
 #lista-datos {
   border: 0.3rem solid black;
   border-radius: 0.2rem;
   background-color: whitesmoke;
   width: 30%;
   height: auto;
+}
+
+#encabezado {
+  border-radius: 0.3rem;
+  box-shadow: 4px 4px 4px 4px black;
+  border-color: black;
+  border-style: solid;
+  display: block;
+  align-items: center;
+  width: 40%;
+  margin: 0.5rem;
+  background-color: white;
+}
+
+.consulta {
+  padding: 0.3rem;
+  background-color: rgb(163, 226, 255);
 }

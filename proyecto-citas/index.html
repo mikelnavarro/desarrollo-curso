@@ -32,22 +32,29 @@
     </nav>
 
     <!-- FORMULARIO PARA RELLENAR -->
+    <main>
+        <form id="form">
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" required />
+            <label for="primerapellido">Primer apellido: </label>
+            <input type="text" id="primerapellido" name="primerapellido" required />
+            <label for="dni">DNI: </label>
+            <input type="text" id="dni" name="dni" placeholder="DNI (87654321B)" pattern="[0-9]{8}[A-Za-z]{1}"
+                required />
 
-    <form id="form">
-        <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" name="nombre" required />
-        <label for="primerapellido">Primer apellido: </label>
-        <input type="text" id="primerapellido" name="primerapellido" required />
-        <label for="dni">DNI: </label>
-        <input type="text" id="dni" name="dni" placeholder="DNI (87654321B)" pattern="[0-9]{8}[A-Za-z]{1}" required />
-
-        <input type="submit" id="Submit" value="Cita Previa" />
-    </form>
-    <div id="cabecera"></div>
-    <div id="lista-citas">
-        <!-- Aquí ira la lista de personas que pedirán cita. -->
-    </div>
-    <a id="consultarpersonas" href="consultar.html" alt="consultar cuántas personas">Consultar Lista</a>
+            <input type="submit" id="Submit" value="Cita Previa" />
+        </form>
+        <p id="adv">⚠️ ADVERTENCIA: El botón Limpiar, borrará toda la información de las personas. Se borrará por
+            completo.</p>
+        <div id="cabecera"></div>
+        <div id="lista-citas">
+            <!-- Aquí ira la lista de personas que pedirán cita. -->
+        </div>
+        <input type="text" id="dniBorrar" name="dni" placeholder="DNI (87654321B)" pattern="[0-9]{8}[A-Za-z]{1}" required />
+        <button type="button" id="borrarPersona" onclick="borrarPersona()">Borrar Persona</button>
+        <button type="button" id="limpiarLocal">LIMPIAR</button>
+        <a id="consultarpersonas" href="consultar.html" alt="consultar cuántas personas">Consultar Lista</a>
+    </main>
 </body>
 
 </html>
