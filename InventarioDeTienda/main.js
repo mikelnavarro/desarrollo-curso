@@ -68,9 +68,7 @@ function mostrarProductos() {
             <p>Precio + IVA: ${p.precioConIVA.toFixed(2)}</p>
             <p>Precio Base: ${p.precioBase}</p>
             <p>Fecha (en español): ${p.formatearFechaCreacion()}</p>
-            <hr>
     `;
-    
     sectionListar.appendChild(div);
 
   });
@@ -91,9 +89,12 @@ function agregarProducto(nombre, precioBase, categoria) {
 
 
 buttonLimpiarLocal.addEventListener("click", function(e) {
-
+    e.preventDefault();
     localStorage.removeItem("arrayProductos");
-})
+});
+
+
+
 // Ejecutamos la carga inicial al arrancar
 cargarEnLocalStorage();
 mostrarProductos();
