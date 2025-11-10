@@ -82,11 +82,11 @@ function agregarProducto(nombre, precioBase, categoria) {
   guardarEnLocalStorage();
   mostrarProductos();
 }
+
 buttonLimpiarLocal.addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("arrayProductos");
 });
-
 // Ejecutamos la carga inicial al arrancar
 cargarEnLocalStorage();
 mostrarProductos();

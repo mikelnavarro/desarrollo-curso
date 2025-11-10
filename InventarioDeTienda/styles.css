@@ -136,3 +136,17 @@ footer {
 #producto-individual .producto-card:hover {
   transform: scale(1.02);
 }
+
+
+button {
+    padding: 2%;
+    width: 25%;
+    border-style: none;
+    background-color: #b4b3b3;
+    font-weight: bold;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: rgb(190, 190, 190);
+    cursor: pointer;
+}
