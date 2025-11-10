@@ -50,7 +50,6 @@ formularioProducto.addEventListener("submit", function (event) {
 /* Funcion Para Mostrar */
 function mostrarProductos() {
   sectionListar.innerHTML = "";
-
   if (arrayProductos.length === 0) {
     sectionListar.innerHTML = "<p>No hay productos a mostrar.</p>";
     return;
@@ -58,14 +57,7 @@ function mostrarProductos() {
   // Mostrar los productos
   arrayProductos.forEach((p) => {
     const div = document.createElement("div");
-    // Pruebas ejemplos
-    const button = document.createElement("button");
-    button.innerHTML = "Click Me";
-    button.onclick = function () {
-      alert("Ejemplo!");
-    };
     div.classList.add("producto-individual");
-
     div.innerHTML = `
             <p>Producto: ${p.nombre}</p>
             <p>Categoria: ${p.categoria}</p>
@@ -74,7 +66,6 @@ function mostrarProductos() {
             <p>Fecha (en español): ${p.formatearFechaCreacion()}</p>
     `;
     sectionListar.appendChild(div);
-    div.appendChild(button); // Ejemplo 07-11-23
   });
 }
 /* Funcion Para Agregar Productos */
@@ -87,7 +78,6 @@ function agregarProducto(nombre, precioBase, categoria) {
   guardarEnLocalStorage();
   mostrarProductos();
 }
-
 buttonLimpiarLocal.addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("arrayProductos");
