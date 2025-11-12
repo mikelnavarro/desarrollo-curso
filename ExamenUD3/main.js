@@ -28,6 +28,7 @@ function guardarEnLocalStorage() {
   localStorage.setItem("arrayTrenes", JSON.stringify(arrayTrenes));
 }
 function Fitrar() {
+
 }
 registrarTrenes.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -46,6 +47,7 @@ registrarTrenes.addEventListener("submit", function (event) {
   agregarTren(nombreTren, velocidadTren, tipoTren);
   registrarTrenes.reset();
 });
+
 
 /* Funnción Para Mostrar Elementos */
 function mostrarElementos() {

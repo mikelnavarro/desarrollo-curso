@@ -1,13 +1,17 @@
-
+* {
+    font-family: 'Comic Sans MS';
+}
 body {
     margin: 0.3rem;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Comic Sans MS';
 }
+
 header {
     text-align: center;
     align-items: center;
     margin-bottom: 3rem;
 }
+
 form {
     display: grid;
     grid-column: 4;
@@ -21,10 +25,12 @@ form {
     width: 70%;
     background-color: rgb(214, 214, 214);
 }
+
 input {
 
     gap: 2rem;
 }
+
 input #nombre {
     grid-column-start: 1;
     grid-row-start: 1;
@@ -44,7 +50,7 @@ select #tipo {
 #registraTren {
     grid-column-start: 2;
     grid-row-start: 2;
-        color: white;
+    color: white;
     height: 40%;
     background-color: red;
     border-style: none;
@@ -66,6 +72,7 @@ select {
     padding: 0.3rem;
     width: 70%;
 }
+
 #registraTren:hover {
     cursor: pointer;
     color: white;
@@ -84,9 +91,10 @@ select {
     padding: 3rem;
 }
 
-#producto-individual .prd{
+#producto-individual .prd {
     color: red;
 }
+
 #div {
     border: 0.2rem solid black;
     background-color: rgb(243, 137, 137);
@@ -95,15 +103,28 @@ select {
 }
 
 button {
-  font-weight: bolder;
-  color: black;
-  background-color: #ff8686;
-  padding: 0.4rem;
-  border-style: none;
-  border-radius: 0.3rem;
+    font-weight: bolder;
+    color: black;
+    background-color: #ff8686;
+    padding: 0.4rem;
+    border-style: none;
+    border-radius: 0.3rem;
 }
-button {
-  transition: 0.3s;
-  background-color: #fc6262;
-  cursor: pointer;
+
+button:hover {
+    transition: 0.3s;
+    background-color: #fc6262;
+    cursor: pointer;
+}
+
+#idTrenes {
+    border: 3px solid red;
+}
+
+#seleccionarTrenes {
+    margin: 2rem;
+    border: 0.2rem solid rgb(0, 0, 0);
+    border-radius: 0.3rem;
+    gap: 4rem;
+    padding: 3rem;
 }
