@@ -7,7 +7,7 @@ const total = document.getElementById("lista-total");
 
 function calcularTotal() {
 
-    arrayProductos.array.forEach(element => {
+    arrayProductos.forEach(element => {
 
         
     });

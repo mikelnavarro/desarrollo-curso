@@ -142,7 +142,6 @@ footer {
 .producto-card:hover {
   transform: scale(1.02);
 }
-<<<<<<< HEAD
 .borrarProducto:hover {
     background-color: #c00000;
     cursor: pointer;
@@ -166,7 +165,7 @@ footer {
 #limpiarLocal:focus {
   outline: 2px solid #5f5ff6;
   outline-offset: 2px;
-=======
+}
 
 
 button {
@@ -180,5 +179,8 @@ button {
 button:hover {
     background-color: rgb(190, 190, 190);
     cursor: pointer;
->>>>>>> 1f0644c0cafe42b0fb4260ed4b05541ca8239133
+}
+.total {
+    padding: 2em;
+    background-color: #f0f0f0f0;
 }

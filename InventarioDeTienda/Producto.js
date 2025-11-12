@@ -37,7 +37,7 @@ export class Producto {
     const dia = this.fechaCreacion.getDate();
     const mes = this.fechaCreacion.getMonth() + 1;
     const year = this.fechaCreacion.getFullYear();
-
+    let fechaEspañola = `${dia}/${mes}/${year}`;
     return this.fechaCreacion.toLocaleString("es-ES", {
       day: "2-digit",
       month: "long",

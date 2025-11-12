@@ -6,6 +6,9 @@ const categoriaProSelect = document.getElementById("categoriaProducto");
 const sectionListar = document.getElementById("lista-productos");
 const DivProducto = document.getElementById("producto-individual");
 const buttonLimpiarLocal = document.getElementById("limpiarLocal");
+const sectionTotal = document.getElementById("total");
+
+
 let arrayProductos = [];
 
 function cargarEnLocalStorage() {
@@ -63,7 +66,7 @@ function mostrarProductos() {
     botonEliminar.classList.add("borrarProducto");
     div.classList.add("producto-card");
     div.innerHTML = `
-            <p>${p.generarCodigoProducto()}</p>
+            <p>Código: ${p.generarCodigoProducto()}</p>
             <p>Producto: ${p.nombre}</p>
             <p>Categoria: ${p.categoria}</p>
             <p>Precio + IVA: ${p.precioConIVA.toFixed(2)}</p>
@@ -72,6 +75,14 @@ function mostrarProductos() {
     `;
     div.appendChild(botonEliminar);
     sectionListar.appendChild(div);
+    botonEliminar.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      borrarProducto();
+
+      guardarEnLocalStorage();
+      mostrarProductos();
+    });
   });
 }
 /* Funcion Para Agregar Productos */
@@ -86,10 +97,41 @@ function agregarProducto(nombre, precioBase, categoria) {
   mostrarProductos();
 }
 
+
+
+
+/* Funcion Eliminar */
+function borrarProducto() {
+  arrayProductos.forEach((p) => {
+    let id = p.generarCodigoProducto();
+    if (p.generarCodigoProducto()) {
+      arrayProductos.pop(p.generarCodigoProducto());
+    }
+
+  });
+}
 buttonLimpiarLocal.addEventListener("click", function (e) {
   e.preventDefault();
   localStorage.removeItem("arrayProductos");
 });
+
+
+
+
 // Ejecutamos la carga inicial al arrancar
 cargarEnLocalStorage();
 mostrarProductos();
+
+
+function calcularTotal() {
+  arrayProductos.forEach((p) => {
+    const precio = p.calcularPrecioIVA();
+    const total = document.createElement("section");
+    total.classList.add("total");
+    total.innerHTML = `
+          <p><strong>${precio}</strong></p>`;
+  });
+  sectionTotal.appendChild(total);
+
+}
+calcularTotal();
