@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario de la Tienda</title>
     <link href="styles.css" rel="stylesheet" />
+    <script src="cuentaTotal.js" type="module"></script>
     <script src="main.js" type="module"></script>
 </head>
 
@@ -26,15 +27,15 @@
             <label for="precioBase">Precio Base: </label>
             <input type="text" id="precioBase" name="precioBase" />
             <select id="categoriaProducto">
-                <option value="alimentacion">Alimentación</option>
-                <option value="limpieza">Limpieza</option>
-                <option value="higiene">higiene</option>
-                <option value="informatica">Informática</option>
-                <option value="musical">Musical</option>
+                <option value="Alimentacion">Alimentación</option>
+                <option value="Limpieza">Limpieza</option>
+                <option value="Higiene">Higiene</option>
+                <option value="Informatica">Informática</option>
+                <option value="Musical">Musical</option>
             </select>
             <input type="submit" id="Submit" value="Guardar" />
         </form>
-        <button type="button" id="borrarProducto">Borrar</button>
+        <section id="lista-total"></section>
         <button type="button" id="limpiarLocal">LIMPIAR</button>
         <section id="lista-productos">
             <div id="producto-individual"></div>

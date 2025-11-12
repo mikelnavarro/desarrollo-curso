@@ -16,6 +16,7 @@ function cargarEnLocalStorage() {
 
     arrayProductos = objetos.map((obj) => {
       const p = new Producto(obj.nombre, obj.precioBase, obj.categoria);
+      p.generarCodigoProducto();
       p.fechaCreacion = new Date(obj.fechaCreacion);
       p.calcularPrecioIVA();
       return p;
@@ -46,11 +47,10 @@ formularioProducto.addEventListener("submit", function (event) {
   agregarProducto(nombre, precioBase, categoriaProducto);
   formularioProducto.reset();
 });
-
 /* Funcion Para Mostrar */
 function mostrarProductos() {
+  sectionListar.classList.add("lista-productos");
   sectionListar.innerHTML = "";
-  sectionListar.classList.add("producto-card");
   if (arrayProductos.length === 0) {
     sectionListar.innerHTML = "<p>No hay productos a mostrar.</p>";
     return;
@@ -58,17 +58,19 @@ function mostrarProductos() {
   // Mostrar los productos
   arrayProductos.forEach((p) => {
     const div = document.createElement("div");
+    const botonEliminar = document.createElement("button");
+    botonEliminar.textContent = "Eliminar";
+    botonEliminar.classList.add("borrarProducto");
     div.classList.add("producto-card");
     div.innerHTML = `
+            <p>${p.generarCodigoProducto()}</p>
             <p>Producto: ${p.nombre}</p>
             <p>Categoria: ${p.categoria}</p>
             <p>Precio + IVA: ${p.precioConIVA.toFixed(2)}</p>
             <p>Precio Base: ${p.precioBase}</p>
             <p>Fecha (en español): ${p.formatearFechaCreacion()}</p>
     `;
-    div.style.backgroundColor = "#f0f0f0";
-    div.style.border = "1px solid #ccc";
-    div.style.padding = "1rem";
+    div.appendChild(botonEliminar);
     sectionListar.appendChild(div);
   });
 }
@@ -76,6 +78,7 @@ function mostrarProductos() {
 function agregarProducto(nombre, precioBase, categoria) {
   // Llama a la funcion
   const producto = new Producto(nombre, precioBase, categoria);
+  producto.generarCodigoProducto();
   producto.formatearFechaCreacion();
   producto.calcularPrecioIVA();
   arrayProductos.push(producto);

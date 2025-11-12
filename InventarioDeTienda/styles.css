@@ -105,6 +105,10 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+.lista-productos {
+    background-color: white;
+    gap: 1em;
+}
 #lista-productos {
     flex-wrap: wrap;
     margin: 2rem;
@@ -116,23 +120,49 @@ footer {
     padding: 3rem;
 }
 
-#producto-individual .prd{
-    color: red;
-}
 #producto-individual {
     background-color: rgb(243, 137, 137);
     gap: 2rem;
     border: 0.2rem solid black;
 }
-
-#producto-individual .producto-card {
-  background-color: #fff;
+.producto-card {
+  background-color: #f0f0f0;
   padding: 1rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
 }
-
-#producto-individual .producto-card:hover {
+.producto-card .borrarProducto {
+    padding: 7px;
+    background-color: red;
+    border-radius: 0.4rem;
+    border: 0.1em solid black;
+    transition: transform 0.3s ease;
+}
+.producto-card:hover {
   transform: scale(1.02);
+}
+.borrarProducto:hover {
+    background-color: #c00000;
+    cursor: pointer;
+}
+#limpiarLocal {
+    background-color: #5f5ff6;
+    padding: 20px;
+    margin: 1vh 1vw;
+    border-radius: 1.5em;
+    border-style: none;
+    width: 20%;
+    font-weight: bold;
+    color: white;
+}
+
+#limpiarLocal:hover {
+    background-color: red;
+    transition: 0.3s;
+    cursor: pointer;
+}
+#limpiarLocal:focus {
+  outline: 2px solid #5f5ff6;
+  outline-offset: 2px;
 }
