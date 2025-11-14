@@ -1,13 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" type="module"></script>
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" type="module" defer></script>
 </head>
 <body>
-    
+
+    <header>
+        <h1>Gestor de Tareas</h1>
+    </header>
+    <main>
+
+        <!-- FORMULARIO PARA AÑADIR TAREAS -->
+        <section class="task-form">
+            <h2>Añadir tarea</h2>
+            <form id="formulario">
+                <input type="text" id="title" placeholder="Título">
+                <textarea id="description" placeholder="Descripción"></textarea>
+                <select id="priority">
+                    <option value="baja">Prioridad baja</option>
+                    <option value="media">Prioridad media</option>
+                    <option value="alta">Prioridad alta</option>
+                </select>
+                <input type="submit" id="Submit" value="Añadir"></input>
+            </form>
+        </section>
+        <section class="filters">
+            <h2>Filtrar tareas</h2>
+            <select id="filterStatus">
+                <option value="todas">Todas</option>
+                <option value="pendientes">Pendientes</option>
+                <option value="completadas">Completadas</option>
+            </select>
+            <select id="filterPriority">
+                <option value="todas">Todas las prioridades</option>
+                <option value="baja">Baja</option>
+                <option value="media">Media</option>
+                <option value="alta">Alta</option>
+            </select>
+        </section>
+
+
+
+        <!-- LISTA DE TAREAS -->
+        <section id="lista" class="task-list">
+            <h2>Tareas</h2>
+            <div id="tasks"></div>
+        </section>
+
+    </main>
+
 </body>
 </html>
