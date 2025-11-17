@@ -1,12 +1,24 @@
+<?php
+?>
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Archivo de entrada a la aplicación: formulario de login</title>
+    <title>Formulario de Login</title>
+    <meta charset="utf-8">
 </head>
+
 <body>
-	<h1> Incluye aquí tu formulario de Login </h1>
-	<p> Si el login es correcto redireciona al usuario a "principal.php", sino no le dejes pasar. </p>
+    <?php  if(isset($_GET["redirigido"])){
+        echo "<p>Haga Login para continuar.</p>";
+    }?>
+    <form action="comprobar_user.php" method="POST">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario">
+        <label for="clave">Clave:</label>
+        <input type="text" id="clave" name="clave">
+        <input type="submit">
+    </form>
 </body>
+
 </html>

@@ -1,8 +1,10 @@
 <?php
+namespace Mikel;
+require "../vendor/autoload.php";
 
-/**
- * Aquí implementa tus clases que definen tu negocio, en este caso la gestión de tus hobbyes.
- * 
- */
+class GestorLectura implements AccionesBD {
+
+    
+}
 
 ?>

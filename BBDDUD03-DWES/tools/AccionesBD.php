@@ -3,7 +3,10 @@
 
 interface AccionesBD {
     
-    select($id, $titulo_libro){}
+    function listar(): array;
+    function eliminar($id, array $datos);
+    function actualizar(int $id, array $datos);
+    function insertar(array $datos);
 }
 
 ?>
