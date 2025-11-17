@@ -22,7 +22,6 @@ function addToCart(producto){
     cartObs.notify(total);
     mostrarProductos(producto);
 }
-
 function cargarEnLocalStorage() {
   const datos = localStorage.getItem("arrayProductos");
 
