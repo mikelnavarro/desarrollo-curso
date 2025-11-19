@@ -9,36 +9,38 @@ class GestorLectura implements AccionesBD {
     // Atributos
     private $conexion;
     function actualizar($id, array $datos){
-        foreach($datos as $campo) {
-            $titulo = $datos['titulo_libro'];
-            $autor = $datos['autor'];
-            $terminado = $datos['terminado'];
-            $paginas = $datos['paginas'];
-            $fecha = $datos['fecha_lectura'];
-        // update datos
-        $updt = "UPDATE lectura SET id = $id, titulo_lectura = $titulo, autor = $autor, paginas = $paginas, terminados = $terminado, fecha_lectura = $fecha
-                WHERE id = $id";
-            
+        // Actualizamos
+        // Update: actualizar email del usuario
+        $actualizacion = $conexion->prepare("UPDATE lectura SET email = :email WHERE id = :id");
+        if ($stmt->execute(array(':titulo_lectura' =>$titulo_lectura, ':autor' =>$autor, ':paginas' =>$paginas, ':terminado' =>$terminado, ':fecha_lectura' =>$fecha_lectura))){
+            echo "Actualización correcta";
         }
     }
     function listar(){
-        
-        
-        $select = "SELECT id,titulo_lectura,autor,paginas,fecha_lectura FROM lectura";
-        $arrayLibros = $conexion->query($select);
+        // Realizamos una operacion de lectura SQL
+        $select = $conexion->query("SELECT id,titulo_lectura,autor,paginas,fecha_lectura FROM lectura");
+        $arrayLibros = $select->fetchAll(PDO::FETCH_ASSOC); // Almacena en array llamado libros
+
         
         return $arrayLibros;
     }
     function insertar(array $datos) {
-        
-        foreach($datos as $l){
-            $titulo = $l['titulo_libro'];
-            $autor = $l['autor'];
-            $paginas = $l['paginas'];
-            $fecha_lectura = $l['fecha_lectura'];
-            $i = "INSERT INTO lectura(titulo_lectura,autor,paginas,fecha_lectura)
-            VALUES ($titulo,$autor,$paginas,$fecha_lectura);";
-        }
+
+        // Insercion 1
+        // Los nombres de los marcadores (ej. :nombre) deben coincidir con las claves del array.
+        $sql = "INSERT INTO lectura (titulo_lectura,autor,paginas,fecha_lectura) VALUES (:titulo_lectura,:autor,:paginas,:fecha_lectura)";
+        $stmt = $conexion->prepare($sql);
+        if($stmt->execute($datos)){
+            echo "Registro insertado exitosamente.";
+        }  
+        /*
+        // Realizamos insercion en SQL / PHP
+        $insertar = $conexion->prepare("INSERT INTO lectura(titulo_lectura,autor,paginas,fecha_lectura) 
+        VALUES (:titulo_lectura,:autor,:paginas,:fecha_lectura)");
+        // Bind y execute:
+        if($insertar->execute(array(':titulo_lectura' =>$titulo_lectura, ':autor' =>$autor, ':paginas' =>$paginas, ':fecha_lectura' =>$fecha_lectura))); {
+            echo "Se ha creado el nuevo registro!";
+        }*/
     }
     
     
