@@ -107,11 +107,8 @@ main.container {
     max-width: 100%;
     align-items: center;
     overflow: none;
-    flex: 1 1 15%;
     height: auto;
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 30%;}
+}
 /* Footer */
 footer {
     text-align: center;
