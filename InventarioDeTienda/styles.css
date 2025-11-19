@@ -224,3 +224,6 @@ button:hover {
     text-align: center;
     animation: slideIn 0.5s ease-out;
 }
+.buscador {
+    padding: 15px;
+}

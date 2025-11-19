@@ -1,0 +1,59 @@
+* {
+    margin: auto;
+    font-family: "Arial";
+}
+body {
+    margin: 1.5rem;
+}
+/* Formulario Inicio Sesion */
+
+#sesion {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 40%;
+    box-shadow: 2px 2px 2px 2px rgb(80, 80, 80);
+    margin: 0 auto;
+    border-radius: 0.3rem;
+    align-items: left;
+}
+#sesion input {
+    padding: 6px;
+    width: 30%;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    border-radius: 0.3rem;
+}
+
+#sesion label {
+    font-weight: bold;
+    align-items: left;
+}
+
+#sesionSubmit {
+    background-color: rgb(24, 170, 85);
+    border-style: none;
+    transition: all 0.3s;
+}
+#sesionSubmit:hover {
+    transition: all 0.3s;
+    background-color: rgb(24, 170, 85);
+    cursor: pointer;
+}
+
+/* Atrapar La Palabra */
+
+#atrapaLaPalabra {
+    display: flex;
+    flex-shrink: 2;
+    flex-basis: 20%;
+    text-align: center;
+    max-width: 20%;
+    margin: 15px auto;
+    margin-top: 60px;
+    padding: 0.4rem;
+    width: 30%;
+}
+
