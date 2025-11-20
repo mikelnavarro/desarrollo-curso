@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #f1f1f1;
+    font-family: Arial;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* CSS del títulos */
+
+h1 {
+    font-size: 36px;
+    line-height: 1.6;
+    color: #333
+}
+
+header {
+    color: white;
+    text-align: center;
+    background-color: #3498db;
+    padding: 10px 15px;
+    margin-bottom: 4px;
+}
+
+.menu-container {
+    margin: 20px 10px;
+    padding: 15px 9px;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    background: #3498db;
+
+}
+
+.menu>li {
+    padding: 10px;
+    background-color: #3498db;
+    position: relative;
+}
+
+/* animación listas */
+.menu>li>a {
+    padding: 15px 20px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+}
+
+.menu li:hover .submenu {
+    display: block;
+}
+
+.menu>li:hover {
+    background-color: #3498db;
+}
+
+.submenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: #3498db;
+}
+
+.submenu li a {
+    color: white;
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+main {
+    margin: 5px 10px;
+
+}
+
+.box-model {
+    display: flex;
+    padding: 26px;
+    margin: auto;
+}
+
+/* Espacio Izquierda */
+.space-left {
+    flex: 1;
+    padding: 15px;
+    margin: 0px 9px;
+    border: 2px solid gray;
+}
+
+.space-right {
+    flex: 1;
+    padding: 15px;
+    margin: 0px 9px;
+    border: 2px solid gray;
+}
+
+table,
+th,
+td {
+    padding: 15px;
+    margin: 0px 9px;
+    border-collapse: collapse;
+    border: 3px solid gray;
+}
+
+tr::after {
+    background-color: gray;
+}
+
+tr:hover {
+    background-color: antiquewhite;
+}
+
+
+
+/* Formulario */
+.formulario {
+
+    /* display: flex*/
+    padding: 55px;
+    width: 60%;
+    background-color: #dbdada;
+    border-radius: 3px;
+    border: 1px solid #333;
+    font-size: 14px;
+    border-style: none;
+    margin: 0px 9px;
+}
+
+label {
+    margin-top: 20px;
+    text-align: left;
+}
+
+input {
+    margin: auto;
+    font-family: Arial;
+    padding: 14px;
+}
+
+input[type=date] {
+    font-family: Arial;
+    padding: 14px;
+    margin-bottom: 5px;
+}
+input[type=checkbox] {
+    margin: auto;
+    margin-top: 5%;
+}
+input[type=submit] {
+    padding: 25px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 12px;
+    width: 35%;
+    background-color: #70db70;
+    border-radius: 3px;
+    border-style: none;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+    background-color: #4cc14c;
+}
+
+input[type=text],
+[type=email] {
+    padding: 14px;
+    margin-bottom: 5px;
+    width: 50%;
+}

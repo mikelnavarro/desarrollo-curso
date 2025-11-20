@@ -1,0 +1,353 @@
+        * {
+            box-sizing: border-box;
+        }
+
+        /* CSS del Cuerpo */
+        body {
+            font-family: sans-serif;
+            margin: 0px;
+            padding: 0;
+            font-size: medium;
+            background-color: #f4f4f4;
+            border-radius: 3px;
+        }
+
+        /* CSS del títulos */
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #3498db;
+            padding: 10px 15px;
+            margin-bottom: 4px;
+        }
+
+        .menu-container {
+            margin: 20px 10px;
+            padding: 15px 9px;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            background: #3498db;
+
+        }
+
+        .menu>li {
+            padding: 10px;
+            background-color: #3498db;
+            position: relative;
+        }
+
+        /* animación listas */
+        .menu>li>a {
+            padding: 15px 20px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu li:hover .submenu {
+            display: block;
+        }
+
+        .menu>li:hover {
+            background-color: #3498db;
+        }
+
+        .submenu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            background-color: #3498db;
+        }
+
+        .submenu li a {
+            color: white;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        /* Espacio izquierda */
+        .space-left {
+            flex: 1;
+            padding: 20px;
+            align-items: left;
+            margin: 16px 10px;
+            height: 150px;
+            width: 60px;
+        }
+
+        /* Espacio derecha */
+        .space-right {
+            border-left: 2px solid grey;
+            flex: 1;
+            padding: 20px;
+            align-items: left;
+            margin: 16px 10px;
+            width: 60px;
+            height: 150px;
+        }
+
+        div.tablecontainer {
+            overflow-x: auto;
+        }
+
+        .box-model {
+            display: flex;
+            margin: 10px 10px;
+        }
+
+        table {
+            margin: 15px 15px;
+        }
+
+        th,
+        td {
+            border: 0px solid black;
+            border-collapse: collapse;
+            padding: 4px;
+        }
+
+        th {
+            text-align: center;
+            background-color: #333;
+            color: white;
+
+        }
+
+        tr,
+        td {
+            padding: 6px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #b3b3b3;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            cursor: pointer;
+        }
+
+        .tooltiptexto {
+            visibility: hidden;
+            position: absolute;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            padding: 5px 0;
+            top: -5px;
+            z-index: 1;
+            left: 110%;
+        }
+
+        .tooltiptexto::after {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent transparent black transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            opacity: 1;
+        }
+
+        .tooltip:hover .tooltiptexto {
+            visibility: visible;
+        }
+
+
+
+        /* Opciones de menus */
+        .topnav {
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            border-bottom: 3px solid transparent;
+        }
+
+        .topnav a:hover {
+            border-bottom: 3px solid red;
+        }
+
+        .topnav a.active {
+            border-bottom: 3px solid red;
+        }
+
+        #mySidenav a {
+            position: absolute;
+            left: -80px;
+            transition: 0.3s;
+            padding: 15px;
+            width: 100px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #mySidenav a:hover {
+            left: 0;
+        }
+
+        #about {
+            top: 20px;
+            background-color: #04AA6D;
+        }
+
+        #blog {
+            top: 80px;
+            background-color: #2196F3;
+        }
+
+        #projects {
+            top: 140px;
+            background-color: #f44336;
+        }
+
+        #contact {
+            top: 200px;
+            background-color: #555
+        }
+
+    nav.accessibility-navbar {
+      width: 160px; /* pequeñito */
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: #f4f4f4;
+      padding: 1rem;
+      border-right: 1px solid #ccc;
+    }
+
+    .accessibility-navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+        /* Navbar desplegable */
+        .navbar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+        }
+
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            width: 25%;
+            /* Four links of equal widths */
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: #000;
+        }
+
+        .navbar a.active {
+            background-color: #04AA6D;
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar a {
+                float: none;
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+        }
+
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .navbar a {
+            float: left;
+            font-size: 16px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        /* Menus interiores Sub */
+        .subnav {
+            float: left;
+            overflow: hidden;
+        }
+
+        .subnav .subnavbtn {
+            font-size: 16px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .navbar a:hover,
+        .subnav:hover .subnavbtn {
+            background-color: red;
+        }
+
+        .subnav-content {
+            display: none;
+            position: absolute;
+            left: 0;
+            background-color: red;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .subnav-content a {
+            float: left;
+            color: white;
+            text-decoration: none;
+        }
+
+        .subnav-content a:hover {
+            background-color: #eee;
+            color: black;
+        }
+
+        .subnav:hover .subnav-content {
+            display: block;
+        }
+
+

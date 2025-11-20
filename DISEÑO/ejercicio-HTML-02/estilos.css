@@ -1,0 +1,205 @@
+        * {
+            box-sizing: border-box;
+        }
+        /* CSS del Cuerpo */
+        body {
+            font-family: sans-serif;
+            margin: 15px;
+            padding: 0;
+            font-size: medium;
+            background-color: #f4f4f4;
+            border-radius: 3px;
+        }
+        /* CSS del títulos */
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.6;
+            color: #333;
+        }
+        /* Textos */
+        #container-text {
+            background-color: powderblue;
+            padding: 10px;
+            width: 50%;
+            text-align: justify;
+            justify-content: center;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            display: inline-block;
+
+        }
+        .container2 {
+            display: flex;
+            margin: 10px 10px;
+        }
+        /* CSS de la cabecera */
+        header {
+            background-color: #3498db;
+            padding: 15px 10px;
+            margin-bottom: 4px;
+        }
+        /* Espacio izquierda */
+        .space-left {
+            flex: 1;
+            padding: 20px;
+            align-items: left;
+            margin-left: 20px;
+            margin-right: 15px;
+            background-color: powderblue;
+            height: 150px;
+            width: 60px;
+        }
+        /* Espacio derecha */
+        .space-right {
+            flex: 1;
+            padding: 20px;
+            align-items: left;
+            margin-right: 30px;
+            margin: 16px 10px;
+        }
+        /* Listas */
+        #lista ul {
+            list-style: square;
+            margin: auto;
+            color: black;
+            display: inline-block;
+
+        }
+
+        #lista a:visited {
+            color: red;
+        }
+
+        #lista a:active {
+            color: blue;
+        }
+
+        #lista a:hover {
+            color: green;
+        }
+
+        .boton-transicion {
+            text-align: justify;
+            padding: 10px;
+            background-color: green;
+            height: 100px;
+            width: 100px;
+            transition: width 2s, height 6s, background-color 2s;
+        }
+
+        .boton-transicion:hover {
+            height: 200px;
+            background-color: greenyellow;
+            width: 205px;
+        }
+
+        .container {
+            display: grid;
+            gap: 20px 40px;
+            grid-template-columns: auto auto auto;
+            padding: 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            background-color: dodgerblue;
+        }
+        /* CSS Container */
+        .container>div {
+            background-color: #f1f1f1;
+            border: 1px solid black;
+            padding: 20px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .container img {
+            width: 50%;
+        }
+
+
+        /* Animación listas */
+
+
+        .menu-container {
+            margin: 20px 10px;
+            padding: 15px 9px;
+        }
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            background: #3498db;
+
+        }
+
+        .menu>li {
+            position: relative;
+        }
+        /* animación listas */
+        .menu>li>a {
+            padding: 15px 20px;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
+        .menu li:hover .submenu {
+            display: block;
+        }
+        .menu>li:hover {
+            background: #3498db;
+        }
+
+        .submenu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            display: none;
+            background: #3498db;
+        }
+
+        .submenu li a {
+            color: white;
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        /* tarketa animada card */
+        .card {
+            justify-content: center;
+            width: 250px;
+            background: #fff;
+            box-shadow: 0 4px 12px #00000026;
+            transition: transform 1.5s ease;
+        }
+        /* card imagen */
+        .card img {
+            width: 100%;
+            display: block;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        /* animacion del circulo */
+        .circulo {
+            width: 80px;
+            height: 80px;
+            background: tomato;
+            border-radius: 50%;
+            position: relative;
+            animation: mover 3s infinite alternate linear;
+        }
+        @keyframes mover {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 70%;
+            }
+        }

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My App</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>CABECERA</h2>
+        <nav class="menu-container">
+            <ul class="menu">
+                <li><a href="https://www.google.com">Google</a></li>
+                <li><a href="#">Categorías</a>
+                    <ul class="submenu">
+                        <li><a href="#tecnologia">Tecnología</a></li>
+                        <li><a href="#moda">Moda</a></li>
+                        <li><a href="#hogar">Hogar</a></li>
+                    </ul>
+                </li>
+                <li><a href="#ofertas">Ofertas</a>
+                    <ul class="submenu">
+                        <li><a>Ropa</a></li>
+                        <li><a>Alimentos</a></li>
+                        <li><a>Maquillaje</a></li>
+                        <li><a>Ropa de Hombre</a></li>
+                        <li><a>Ropa</a></li>
+                </li>
+            </ul>
+            <li><a href="#contacto">Contacto</a>
+                <ul class="submenu">
+                    <li><a>Teléfono</a></li>
+                    <li><a>Quiénes somos</a></li>
+            </li>
+            </ul>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Información - Información</h1>
+        <div class="box-model">
+            <div class="space-left">
+                <h3></h3>
+                <p>Maecenas id elementum neque. In hac habitasse platea dictumst. Suspendisse potenti. Integer porta ex
+                    quis est pulvinar pharetra. Nullam purus dui, imperdiet eget facilisis ut, mollis et felis. Nulla
+                    facilisi. Duis pulvinar et mi id hendrerit. Morbi non nibh erat. Fusce egestas, elit vitae
+                    pellentesque varius, est ante porttitor tortor, nec ullamcorper diam ipsum vitae libero. Interdum et
+                    malesuada fames ac ante ipsum primis in faucibus. Nulla turpis tortor, pulvinar ac fringilla at,
+                    mattis quis mauris. Aliquam at scelerisque risus. Maecenas varius nibh ligula, eu interdum dui
+                    faucibus sit amet. Aenean risus tortor, maximus bibendum tortor sit amet, euismod consectetur arcu.
+                    Etiam placerat porttitor diam non imperdiet. Sed risus massa, lacinia quis finibus sit amet, ornare
+                    eget velit.</p>
+
+            </div>
+            <div class="space-right">
+                <h3></h3>
+                <p>Vestibulum condimentum nisl sed lectus dignissim, venenatis commodo neque fringilla. Maecenas eu ante
+                    dui. Pellentesque lacus mauris, efficitur sit amet ex in, vestibulum semper quam. Nullam pretium
+                    felis massa, id scelerisque tortor hendrerit vitae. Vivamus vestibulum vel velit nec sollicitudin.
+                    Mauris purus dui, molestie eu cursus ut, faucibus ac est. Praesent tincidunt metus vitae velit
+                    vehicula, rhoncus congue lectus maximus. Sed mi augue, aliquam vel urna et, tempor cursus massa.</p>
+            </div>
+        </div>
+
+
+
+        <div class="formulario">
+
+            <h3>Formulario de Administración Estatal</h3>
+            <form action="##" method="POST">
+                <!-- Nombre y Apellidos -->
+                <label for="nombre">Nombre: </label><br><br>
+                <input type="text" id="nombre" name="nombre" pattern="[A-Za-z]"><br><br>
+
+                <label for="fnacimiento">Fecha de Nacimiento: </label><br><br>
+                <input type="date" id="fnacimiento" name="fnacimiento" max="2001-01-01"><br><br>
+
+                <!-- Campo del DNI -->
+                <label for="nif">DNI (NIF): </label><br><br>
+                <input type="text" id="nif" name="nif" pattern="[0-9]{8}[A-Z]{1}"
+                    title="Debe poner 8 números y una letra" maxlength="9" minlength="9"><br><br>
+                <!-- Opciones radio -->
+                <label for="gender">Género:</label><br>
+                <input type="radio" id="female" name="gender">
+                <label for="female">Femenino</label>
+
+                <input type="radio" id="male" name="gender">
+                <label for="male">Masculino</label>
+
+                <input type="radio" id="other" name="gender">
+                <label for="other">Otro</label>
+
+                <input type="radio" id="nonbinary" name="gender">
+                <label for="nonbinary">No binarismo</label><br><br>
+
+                <!-- Edad -->
+                <label for="age">Edad</label><br><br>
+                <input type="number" id="age" name="age" min="18" max="65"><br><br>
+
+
+
+                <!-- Opciones -->
+
+                <p><strong>Elige el/los medio/s de tranporte:</strong></p>
+                <input type="checkbox" id="coche" name="vehiculo">
+                <label for="coche">Coche</label><br>
+
+
+                <input type="checkbox" id="moto" name="vehiculo">
+                <label for="moto">Moto</label><br>
+
+                <input type="checkbox" id="patinete" name="vehiculo">
+                <label for="patinete">Patinete</label><br>
+
+                <input type="checkbox" id="bici" name="vehiculo">
+                <label for="bici">Bici</label><br><br><br>
+
+                <!-- Cuadro de texto -->
+
+                <label for="text">Texto en letras: </label>
+                <input type="text" id="text" name="text" pattern="[A-Za-z]"><br><br>
+
+                <!-- SUBMIT -->
+                <input type="submit" id="submit">
+            </form>
+        </div>
+    </main>
+
+
+</body>
+
+</html>
