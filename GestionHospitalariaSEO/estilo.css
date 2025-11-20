@@ -1,0 +1,60 @@
+
+/* CSS simple, responsive y con buen contraste. Evitar colores personalizados forzados para compatibilidad con preferencias del usuario. */
+    :root {
+      --max-width: 900px;
+      --accent: #0a66c2;
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #555555;
+      --radius: 12px;
+      --gap: 1rem;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{
+      max-width:var(--max-width);
+      margin:1.25rem auto;
+      padding:1.25rem;
+    }
+    header { margin-bottom: 1rem; }
+    h1{font-size:1.6rem;margin:0 0 .25rem}
+    p.lead{margin-top:0;color:var(--muted)}
+    nav.breadcrumbs{font-size:.9rem;margin-bottom:.5rem}
+    .card{
+      border-radius:var(--radius);
+      box-shadow: 0 6px 18px rgba(10,10,10,0.06);
+      padding:1rem;
+      background:color-mix(in srgb, var(--bg) 94%, black 6%);
+      margin-bottom:1rem;
+    }
+
+    /* Accessibility helpers */
+    a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid #ffbf47; outline-offset: 3px; }
+    :focus { scroll-margin-top: 6rem; }
+
+    /* Layout */
+    .grid{ display:grid; grid-template-columns: 1fr; gap: var(--gap); }
+    @media (min-width:800px){ .grid{ grid-template-columns: 1fr 320px; } }
+
+    /* Sidebar */
+    aside.sidebar{ font-size:.95rem; color:var(--muted); }
+
+    /* Lists */
+    ol.steps { padding-left:1.15rem; }
+    dt{font-weight:600}
+
+    /* Footer */
+    footer{font-size:.85rem;color:var(--muted);margin-top:1.25rem}
+
+    /* High-contrast mode: respect user preference */
+    @media (prefers-contrast: more){
+      :root { --bg: #fff; --text: #000; }
+    }
