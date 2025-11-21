@@ -20,8 +20,6 @@
             <th style="padding: 10px; border: 1px solid #ccc;">Fecha de Alta</th>
             <th style="padding: 10px; border: 1px solid #ccc;">Acciones</th>
         </tr>
-
-        <!-- Ejemplo de una fila. En tu práctica el alumno iterará desde PHP -->
         <tr>
             <td style="padding: 10px; border: 1px solid #ccc;">1</td>
             <td style="padding: 10px; border: 1px solid #ccc;">Lectura</td>

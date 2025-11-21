@@ -2,19 +2,8 @@
 require_once '../src/GestorLectura.php';
 require "../vendor/autoload.php";
 
+
 $gestor = new GestorLectura();
-// 1. El array asociativo con los datos a insertar
-$datos = [
-    'titulo_lectura' => 'Juan',
-    'autor' => 'Pérez',
-    'paginas' => 'juan.perez@example.com',
-    'fecha_lectura' => 2000-01-01
-];
-if ($gestor->insertar($datos)) {
-    echo "¡Usuario insertado exitosamente usando POO!";
-} else {
-    echo "No se ha podido insertar.";
-}
 while ($row = $gestor->listar()) {
     "<br>" . $row["titulo_lectura"] . "<br>".
     "<br>" . $row["autor"] . "<br>";
