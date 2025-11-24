@@ -8,14 +8,6 @@ $libro = new Libro();
 
 // Llama al método listar() para obtener los datos
 $libros = $libro->listar();
-
-
-// Llama al metodo modificar() para actualizar
-if (isset($_POST['action']) && $_POST["action"] === "modificar" && isset($_POST["id"])) {
-    if (is_numeric($_GET["id"])) {
-        $libro->modificar($_GET["id"]);
-    }
-}
 // Llama al método borrar() para eliminar
 
 if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])) {
@@ -49,6 +41,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
                 <th>Autor</th>
                 <th>Número de Páginas</th>
                 <th>Año Publicación</th>
+                <th>¿Terminado?</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -62,9 +55,10 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
                 echo "<td>" . htmlspecialchars($row["autor"]) . "</td>";
                 echo "<td>" . htmlspecialchars($row["n_paginas"]) . "</td>";
                 echo "<td>" . htmlspecialchars($row["fecha_publicacion"]) . "</td>";
+                echo "<td>" . htmlspecialchars($row["terminado"] ? "Sí" : "No") . "</td>";
                 echo "<td>";
                 // Botones de acción (funcionalidad a implementar más tarde)
-                echo "<a id=Editar href='principal.php?action=modificar&id=" . htmlspecialchars($row['id']) . "'>Editar</a> | ";
+                echo "<a id=Editar href='modificar.php?action=modificar&id=" . htmlspecialchars($row['id']) . "'>Editar</a> | ";
                 echo "<a id=Borrar href='principal.php?action=borrar&id=" . htmlspecialchars($row['id']) . "'>Borrar</a>";
                 echo "</td>";
                 echo "</tr>";

@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
     $correcto = $libro->crear($datos);
     if ($correcto){
         header("Location: principal.php?mensaje=Libro agregado correctamente");
-        echo "Éxito al agregar";
+        exit();
     } else {
         echo "Error al agregar";
     }

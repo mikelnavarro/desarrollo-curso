@@ -23,10 +23,10 @@ class Libro
 
     // Funciones
     public function modificar(array $datos){
-        $sql = "UPDATE libros SET titulo=:titulo, autor=:autor, n_paginas=:n_paginas, fecha_publicacion=:fecha_publicacion, terminado=:terminado WHERE id=:id";
+        $sql = "UPDATE libros SET id=:id, titulo=:titulo, autor=:autor, n_paginas=:n_paginas, fecha_publicacion=:fecha_publicacion, terminado=:terminado WHERE id=:id";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bindParam(':id',$datos["id"],PDO::PARAM_INT);
         return $stmt->execute(array(
+            ":id"=>$datos["id"],
             ":titulo"=>$datos["titulo"],
             ":autor"=>$datos["autor"],
             ":n_paginas"=>$datos["n_paginas"],
@@ -36,7 +36,7 @@ class Libro
     }
     public function listar()
     {
-        $sql = "SELECT id, titulo, autor, n_paginas, fecha_publicacion FROM libros"; // Consulta para seleccionar todos los libros
+        $sql = "SELECT id, titulo, autor, n_paginas, fecha_publicacion, terminado FROM libros"; // Consulta para seleccionar todos los libros
         $stmt = $this->conexion->prepare($sql);
         $stmt->execute();
         return $stmt->fetchAll();
@@ -51,7 +51,7 @@ class Libro
         $sql = "DELETE FROM libros WHERE id = :id";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindParam(":id",$id, PDO::PARAM_INT);
-
+        $this->conexion->prepare("ALTER TABLE libros AUTO_INCREMENT = 1")->execute();
         return $stmt->execute();
         
     }
@@ -66,5 +66,18 @@ class Libro
             ":n_paginas"=>$datos["n_paginas"],
             ":fecha_publicacion"=>$datos["fecha_publicacion"]
         ));
+    }
+    public function getID($id){
+        $sql = "SELECT id FROM libros WHERE id = :id";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
+    public function getTitulo(){
+        $sql = "SELECT titulo FROM libros WHERE titulo = :titulo";
+        $stmt = $this->conexion->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetch();
     }
 }

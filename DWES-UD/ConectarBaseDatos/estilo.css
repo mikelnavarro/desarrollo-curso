@@ -9,29 +9,29 @@ form {
     text-align: left;
     box-shadow: 3px 3px 3px 3px #ccc;
     border-radius: 2%;
-    padding: 3rem;
-    width: 60%;
-    margin: 2rem 4rem;
+    width: 70%;
+    margin: 2px;
+    padding: 3px;
+    
 }
 
 label {
-    padding: 10px;
-    margin: 5px 5px;
+    padding: 15px;
     width: 40%;
     font-weight: bold;
 }
 
 input {
-    padding: 15px;
+    padding: 10px;
     border-radius: 2%;
-    width: 45%;
+    width: 40%;
     max-width: 50%;
     border-color: #b9b8b8;
     border-style: 2px;
 }
 
 #Submit {
-    margin: 6px 6px;
+    margin: 6px 0px;
     padding: 20px;
     color: white;
     border-style: none;
