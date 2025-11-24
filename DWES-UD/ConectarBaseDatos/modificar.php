@@ -5,8 +5,9 @@ $id = $_GET['id'];
 $libro_actual = null;
 // Comprobamos el id
 if ($id) {
+    $libro_actual = $libro->getID($id);
     $libro_actual = $libro->listar();
-    if (!$libro_actual[$id]) {
+    if (!$libro_actual) {
         echo "Libro No encontrado";
     }
     if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["action"] == "modificar") {
@@ -46,9 +47,11 @@ if ($id) {
         <label for="n_paginas">Número de Paginas: </label>
         <input type="number" id="n_paginas" name="n_paginas" value="<?= $libro["n_paginas"] ?>"><br>
         <label for="fecha_publicacion">Fecha de publicacion: </label>
-        <input type="date" id="fecha_publicacion" name="fecha_publicacion" value="<?php echo $libro_actual["fecha_publicacion"] ?>"><br>
+        <input type="date" id="fecha_publicacion" name="fecha_publicacion"
+            value="<?php echo $libro_actual["fecha_publicacion"] ?>"><br>
         <label for="terminado">¿Se lo ha terminado?</label>
-        <input type="checkbox" id="terminado" name="terminado" value="<?php $libro_actual["terminado"] ? "checked" : "" ?>"><br>
+        <input type="checkbox" id="terminado" name="terminado"
+            value="<?php $libro_actual["terminado"] ? "checked" : "" ?>"><br>
         <input type="hidden" name="action" value="modificar">
         <input type="hidden" name="id" value="<?php echo isset($_GET["id"]) ? htmlspecialchars($_GET["id"]) : ""; ?>">
         <input type="submit" value="Editar">
