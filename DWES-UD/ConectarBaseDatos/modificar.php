@@ -2,10 +2,9 @@
 require_once 'Libro.php';
 $libro = new Libro();
 $id = $_GET['id'];
-$libro_actual = null;
 // Comprobamos el id
 if ($id) {
-    $libro_actual = $libro->getID($id);
+    $libro_actual = null;
     $libro_actual = $libro->listar();
     if (!$libro_actual) {
         echo "Libro No encontrado";
@@ -43,12 +42,12 @@ if ($id) {
         <label for="titulo">Título: </label>
         <input type="text" id="titulo" name="titulo" value="<?= $libro_actual["titulo"] ?>"><br>
         <label for="autor">Autor: </label>
-        <input type="text" id="autor" name="autor" value="<?= htmlspecialchars($libro["autor"]) ?>"><br>
+        <input type="text" id="autor" name="autor" value="<?= htmlspecialchars($libro_actual["autor"]) ?>"><br>
         <label for="n_paginas">Número de Paginas: </label>
-        <input type="number" id="n_paginas" name="n_paginas" value="<?= $libro["n_paginas"] ?>"><br>
+        <input type="number" id="n_paginas" name="n_paginas" value="<?= $libro_actual["n_paginas"] ?>"><br>
         <label for="fecha_publicacion">Fecha de publicacion: </label>
         <input type="date" id="fecha_publicacion" name="fecha_publicacion"
-            value="<?php echo $libro_actual["fecha_publicacion"] ?>"><br>
+            value=" <?php echo $libro_actual["fecha_publicacion"] ?>"><br>
         <label for="terminado">¿Se lo ha terminado?</label>
         <input type="checkbox" id="terminado" name="terminado"
             value="<?php $libro_actual["terminado"] ? "checked" : "" ?>"><br>
