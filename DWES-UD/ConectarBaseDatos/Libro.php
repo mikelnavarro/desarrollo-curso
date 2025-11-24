@@ -51,9 +51,8 @@ class Libro
         $sql = "DELETE FROM libros WHERE id = :id";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindParam(":id",$id, PDO::PARAM_INT);
-        $this->conexion->prepare("ALTER TABLE libros AUTO_INCREMENT = 1")->execute();
-        return $stmt->execute();
-        
+        return $stmt->execute() . $this->conexion->prepare("ALTER TABLE libros AUTO_INCREMENT = 1")->execute();
+
     }
     
     public function crear(array $datos){
@@ -70,7 +69,7 @@ class Libro
     public function getID($id){
         $sql = "SELECT id FROM libros WHERE id = :id";
         $stmt = $this->conexion->prepare($sql);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->bindParam(":id",$id, PDO::PARAM_INT);
         $stmt->execute();
         return $stmt->fetch();
     }
