@@ -1,0 +1,17 @@
+{
+    "name": "vespertino/ev_ud1-ud3-mikelnavarro",
+    "description": "Practica DWES Evaluable",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Vespertino\\EvUd1Ud3Mikelnavarro\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mikel",
+            "email": "mikelnaval2006@gmail.com"
+        }
+    ],
+    "require": {}
+}
