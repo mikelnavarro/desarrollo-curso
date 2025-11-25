@@ -67,15 +67,9 @@ class Libro
         ));
     }
     public function getID($id){
-        $sql = "SELECT id FROM libros WHERE id = :id";
+        $sql = "SELECT * FROM libros WHERE id = :id";
         $stmt = $this->conexion->prepare($sql);
         $stmt->bindParam(":id",$id, PDO::PARAM_INT);
-        $stmt->execute();
-        return $stmt->fetch();
-    }
-    public function getTitulo(){
-        $sql = "SELECT titulo FROM libros WHERE titulo = :titulo";
-        $stmt = $this->conexion->prepare($sql);
         $stmt->execute();
         return $stmt->fetch();
     }

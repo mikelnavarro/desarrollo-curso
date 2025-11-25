@@ -28,6 +28,7 @@ function comprobar_usuario($nombre, $clave){
     }else return FALSE;
 }
 ?>
+<?php echo "Bienvenido ".$_SESSION["usuario"];?>
 <?php if (isset($err) && $err == true ){
     header("Location:error.php");
 }?>

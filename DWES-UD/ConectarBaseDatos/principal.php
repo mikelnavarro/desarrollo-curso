@@ -1,7 +1,6 @@
 <?php
 // Incluye el archivo de la clase
-require_once 'Libro.php';
-
+require_once "Libro.php";
 // Instancia la clase Libro
 $libro = new Libro();
 
@@ -30,9 +29,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-
     <h2>Listado de Libros</h2>
-
     <table>
         <thead>
             <tr>
@@ -59,6 +56,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
                 echo "<td>";
                 // Botones de acción (funcionalidad a implementar más tarde)
                 echo "<a id=Editar href='modificar.php?action=modificar&id=" . htmlspecialchars($row['id']) . "'>Editar</a> | ";
+                echo "<a id=Ver href='ver.php?action=ver&id=" .htmlspecialchars($row["id"]). "'>Ver</a> | ";
                 echo "<a id=Borrar href='principal.php?action=borrar&id=" . htmlspecialchars($row['id']) . "'>Borrar</a>";
                 echo "</td>";
                 echo "</tr>";
