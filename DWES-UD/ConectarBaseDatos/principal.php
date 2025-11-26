@@ -17,10 +17,18 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
     }
 }
 // Opcional: Manejo de Mensaje
+
+/* if ($_SERVER['REQUEST_METHOD'] === "GET") {
+    $mensajeAviso = $_GET['mensaje'];
+    echo "<h5 id=mensajeAviso>" . $mensajeAviso . "</h5>";
+}
+
+*/
 ?>
 
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Listado de Libros</title>
@@ -28,6 +36,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
     </style>
     <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
     <h2>Listado de Libros</h2>
     <table>
@@ -66,4 +75,5 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
     </table>
     <a href="agregar.php">Agregar Libro</a>
 </body>
+
 </html>
