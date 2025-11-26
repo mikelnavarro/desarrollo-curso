@@ -1,5 +1,5 @@
-import { User } from "./User.js";
-import { Storage } from "./Storage.js";
+import { User } from "../EjercicioAPalabra/User.js";
+import { Storage } from "../EjercicioAPalabra/Storage.js";
 const username = document.getElementById("username");
 const password = document.getElementById("password");
 const inciarSesion = document.getElementById("sesion");

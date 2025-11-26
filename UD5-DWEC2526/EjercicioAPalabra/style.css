@@ -1,0 +1,77 @@
+
+
+
+body {
+    font-family: "Arial";
+    background-color: #f3f3f3f3
+}
+
+.principal {
+    background-color: #f3f3f3f3
+}
+
+#formularioLogin {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffff;
+    margin-top: 1em;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 4px 4px 4px #ccc;
+    width: 60%;
+    border-radius: 0.6rem;
+    padding: 1.3rem;
+    gap: 1em;
+}
+
+#formularioLogin label {
+    font-weight: bold;
+    padding: 0.3rem;
+}
+
+#formularioLogin input[type="text"], [type="password"] {
+    width: 50%;
+    max-width: 260px;
+    padding: 0.4em;
+}
+
+#loginSubmit {
+    padding: 15px;
+    width: 130px;
+    border-style: none;
+    background-color: #807cff;
+    border-radius: 0.2em;
+    transition: 0.4s;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#loginSubmit:hover {
+    cursor: pointer;
+    background-color: #524cf4;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 3px;
+    font-weight: bolder;
+    padding: 0.3em;
+    width: 50%;
+}
+
+.go {
+  color: green;
+}
+.stop {
+  color: red;
+}
+.introducirPalabra {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 120px;
+
+}
