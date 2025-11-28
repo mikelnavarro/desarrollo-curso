@@ -20,6 +20,7 @@ export const DOMFacade = {
             <p>Categoría: ${product.categoria}</p>
             <p>Fecha: ${product.fechaCreacion} </p>
             <p>Precio final: ${product.finalPrice} $ </p>
+            <p>Descuento aplicado: ${product.discount}%</p>
             <p>ID: ${product.id}</p><br>
             <button class="delete-btn" data-id="${product.id}">Borrar</button>`;
       listaproductos.appendChild(div);

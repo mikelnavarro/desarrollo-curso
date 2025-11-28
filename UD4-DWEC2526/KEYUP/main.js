@@ -21,5 +21,6 @@ formulario.addEventListener("submit", function (e) {
 
   arrayProductos.push(product);
   storage.save(arrayProductos);
-  DOMFacade.mostrar(arrayProductos);
+  storage.load();
+  DOMFacade.mostrar(arrayProductos);  
 });

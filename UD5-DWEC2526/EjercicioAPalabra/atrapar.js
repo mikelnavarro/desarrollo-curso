@@ -6,15 +6,17 @@ import { liPalabras } from "./move.js";
 const input = document.getElementById("introducirPalabra");
 const introducirPalabra = document.getElementById("introducirPalabra");
 const log = document.getElementById("log");
+const palabrasUser = [];
 
 
-input.addEventListener("keyup", palabraInput);
-
-function palabraInput() {
-  log.textContent = `Ha introducido ${input.value}`;
-}
-
+palabrasUser.push(introducirPalabra.value);
+introducirPalabra.addEventListener("keyup", (e) => {
+  const palabrasUser = liPalabras.forEach(
+    (word) => palabrasUser.includes(word),
+    addPuntaje()
+  );
+});
 
 function addPuntaje() {
-    const jugador = new Jugador();
+  const jugador = new Jugador();
 }

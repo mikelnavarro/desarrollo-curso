@@ -4,7 +4,7 @@ import { DOMFacade } from "./DOMFacade.js";
 // Mostrar filtrados
 // Evento KeyUp para búsqueda
 const storage = new Storage();
-const arrayProductos = storage.load();
+const arrayProductos = storage.load() || [];
 const categoriaFilter = document.getElementById("categoriaFilter");
 const busqueda = document.getElementById("busqueda");
 busqueda.addEventListener("keyup", function (event) {
@@ -24,6 +24,7 @@ categoriaFilter.addEventListener("change", function (event) {
 
   DOMFacade.mostrar(filtrados);
 
+  
   // Filtrado
   resultado.textContent = `Te gusta el sabor ${event.target.value}`;
 });
