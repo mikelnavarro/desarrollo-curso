@@ -40,13 +40,25 @@ class GestorMascotas
 			":id_persona" => $datos["id_persona"],
 		));
 	}
-
+	
 	public function responsable($responsable)
 	{
 
 		try {
 
 			$sql = "SELECT id FROM personas WHERE nombre=:nombre";
+			$stmt = $this->conexion->prepare($sql);
+			$stmt->execute();
+			return $stmt->fetchAll();
+		} catch (Exception $exception) {
+			echo $exception->getMessage();
+		}
+	}
+
+	public function listarResponsable() {
+		try {
+			$sql = "SELECT m.id_persona, m.id, m.nombre, m.tipo, m.fecha_nacimiento, m.foto_url, r.nombre as responsable FROM mascotas m, personas r WHERE m.id_persona = r.id";
+			
 			$stmt = $this->conexion->prepare($sql);
 			$stmt->execute();
 			return $stmt->fetchAll();

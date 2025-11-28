@@ -27,22 +27,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="utf-8">
     <title>Formulario de Login</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+
+    </style>
 </head>
 
 <body>
-    <?php  if(isset($_GET["redirigido"])){
-        echo "<p>Haga Login para continuar.</p>";
-    }?>
-    <?php if (isset($err) && $err == true ){
-        echo "<p>Revise usuario y contraseña.</p>";
-    }?>
-    <form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST">
-        <label for="username">Usuario:</label>
-        <input type="text" id="username" name="username">
-        <label for="clave">Clave:</label>
-        <input type="text" id="clave" name="clave">
-        <input type="submit">
-    </form>
+    <?php if(isset($_GET["redirigido"])) {
+    echo "<p>Haga Login para continuar.</p>";
+}
+
+?><?php if (isset($err) && $err==true) {
+    echo "<p>Revise usuario y contraseña.</p>";
+}
+
+?><form action="<?= $_SERVER["PHP_SELF"]; ?>" method="POST"><label for="username">Usuario:</label><input type="text"
+            id="username" name="username"><label for="clave">Clave:</label><input type="text" id="clave"
+            name="clave"><input type="submit"></form>
 </body>
 
 </html>
