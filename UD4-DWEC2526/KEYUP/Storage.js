@@ -10,11 +10,10 @@ export class Storage {
 
     if (data) {
       return data.map(elemento => {
-        const product = new Product(elemento.name, elemento.price, elemento.categoria, elemento.discount);
+        const product = ProductFactory.create(elemento.name, elemento.price, elemento.categoria, elemento.discount);
         product.fechaCreacion = elemento.fechaCreacion;
-        product.codigo = elemento.codigo;
-        product.calcularPrecioFinal();
-        product.generarCodigo();
+        product.id = elemento.id;
+        product.finalPrice = elemento.finalPrice;
         return product;
       });
     }

@@ -14,10 +14,11 @@ formulario.addEventListener("submit", function (e) {
   const categoria = document.getElementById("categoria").value;
   const descuento = parseFloat(document.getElementById("descuento").value);
 
-  let product = new ProductFactory.create(nombre,precio,categoria,descuento);
-  
-  product.calcularPrecioFinal();
-  product.generarCodigo();
+  let product = ProductFactory.create(nombre,precio,categoria,descuento);
+  product.fechaCreacion;
+  product.id;
+  product.finalPrice;
+
   arrayProductos.push(product);
   storage.save(arrayProductos);
   DOMFacade.mostrar(arrayProductos);

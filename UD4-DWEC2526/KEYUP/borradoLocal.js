@@ -4,6 +4,17 @@ import { DOMFacade } from "./DOMFacade.js";
 const storage = new Storage();
 let arrayProductos = storage.load() || [];
 // Borrar Productos
+
+export function deleteProducto(id) {
+  arrayProductos.forEach((p) => {
+    if (id) {
+      arrayProductos.pop(p.id);
+    }
+  });
+
+  storage.save(arrayProductos);
+  DOMFacade.mostrar(arrayProductos);
+}
 document.getElementById("borrarTodo").addEventListener("click", (event) => {
   storage.clear();
   storage.load();

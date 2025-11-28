@@ -1,3 +1,4 @@
+import { deleteProducto } from "./borradoLocal.js";
 import { ProductFactory } from "./ProductFactory.js";
 
 export const DOMFacade = {
@@ -19,8 +20,14 @@ export const DOMFacade = {
             <p>Categoría: ${product.categoria}</p>
             <p>Fecha: ${product.fechaCreacion} </p>
             <p>Precio final: ${product.finalPrice} $ </p>
-            <p>ID: ${product.codigo}</p><br>`;
+            <p>ID: ${product.id}</p><br>
+            <button class="delete-btn" data-id="${product.id}">Borrar</button>`;
       listaproductos.appendChild(div);
+      const btnDelete = div.querySelector(".delete-btn");
+      btnDelete.addEventListener("click", function () {
+        const id = btnDelete.dataset.id;
+        deleteProducto(id);
+      });
     });
   },
   clearForm() {
