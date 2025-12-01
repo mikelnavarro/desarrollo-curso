@@ -24,3 +24,4 @@ formulario.addEventListener("submit", function (e) {
   storage.load();
   DOMFacade.mostrar(arrayProductos);  
 });
+DOMFacade.mostrar(arrayProductos);  
