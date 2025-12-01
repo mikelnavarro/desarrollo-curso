@@ -1,7 +1,5 @@
 import { User } from "./User.js";
-import { USER, PASS } from "./credenciales.js";
 import { Storage } from "./Storage.js";
-import { Jugador } from "./Jugador.js";
 // Variables definidas
 const loginForm = document.getElementById("formularioLogin");
 const errorMessage = document.getElementById("error");
@@ -15,14 +13,14 @@ const listaUsers = storage.load() || []; // Array Users
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault(); // Previene por defecto el envío
 
+  
   // Valores
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
   if (username && password){
     validateUsername(username);
     validatePassword(password);
-    const nuevoJugador = new Jugador(username,0,4);
-    const nuevoUsuario = new User(username,password);
+    const nuevoUsuario = new User(username,password,0,3);
     listaUsers.push(nuevoUsuario);
     storage.save(listaUsers);
     window.location.replace('atrapar.html');

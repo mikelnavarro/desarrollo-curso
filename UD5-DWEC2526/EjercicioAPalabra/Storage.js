@@ -1,25 +1,28 @@
-import { Jugador } from './Jugador.js';
 import { User } from "./User.js";
 export class Storage {
-  save(registrados) {
-    localStorage.setItem("registrados", JSON.stringify(registrados));
+  save(listaUsers) {
+    localStorage.setItem("listaUsers", JSON.stringify(listaUsers));
   }
   load() {
-    const rawData = localStorage.getItem("registrados"); // Obtiene la cadena JSON
-    const data = JSON.parse(localStorage.getItem("registrados"));
+    const rawData = localStorage.getItem("listaUsers"); // Obtiene la cadena JSON
+    const data = JSON.parse(localStorage.getItem("listaUsers"));
 
     if (data) {
       return data.map(us => {
-        const jugador = new Jugador(us.name, us.puntos, us.vidas);
-        const usuario = new User(us.name, us.password);
-        
-        return jugador;
+        const usuario = new User(us.name, us.password, us.puntos, us.vidas);
+        return usuario;
       });
     } else {
       return [];
     }
   }
+  
+  getUsuario(){
+    return registrados.map(elemento => 
+      new User(elemento.name,elemento.password,elemento.puntos,elemento.vidas)
+    );
+  }
   clearUser(){
-    localStorage.removeItem("registrados");
+    localStorage.removeItem("listaUsers");
   }
 }

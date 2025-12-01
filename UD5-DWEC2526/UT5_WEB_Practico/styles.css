@@ -1,0 +1,41 @@
+body {
+    font-family: "Arial";
+}
+
+.principal {
+    background-color: #ccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 1em;
+    box-shadow: 2px 2px 2px #f1f1 (0.0, 2);
+    box-shadow: #f1f1;
+    align-items: center;
+    border-radius: 2%;
+}
+
+label {
+    padding: 4px;
+    margin: auto;
+    font-weight: bolder;
+    margin: 0 auto;
+}
+
+input[type="text"],
+[type="password"] {
+    padding: 10px;
+    font-weight: bolder;
+    width: 30%;
+    max-width: 220px;
+}
+
+input[type="submit"] {
+    padding: 4px;
+    width: 40%;
+    border-radius: 2%;
+    border-style: none;
+    margin: 0 auto;
+}

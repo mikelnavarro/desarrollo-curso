@@ -1,22 +1,19 @@
 // IMPORTAR
 import { Storage } from "./Storage.js";
-import { Jugador } from "./Jugador.js";
 import { User } from "./User.js";
 import { liPalabras } from "./move.js";
 const input = document.getElementById("introducirPalabra");
-const introducirPalabra = document.getElementById("introducirPalabra");
-const log = document.getElementById("log");
+const usuario = new Storage().getUsuario();
 const palabrasUser = [];
 
-
-palabrasUser.push(introducirPalabra.value);
-introducirPalabra.addEventListener("keyup", (e) => {
-  const palabrasUser = liPalabras.forEach(
-    (word) => palabrasUser.includes(word),
-    addPuntaje()
-  );
+input.addEventListener('input', (e) => {
+    if (e.target.value === liPalabras) {
+        usuario.addPuntaje(10);
+        e.target.value = '';
+    }
 });
 
-function addPuntaje() {
-  const jugador = new Jugador();
+
+function addPuntaje(n) {
+  usuario.puntos += n;
 }
