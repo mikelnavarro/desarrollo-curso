@@ -14,9 +14,17 @@ fputcsv() → escribe una línea en CSV automáticamente separada por comas
 fclose() → cierra el archivo
 
 */
+$letras = ["A,B,C,D,E,F,G,H,I,J,K,L,M,N,Ñ,O,P,Q,R,S,T,U,V,W,Y,Z"];
+
+$list = [
+    ["aaa","bbb","ccc","dddd"],
+    ["123","456","789"],
+    ['"aaa"', '"bbb"']
+];
+$fp = fopen("file.csv","w");
+// ESCRIBIMOS
 
 $archivo = fopen("libros.csv", "r");
-
 while (($fila = fgetcsv($archivo)) !== false) {
     print_r($fila);
 }

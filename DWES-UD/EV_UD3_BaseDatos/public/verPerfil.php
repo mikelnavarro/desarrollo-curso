@@ -1,6 +1,6 @@
 <?php
 require "../vendor/autoload.php";
-require "../src/Registro.php";
+require "../src/Usuario.php";
 
 
 session_start();
@@ -8,12 +8,26 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit;
 }
-$user = new Registro();
+$user = new Usuario();
 $sesion = $_SESSION["usuario"];
 echo "Usuario: " . $_SESSION["usuario"] . "<br>";
 $datosUsuario = $user->getUsername($sesion);
 print_r($datosUsuario);
 if ($datosUsuario) {
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    if ($_GET["action"] === "eliminar") {
+        $id = $_GET["id"];
+        if ($user->getID($id)) {
+            $user->deleteUsername($id);
+            header("Location: registrarse.php?mensaje=user eliminado");
+            exit();
+        } else if (!$user->getID($id)) {
+            die("El usuario no existe en la base de datos!");
+            return false;
+        }
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -43,7 +57,8 @@ if ($datosUsuario) {
                 </div>
             </div>
             <div>
-                <a href="#" class="btn btn-danger">Eliminar</a>
+                <a href="verPerfil.php?action=eliminar&id=<?php echo $datosUsuario["id"]?>"
+                    class="btn btn-danger">Eliminar</a>
             </div>
         </div>
     </div>
