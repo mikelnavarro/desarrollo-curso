@@ -28,8 +28,22 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
     <style>
+        /* Estilos para el body */
         body {
-            font-family: "Arial";
+            margin: 10px 20px 10px 20px;
+            /* Relleno para top, right, bottom, left */
+        }
+
+        /* Estilos para el main */
+        main {
+            margin: 20px;
+            /* Margen uniforme alrededor del main */
+            padding: 15px;
+            /* Relleno interno dentro del main */
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            /* Sombra para dar profundidad */
         }
 
         .container {
@@ -123,6 +137,8 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
         <?php endforeach; ?>
     </div>
 
+    <!-- Tabla de Visualización -->
+     <h2>Tabla de Visualización Biblioteca</h2>
     <table>
         <thead>
             <tr>
