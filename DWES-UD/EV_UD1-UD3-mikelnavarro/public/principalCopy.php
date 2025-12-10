@@ -94,7 +94,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
     <h2>Lista de mascotas</h2>
     <a href="../Logout.php">Cerrar sesion</a>
     <?php foreach ($listaMascotas as $pet): ?>
-
+<div class="container">
     <div class="card">
         <div class="card-content">
             <img src="<?php echo $pet['foto_url'] ?>" class="card-img-top img-fluid" alt="">
@@ -111,6 +111,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
         </div>
     </div>
     <?php endforeach; ?>
+</div>
 </body>
 
 </html>
