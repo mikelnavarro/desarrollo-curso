@@ -8,12 +8,15 @@
       <sourceFolder url="file://$MODULE_DIR$/DWES-UD/UD3-DWES/EJ_BBDD/src" isTestSource="false" packagePrefix="Mikelnavarro\EjBbdd\" />
       <sourceFolder url="file://$MODULE_DIR$/DWES-UD/UD3-DWES/src" isTestSource="false" packagePrefix="Mikel\Ud3\" />
       <sourceFolder url="file://$MODULE_DIR$/PROYECTO COMPOSER/src" isTestSource="false" packagePrefix="Mikel\Ud3\" />
+      <sourceFolder url="file://$MODULE_DIR$/DWES-UD/biblioteca/src" isTestSource="false" packagePrefix="Mikel\Biblioteca\" />
       <excludeFolder url="file://$MODULE_DIR$/BBDDUD03-DWES/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/DWES-UD/EV_UD1-UD3-mikelnavarro/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/DWES-UD/EV_UD3_BaseDatos/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/DWES-UD/UD3-DWES/EJ_BBDD/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/DWES-UD/UD3-DWES/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/DWES-UD/UD3-DWES/vendor/phpmailer/phpmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/DWES-UD/biblioteca/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/DWES-UD/biblioteca/vendor/phpmailer/phpmailer" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -28,6 +28,8 @@
       <path value="$PROJECT_DIR$/DWES-UD/EV_UD3_BaseDatos/vendor/composer" />
       <path value="$PROJECT_DIR$/DWES-UD/UD3-DWES/vendor/composer" />
       <path value="$PROJECT_DIR$/DWES-UD/UD3-DWES/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/DWES-UD/biblioteca/vendor/phpmailer/phpmailer" />
+      <path value="$PROJECT_DIR$/DWES-UD/biblioteca/vendor/composer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">
