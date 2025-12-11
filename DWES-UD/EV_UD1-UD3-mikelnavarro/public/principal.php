@@ -52,6 +52,10 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
         padding: 4px;
         width: 100%;
     }
+    #paginaprincipal {
+            max-width: 300px;
+            width: 6%;
+        }
     </style>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo.css">

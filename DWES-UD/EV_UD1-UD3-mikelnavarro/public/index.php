@@ -1,7 +1,7 @@
 <?php
 // Importar Login
 require '../vendor/autoload.php';
-require '../Login.php';
+require '../src/Login.php';
 // Usar LOGIN BÁSICO
 $login = new Login();
 // Recibe datos por POST

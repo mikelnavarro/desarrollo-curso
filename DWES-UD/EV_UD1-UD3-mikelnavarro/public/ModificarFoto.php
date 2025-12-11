@@ -10,9 +10,6 @@ $idMascota = null;
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $idMascota = $_GET['id'];
     $mascota_actual = $mascota->getID($idMascota);
-    if (!$mascota_actual) {
-        echo "Error, el ID no existe.";
-    }
     if (!$idMascota) {
         echo "Error: No se ha especificado un ID de una mascota válido.";
     }
@@ -118,12 +115,17 @@ function subirArchivos()
             max-width: 800px;
             margin: 20px auto;
         }
+        #paginaprincipal {
+            max-width: 300px;
+            width: 6%;
+        }
     </style>
 </head>
 
 <body>
 
     <a href="principalCopy.php">Página Principal</a>
+    <a href="principalCopy.php"><img src="img/paginaprincipal.png" id="paginaprincipal" alt="button principal"></a>
     <div class="container form-wrapper">
         <div class="row justify-content-center">
             <!-- TARJETA: REGISTRAR MASCOTA -->

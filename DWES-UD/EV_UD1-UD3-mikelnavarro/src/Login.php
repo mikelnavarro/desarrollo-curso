@@ -1,6 +1,6 @@
 <?php
 // Importar la clase Conexion.php
-require "vendor/autoload.php";
+require "../vendor/autoload.php";
 require 'Conexion.php';
 class Login {
 

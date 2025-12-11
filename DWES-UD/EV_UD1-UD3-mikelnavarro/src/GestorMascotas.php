@@ -18,13 +18,12 @@ class GestorMascotas
 	{
 
 		try {
-			$sql = "SELECT * FROM mascotas";
+			$sql = "SELECT foto_url FROM mascotas";
 			$stmt = $this->conexion->prepare($sql);
-			$stmt->bindParam("id", $id, PDO::PARAM_INT);
 			$stmt->execute();
 			return $stmt->fetch();
-		} catch (\Throwable $th) {
-			echo $th->getMessage();
+		} catch (Exception $exception) {
+			echo $exception->getMessage();
 		}
 	}
 

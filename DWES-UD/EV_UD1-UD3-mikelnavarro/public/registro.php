@@ -103,9 +103,14 @@ function subirArchivos(){
             max-width: 800px;
             margin: 20px auto;
         }
+        #paginaprincipal {
+            max-width: 300px;
+            width: 6%;
+        }
     </style>
 </head>
 <body>
+    <a href="principalCopy.php"><img src="img/paginaprincipal.png" id="paginaprincipal" alt="button principal"></a>
     <div class="container form-wrapper">
         <div class="row justify-content-center">
             <!-- TARJETA: REGISTRAR MASCOTA -->
