@@ -34,6 +34,9 @@ if ($libro_actual) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ver</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <style>
     * {
         font-family: "Arial";
@@ -95,7 +98,7 @@ if ($libro_actual) {
             </tbody>
         </table>
     </main>
-    <a href="principal.php">Volver al listado</a>
+    <a href="principal.php" class="btn btn-success">Volver al listado</a>
 </body>
 
 </html>

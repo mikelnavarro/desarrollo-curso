@@ -25,120 +25,100 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
 <head>
     <meta charset="UTF-8">
     <title>Listado de Libros</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="estilos.css">
     <style>
-        /* Estilos para el body */
-        body {
-            margin: 10px 20px 10px 20px;
-            /* Relleno para top, right, bottom, left */
-        }
+    /* Estilos para el body */
+    body {
+        margin: 10px 20px 10px 20px;
+        /* Relleno para top, right, bottom, left */
+    }
 
-        /* Estilos para el main */
-        main {
-            margin: 20px;
-            /* Margen uniforme alrededor del main */
-            padding: 15px;
-            /* Relleno interno dentro del main */
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            /* Sombra para dar profundidad */
-        }
+    /* Estilos para el main */
+    main {
+        margin: 20px;
+        /* Margen uniforme alrededor del main */
+        padding: 15px;
+        /* Relleno interno dentro del main */
+        background-color: #ffffff;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        /* Sombra para dar profundidad */
+    }
 
-        .container {
-            /* Si quieres que el contenedor ocupe todo el ancho disponible, puedes eliminar max-width */
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            display: flex;
-            /* Añade flex para que las tarjetas se muestren en línea */
-            flex-wrap: wrap;
-            /* Permite que las tarjetas se ajusten y pasen a la siguiente línea si no hay espacio */
-            justify-content: space-between;
-            /* Espacio entre tarjetas. Puedes ajustar según prefieras */
-        }
+    .container {
+        /* Si quieres que el contenedor ocupe todo el ancho disponible, puedes eliminar max-width */
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+        display: flex;
+        /* Añade flex para que las tarjetas se muestren en línea */
+        flex-wrap: wrap;
+        /* Permite que las tarjetas se ajusten y pasen a la siguiente línea si no hay espacio */
+        justify-content: space-between;
+        /* Espacio entre tarjetas. Puedes ajustar según prefieras */
+    }
 
-        .card {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-            /* Ancho de las tarjetas. Puedes ajustar según prefieras */
-            width: calc(33% - 10px);
-            /* Esto asume que quieres 3 tarjetas por fila y resta 20px por el espacio entre tarjetas */
-            box-sizing: border-box;
-            /* Asegura que el padding y el borde se incluyan en el ancho total de la tarjeta */
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .card {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        /* Ancho de las tarjetas. Puedes ajustar según prefieras */
+        width: calc(33% - 10px);
+        /* Esto asume que quieres 3 tarjetas por fila y resta 20px por el espacio entre tarjetas */
+        box-sizing: border-box;
+        /* Asegura que el padding y el borde se incluyan en el ancho total de la tarjeta */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 
-        /* TABLA DE DATOS */
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            font-family: "Arial";
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        /* HIPERENLACES */
-        a {
-            text-decoration: none;
-            background-color: blue;
-            color: white;
-            padding: 4px;
-            width: 100%;
-        }
+    /* HIPERENLACES */
+    a {
+        text-decoration: none;
+        background-color: blue;
+        color: white;
+        padding: 4px;
+        width: 100%;
+    }
     </style>
 </head>
 
 <body>
     <a href="../src/Logout.php">Cerrar Sesión</a>
     <a href="verPerfil.php">MI USUARIO</a>
-    <h2>Listado de Libros</h2>
-    <div class="container md-3">
+    <a href="listaUsers.php" class="btn btn-success">Users</a>
+    <div class=" container md-3">
         <?php foreach ($libros as $libro): ?>
-            <div class="card" style="width: 18rem;">
-                <img src="img/tortuga2.jpeg" class="card-img-top img-fluid" alt="">
-                <div class="card-content">
-                    <div class="card-text">
-                        <strong>ID: </strong><?php echo $libro['id'] ?><br>
-                        <strong>Titulo: </strong><?php echo $libro['titulo'] ?><br>
-                        <strong>Autor: </strong><?php echo $libro['autor'] ?><br>
-                        <strong>Fecha de publicación: </strong><?php echo $libro['fecha_publicacion'] ?><br>
-                        <strong>Número de páginas: </strong><?php echo $libro['n_paginas'] ?><br>
-                    </div>
-                </div>
-                <div class="d-flex flex-row mb-3" style="gap:0.4em;">
-                    <a href="ver.php?action=ver&id=<?= $libro['id'] ?>"
-                        class="btn btn-primary">
-                        Ver
-                    </a><br>
-                    <a href="modificar.php?action=modificar&id=<?= $libro['id'] ?>"
-                        class="btn btn-warning">
-                        Editar
-                    </a><br>
-                    <a href="principal.php?action=borrar&id=<?= $libro['id'] ?>"
-                        class="btn btn-danger">
-                        Borrar
-                    </a>
+        <div class="card" style="width: 18rem;">
+            <img src="img/tortuga2.jpeg" class="card-img-top img-fluid" alt="">
+            <div class="card-content">
+                <div class="card-text">
+                    <strong>ID: </strong><?php echo $libro['id'] ?><br>
+                    <strong>Titulo: </strong><?php echo $libro['titulo'] ?><br>
+                    <strong>Autor: </strong><?php echo $libro['autor'] ?><br>
+                    <strong>Fecha de publicación: </strong><?php echo $libro['fecha_publicacion'] ?><br>
+                    <strong>Número de páginas: </strong><?php echo $libro['n_paginas'] ?><br>
                 </div>
             </div>
+            <div class="d-flex flex-row mb-3" style="gap:0.4em;">
+                <a href="ver.php?action=ver&id=<?= $libro['id'] ?>" class="btn btn-primary">
+                    Ver
+                </a><br>
+                <a href="modificar.php?action=modificar&id=<?= $libro['id'] ?>" class="btn btn-warning">
+                    Editar
+                </a><br>
+                <a href="principal.php?action=borrar&id=<?= $libro['id'] ?>" class="btn btn-danger">
+                    Borrar
+                </a>
+            </div>
+        </div>
         <?php endforeach; ?>
     </div>
 
     <!-- Tabla de Visualización -->
-     <h2>Tabla de Visualización Biblioteca</h2>
+    <h2>Tabla de Visualización Biblioteca</h2>
     <table>
         <thead>
             <tr>
