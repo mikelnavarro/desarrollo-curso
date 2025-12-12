@@ -119,7 +119,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
                         <strong>Número de páginas: </strong><?php echo $libro['n_paginas'] ?><br>
                     </div>
                 </div>
-                <div class="d-flex flex-row mb-3">
+                <div class="d-flex flex-row mb-3" style="gap:0.4em;">
                     <a href="ver.php?action=ver&id=<?= $libro['id'] ?>"
                         class="btn btn-primary">
                         Ver
@@ -174,6 +174,7 @@ if (isset($_GET["action"]) && $_GET["action"] === "borrar" && isset($_GET["id"])
         </tbody>
     </table>
     <a href="agregar.php">Agregar Libro</a>
+    <a href="tabla_lectura.php">Grid Tabla Lectura</a>
 </body>
 
 </html>

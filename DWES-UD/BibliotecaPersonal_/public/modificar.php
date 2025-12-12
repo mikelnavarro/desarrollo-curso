@@ -44,27 +44,53 @@ echo "</pre>";
 </head>
 
 <body>
-    <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
-        <label class="form-label" for="id">Id: </label>
-        <input type="number" id="id" name="id" value="<?= $libro_actual["id"] ?>" class="form-control"><br>
-        <label class="form-label" for="titulo">Título: </label>
-        <input type="text" id="titulo" name="titulo" value="<?= $libro_actual["titulo"] ?>" class="form-control"><br>
-        <label class="form-label" for="autor">Autor: </label>
-        <input type="text" id="autor" name="autor" value="<?= $libro_actual["autor"] ?>" class="form-control"><br>
-        <label class="form-label" for="n_paginas">Número de Paginas: </label>
-        <input type="number" id="n_paginas" name="n_paginas" value="<?= $libro_actual["n_paginas"] ?>"
-            class="form-control"><br>
-        <label class="form-label" for="fecha_publicacion">Fecha de publicacion: </label>
-        <input type="date" id="fecha_publicacion" name="fecha_publicacion"
-            value="<?= $libro_actual["fecha_publicacion"] ?>" class="form-control"><br>
-        <label class="form-label" for="terminado">¿Se lo ha terminado?</label>
-        <input type="checkbox" id="terminado" name="terminado" <?= $libro_actual['terminado'] ? 'checked' : '' ?>><br>
-        <input type="hidden" name="action" value="modificar">
-        <input type="hidden" name="id" value="<?= $_GET['id'] ? $_GET["id"] : ''; ?>">
-        <input type="submit" value="Editar">
 
-    </form>
-    <a href="principal.php">Volver al listado</a>
+
+    <div class="container mt-4">
+        <div class="col-md-5 col-lg-4"> <!-- Ajusta el ancho aquí -->
+            <div class="card shadow p-4">
+                <h3 class="mb-3 text-primary">Editar Libro</h3>
+                <form method="POST" action="<?php $_SERVER['PHP_SELF'] ?>">
+                    <div class="mb-3">
+                        <label class="form-label" for="id">Id: </label>
+                        <input type="number" id="id" name="id" value="<?= $libro_actual["id"] ?>" class="form-control"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="titulo">Título: </label>
+                        <input type="text" id="titulo" name="titulo" value="<?= $libro_actual["titulo"] ?>" class="form-control"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="autor">Autor: </label>
+                        <input type="text" id="autor" name="autor" value="<?= $libro_actual["autor"] ?>" class="form-control"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="n_paginas">Número de Paginas: </label>
+                        <input type="number" id="n_paginas" name="n_paginas" value="<?= $libro_actual["n_paginas"] ?>"
+                            class="form-control"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="fecha_publicacion">Fecha de publicacion: </label>
+                        <input type="date" id="fecha_publicacion" name="fecha_publicacion"
+                            value="<?= $libro_actual["fecha_publicacion"] ?>" class="form-control"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="terminado">¿Se lo ha terminado?</label>
+                        <input type="checkbox" id="terminado" name="terminado" <?= $libro_actual['terminado'] ? 'checked' : '' ?>><br>
+                    </div>
+                    <div class="mb-3">
+                        <input type="hidden" name="action" value="modificar">
+                        <input type="hidden" name="id" value="<?= $_GET['id'] ? $_GET["id"] : ''; ?>">
+                    </div>
+                    <input type="submit" value="Editar">
+
+                </form>
+                <div class="mt-3 text-center">
+                    <a href="principal.php" class="btn btn-secondary">Volver al listado</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>

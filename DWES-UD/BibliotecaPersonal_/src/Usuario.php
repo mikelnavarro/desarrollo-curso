@@ -28,6 +28,17 @@ class Usuario
             echo $exception->getMessage();
         }
     }
+    public function listaUsuarios() {
+        try {
+
+            $sql = "SELECT username FROM usuarios";
+            $stmt = $this->conexion->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (Exception $exception){
+            echo $exception->getMessage();
+        }
+    }
     public function comprobarUsuario($username, $password)
     {
         try {
