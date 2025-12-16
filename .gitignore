@@ -1,7 +1,7 @@
 
 node_modules/
 bootstrap/
-/vendor/
+vendor/
 *.zip
 archivo(3).pdf
 archivo(2).pdf
