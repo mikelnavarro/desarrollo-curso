@@ -1,8 +1,10 @@
 <?php
-// tools/Conexion.php
-require_once __DIR__ . '/../tools/Config.php';
+namespace Mikelnavarro\TiendaAplicacion\Tools;
+use PDO; 
+use PDOException;
+use Mikelnavarro\TiendaAplicacion\Tools\Config; 
 
-// Esta clase también deberia ser singleton.
+
 // Crearla ...
 
 class Conexion
@@ -59,3 +61,4 @@ class Conexion
         }
     }
 }
+?>

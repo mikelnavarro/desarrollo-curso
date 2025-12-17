@@ -1,16 +1,11 @@
 {
-    "name": "mikelnavarro/biblioteca",
+    "name": "mikel/biblioteca-personal",
+    "description": "Biblioteca Personal",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Mikelnavarro\\Biblioteca\\": "src/"
+            "Mikel\\BibliotecaPersonal\\": "src/"
         }
     },
-    "authors": [
-        {
-            "name": "Mikel",
-            "email": "mikelnaval2006@gmail.com"
-        }
-    ],
     "require": {}
 }

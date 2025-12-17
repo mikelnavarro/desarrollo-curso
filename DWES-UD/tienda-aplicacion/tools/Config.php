@@ -1,4 +1,6 @@
 <?php
+
+namespace Mikelnavarro\TiendaAplicacion\Tools;
 /**
  * Vamos a usar un patrón Singleton para que solo haya una instancia del objeto "Config"
  * Y se use en toda la aplicación.
@@ -18,7 +20,6 @@ class Config
 
     private function __construct()
     {
-        // Cargamos el archivo .ini solo una vez y con secciones 'true'
         $this->data = parse_ini_file(__DIR__ . '/../config/config.ini', true);
     }
 

@@ -1,6 +1,6 @@
 {
     "name": "mikelnavarro/tienda-aplicacion",
-    "description": "Projecto",
+    "description": "Projecto Tienda",
     "type": "project",
     "autoload": {
         "psr-4": {

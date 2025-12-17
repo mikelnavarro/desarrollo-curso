@@ -11,7 +11,7 @@ class Usuarios {
     }
     public function comprobarUsuario($username,$password){
 	try {
-		$sql = "SELECT user, pass FROM usuarios WHERE user = :user AND pass = :pass";
+		$sql = "SELECT username, password FROM usuarios WHERE username = :user AND password = :pass";
 		if ($stmt = $this->conexion->prepare($sql)){
 		$stmt->bindParam(":user",$username);
 		$stmt->bindParam(":pass",$password);
