@@ -16,7 +16,13 @@ class Usuario
 
     public function __construct($codRes, $correo, $clave, $cp, $ciudad, $direccion)
     {
-
+        $this->codRes = $codRes;
+        $this->correo = $correo;
+        $this->clave = $clave;
+        $this->cp = $cp;
+        $this->pais = $pais;
+        $this->ciudad = $ciudad;
+        $this->direccion = $direccion;
     }
     public function __destruct(){
 

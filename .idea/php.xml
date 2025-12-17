@@ -24,7 +24,6 @@
     <include_path>
       <path value="$PROJECT_DIR$/BBDDUD03-DWES/vendor/composer" />
       <path value="$PROJECT_DIR$/DWES-UD/EV_UD1-UD3-mikelnavarro/vendor/composer" />
-      <path value="$PROJECT_DIR$/DWES-UD/UD3-DWES/EJ_BBDD/vendor/composer" />
       <path value="$PROJECT_DIR$/DWES-UD/EV_UD3_BaseDatos/vendor/composer" />
       <path value="$PROJECT_DIR$/DWES-UD/UD3-DWES/vendor/composer" />
       <path value="$PROJECT_DIR$/DWES-UD/UD3-DWES/vendor/phpmailer/phpmailer" />
