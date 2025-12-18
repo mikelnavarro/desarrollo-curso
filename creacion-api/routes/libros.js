@@ -5,7 +5,8 @@ const router = express.Router();
 // Datos simulados (normalmente vendrían de una BD)
 let libros = [
   { id: 1, titulo: 'Cien años de soledad', autor: 'Gabriel García Márquez' },
-  { id: 2, titulo: 'El Quijote', autor: 'Miguel de Cervantes' }
+  { id: 2, titulo: 'El Quijote', autor: 'Miguel de Cervantes' },
+  { id: 3, titulo: 'Un poeta en Nueva York', autor: 'Federico García Lorca'}
 ];
 
 // GET: obtener todos los libros
