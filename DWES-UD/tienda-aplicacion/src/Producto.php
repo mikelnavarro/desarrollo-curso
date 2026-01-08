@@ -24,21 +24,21 @@ class Producto {
     }
     // Funciones
     // Acceder a la BD
-    public function productosPorCategoria($categoria) {
+    public static function productosPorCategoria($categoria) {
         $pdo = Conexion::getConexion();
         $sql = "SELECT * FROM productos WHERE categoria = :categoria";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(["categoria" => $categoria]);
-        return $stmt->fetch();
+        return $stmt->fetchAll();
 
 }
 
-    public static function buscarPorId(int $codProd):Producto{
+    public static function buscarPorId(int $codProd) {
         $pdo = Conexion::getConexion();
-        $sql = "SELECT * FROM productos WHERE id = :codProd";
+        $sql = "SELECT * FROM productos WHERE codProd = :codProd";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(["codProd" => $codProd]);
-        return $stmt->fetch();
+        return $stmt->fetchAll();
     }
     public function getCodProd() {
         return $this->codProd;

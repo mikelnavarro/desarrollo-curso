@@ -1,12 +1,17 @@
 <?php
+
 require __DIR__ . "/../vendor/autoload.php";
+session_start();
+
 // Si no existe la sesión del usuario, lo mandamos al login
+/*
+
 if (!isset($_SESSION['usu'])) {
     header("Location: login.php?mensaje=Debes iniciar sesión");
     exit();
 }
-
-$usu = $_SESSION['usu'];
+*/
+$usu = $_SESSION['usu']['correo'] ?? 'Invitado';
 
 ?>
 <!DOCTYPE html>
