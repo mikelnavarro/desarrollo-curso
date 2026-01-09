@@ -18,6 +18,8 @@ async function getDatos(inputNombre) {
   if (!inputNombre) {
     countryName.textContent = "Introduce un nombre.";
     countryCapital.textContent = "N/A";
+    coatOfArms.textContent = "placeholder.png";
+    currency.textContent = "N/A";
     flag.src = "placeholder.png";
     return;
   }
@@ -59,33 +61,28 @@ function dibujaCards(paises) {
   (population.textContent = new Intl.NumberFormat("es-ES", {
     maximumSignificantDigits: 3,
   }).format(paises.population)),
-    area.textContent = new Intl.NumberFormat("es-ES").format(paises.area);
-
+    (area.textContent = new Intl.NumberFormat("es-ES").format(paises.area));
 
   // Actualizar la imagen (src y alt)
-  (flag.src = paises.flags.png || "placeholder.png"); // Usamos sprites.front_default
+  flag.src = paises.flags.png || "placeholder.png"; // Usamos sprites.front_default
   flag.alt = paises.flags.alt || `Bandera de ${paises.name.official}`;
   countryCoat.src = paises.coatOfArms.png;
   countryCoat.alt = `Escudo de ${paises.translations.spa.common}`;
 
-
-
+  // Subregion
   subregion.innerHTML = paises.subregion;
   // 1. Extraer las monedas (obtiene un array de objetos de moneda)
-  /*const monedas = Object.values(paises.currencies);
+  const monedas = Object.values(paises.currencies);
   // 2. Acceder al nombre y símbolo de la primera moneda disponible
   if (monedas.length > 0) {
-    const nombreMoneda = monedas[0].name;   // Ejemplo: "Mexican peso"
+    const nombreMoneda = monedas[0].name; // Ejemplo: "Mexican peso"
     const simboloMoneda = monedas[0].symbol; // Ejemplo: "$"
-  // 3. Asignar al elemento del DOM (asumiendo que tienes un elemento 'currency')
     currency.textContent = `${nombreMoneda} (${simboloMoneda})`;
   }
-*/
   const status = paises.status;
-  if (paises.status === "officially-assigned"){
-    checkS.innerHTML = ""
+  if (paises.status === "officially-assigned") {
+    checkS.innerHTML = "";
   }
-
 }
 
 // Función que lee el input del usuario y llama a obtenerMostrar.
