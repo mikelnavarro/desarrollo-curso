@@ -2,7 +2,7 @@
 // index.php inside src/Routes/ folder
 
 use Mikelnavarro\App\Controllers\HomeController;
-use App\Router;
+use Mikelnavarro\App\Router;
 
 $router = new Router();
 

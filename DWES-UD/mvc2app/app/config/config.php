@@ -2,8 +2,8 @@
 
 //Configuración acceso a base de datos
 define('DB_HOST', 'localhost'); //tu servidor de BD.
-define('DB_USUARIO', 'root');
-define('DB_PASSWORD', '');
+define('DB_USUARIO', 'dweb');
+define('DB_PASSWORD', '12345');
 define('DB_NOMBRE', 'test'); // Tu base de datos
 
 

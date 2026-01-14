@@ -8,7 +8,7 @@ class Controlador{
     //Cargar modelo
     public function modelo ($modelo){
         //carga
-        require_once '../app/modelos/'.$modelo.'.php';
+        require_once '../app/src/models/'.$modelo.'.php';
         //Instanciar el modelo
         return new $modelo();
     }
@@ -16,8 +16,8 @@ class Controlador{
     //Cargar vista
     public function vista($vista, $datos = []){
         //Comprobar si existe el archivo de vista.
-        if (file_exists('../app/vistas/'.$vista.'.php')){
-            require_once '../app/vistas/'.$vista.'.php';
+        if (file_exists('../app/src/views/'.$vista.'.php')){
+            require_once '../app/src/views/'.$vista.'.php';
         }else{
             //si el archivo de vista no existe
             die('La vista no exite');

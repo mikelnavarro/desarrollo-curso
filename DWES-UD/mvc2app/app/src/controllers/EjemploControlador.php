@@ -1,5 +1,4 @@
 <?php
-
     class EjemploControlador extends Controlador{
 
         public function __construct(){
