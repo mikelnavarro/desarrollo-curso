@@ -21,8 +21,8 @@ class Core{
         $url = $this->getUrl();
 
         //buscar en controladores si el controlador exite
-        //if (file_exists(__DIR__.'/../app/controladores/'.
-        if (isset($url) && file_exists('../app/src/controllers/'.
+        //if (file_exists(__DIR__.'/../app/controllers/'.
+        if (isset($url) && file_exists('../app/controllers/'.
         ucwords($url[0]).'.php')){
             //si existe se define/setea como controlador por defecto.
             $this->controladorActual = ucwords($url[0]);
@@ -32,7 +32,7 @@ class Core{
         }
 
         //requerir el controlador
-        require_once '../app/src/controllers/'.$this->controladorActual.'.php';
+        require_once '../app/controllers/'.$this->controladorActual.'.php';
         $this->controladorActual = new $this->controladorActual;
 
         //comprobar la segunda parte de la url: el metodo

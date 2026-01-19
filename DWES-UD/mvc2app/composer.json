@@ -1,6 +1,5 @@
 {
     "name": "mikelnavarro/mvc2app",
-    "description": "Mvc2App",
     "type": "project",
     "autoload": {
         "psr-4": {
