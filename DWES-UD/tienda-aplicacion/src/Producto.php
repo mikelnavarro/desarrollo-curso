@@ -22,7 +22,6 @@ class Producto {
         $this->stock = $stock;
         $this->categoria = $categoria;
     }
-    // Funciones
     // Acceder a la BD
     public static function productosPorCategoria($categoria) {
         $pdo = Conexion::getConexion();
@@ -38,7 +37,9 @@ class Producto {
         $sql = "SELECT * FROM productos WHERE codProd = :codProd";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(["codProd" => $codProd]);
-        return $stmt->fetchAll();
+        // Devolver una sola fila (producto) en lugar de un array de filas.
+        // add_carrito.php espera un array asociativo con las columnas.
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
     public function getCodProd() {
         return $this->codProd;

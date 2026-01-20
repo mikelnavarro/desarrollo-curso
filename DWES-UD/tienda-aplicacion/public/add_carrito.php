@@ -19,13 +19,18 @@ if (isset($_SESSION['carrito'][$id])) {
 } else {
     // Si no existe, lo añadimos
     $producto = Producto::buscarPorId($id);
+    if (!$producto) {
+        header("Location: productos.php?mensaje=Producto no encontrado");
+        exit();
+    }
 
+    // Guardar valores con tipos seguros: precio como float, cantidad como int
     $_SESSION['carrito'][$id] = [
-        'CodProd' => $producto['CodProd'],
-        'Nombre'     => $producto['Nombre'],
-        'Precio' => $precio['Precio'],
-        'Peso' => $producto['Peso'],
-        'cantidad'   => $cantidad
+        'CodProd' => $producto['CodProd'] ?? $id,
+        'Nombre'  => $producto['Nombre'] ?? 'Sin nombre',
+        'Precio'  => (float)$producto['Precio'] ?? 0.0,
+        'Peso'    => $producto['Peso'] ?? null,
+        'cantidad'=> $cantidad
     ];
 }
 

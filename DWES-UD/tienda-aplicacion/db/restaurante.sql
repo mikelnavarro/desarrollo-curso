@@ -58,6 +58,14 @@ INSERT INTO restaurantes (Correo, Clave, Pais, CP, Ciudad, Direccion) VALUES
 ('elaguila@outlook.es','AER1','España', 03502, 'Benidorm', 'C. De la Alegría, 23'),
 ('sanesteban@outlook.es','AER1','España', 03502, 'Benidorm', 'C. De Don Simón, 1'),
 ('xijinping@restaurantechina.es','AER1','España', 08005, 'Barcelona', 'C. Del Sitio , 20');
+UPDATE productos SET Precio = 0.80  WHERE CodProd = 9;  -- Agua mineral 1L
+UPDATE productos SET Precio = 1.20  WHERE CodProd = 10; -- Refresco de naranja
+UPDATE productos SET Precio = 2.50  WHERE CodProd = 11; -- Cerveza artesanal
+UPDATE productos SET Precio = 6.90  WHERE CodProd = 12; -- Vino tinto Rioja
+UPDATE productos SET Precio = 12.00 WHERE CodProd = 13; -- Solomillo de ternera
+UPDATE productos SET Precio = 5.50  WHERE CodProd = 14; -- Pechuga de pollo
+UPDATE productos SET Precio = 7.80  WHERE CodProd = 15; -- Salmón fresco
+UPDATE productos SET Precio = 6.50  WHERE CodProd = 16; -- Merluza
 INSERT INTO categorias (Nombre, Descripcion) VALUES
 ("Bebidas sin alcohol", "Bebidas"),
 ("Bebidas con alcohol", "Bebidas"),
