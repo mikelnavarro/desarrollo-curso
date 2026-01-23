@@ -76,7 +76,7 @@ DELETE http://localhost:3000/api/libros/6970fdef8cad41226d218a38
 
 
 ### Con parámetros de consulta
-GET http://localhost:3000/api/libros?autor=Cervantes&año=1605
+GET http://localhost:3000/api/libros?titulo=Cien años de soled
 
 ### Con headers personalizado
 GET http://localhost:3000/api/libros
