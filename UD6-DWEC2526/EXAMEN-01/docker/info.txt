@@ -1,0 +1,62 @@
+### 8.2 Crear estructura
+
+```bash
+mkdir bin routes controllers models middleware config public
+mkdir public/css public/js
+touch bin/www app.js
+touch routes/libros.js
+```
+# Dentro
+```bash
+express
+```
+```bash
+npm install mongodb dotenv
+```
+### 8.3 Configurar package.json
+
+```json
+{
+  "name": "mi-api",
+  "version": "1.0.0",
+  "description": "API de prueba",
+  "main": "app.js",
+  "scripts": {
+    "start": "node bin/www",
+    "dev": "nodemon bin/www"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.0"
+  }
+}
+```
+# Para entrar en la Base de datos
+
+```bash
+use products
+```
+```bash
+db.products.insertOne({
+  nombre: "Asus"
+  descripcion: "Cervantes",
+  precio: 1605
+})
+
+```
+# Abrir PowerShell y ejecutar:
+```bash
+docker exec -it mongodb_products mongosh -u admin -p password123 --authenticationDatabase admin
+```
+```bash
+docker run -d --name mongodb_products -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password123 -e MONGO_INITDB_DATABASE=products -p 27017:27017 -v mongodb_dataProducts:/data/db mongo:6
+```
+# Info Comando logs
+```bash
+docker logs -f products
+```
+
+## Variables .env
+

@@ -1,0 +1,78 @@
+### Obtener todos los products
+GET http://localhost:3000/api/products
+
+### Obtener un producto específico
+GET http://localhost:3000/api/products/1
+
+### Crear un nuevo producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "nombre": "Cien años de soledad",
+  "descripcion": "García Márquez",
+  "precio": 45.99
+}
+
+### Crear un nuevo producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "nombre": "La vida",
+  "descripcion": "García",
+  "precio": 45.99
+}
+
+### Crear un nuevo producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "nombre": "El Quijote",
+  "descripcion": "Miguel de Cervantes",
+  "precio": 15.96
+}
+
+### Crear un nuevo producto
+POST http://localhost:3000/api/products
+Content-Type: application/json
+
+{
+  "nombre": "Don Juan",
+  "descripcion": "Lord Byron",
+  "precio": 25.99
+}
+
+### Actualizar un producto
+PUT http://localhost:3000/api/products/6970f6df8ddc49dc418de666
+Content-Type: application/json
+
+{
+  "nombre": "El Quijote Actualizado",
+  "descripcion": "Cervantes",
+}
+
+### Actualizar un producto
+PUT http://localhost:3000/api/products/6970b01ce12d7f07fcb7f38b
+Content-Type: application/json
+
+{
+  "nombre": "El Quijote Actualizado",
+  "descripcion": "Cervantes",
+}
+
+### Eliminar un producto
+DELETE http://localhost:3000/api/products/6970f825de61131fb51b13d6
+### Eliminar un producto
+DELETE http://localhost:3000/api/products/6970fdef8cad41226d218a38
+
+
+
+### Con parámetros de consulta
+GET http://localhost:3000/api/products
+
+### Con headers personalizado
+GET http://localhost:3000/api/products
+Authorization: Bearer token123456
+X-Custom-Header: valor-personalizado
