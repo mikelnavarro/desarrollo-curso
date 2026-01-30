@@ -1,0 +1,34 @@
+### Obtener todos los albums
+GET http://localhost:3400/api/albums
+
+### Crear un nuevo album
+POST http://localhost:3400/api/albums
+Content-Type: application/json
+
+{
+  "title": "Cien años",
+  "artist": "García Márquez",
+  "year": 1967,
+  "genre": "Rock",
+  "coverUrl": "http://album.mediaAlbums.com/"
+}
+
+
+### Actualizar un libro
+PUT http://localhost:3400/api/libros/6970b01ce12d7f07fcb7f38b
+Content-Type: application/json
+
+{
+  "title": "El Quijote Actualizado",
+  "artist": "",
+}
+
+### Eliminar un libro
+DELETE http://localhost:3400/api/albums/6970f825de61131fb51b13d6
+### Eliminar un libro
+DELETE http://localhost:3400/api/albums/6970fdef8cad41226d218a38
+
+
+
+### Con parámetros de consulta
+GET http://localhost:3400/api/libros?titulo=Cien años de sole
