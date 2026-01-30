@@ -1,0 +1,16 @@
+
+🧩 Anatomía de un Componente (El Bloque LEGO)
+
+Un componente controla un "pedazo" de la pantalla. Se compone de 3 archivos:
+
+Lógica (.ts): El "Cerebro".
+
+Ejemplo: libros = [] (Lista vacía al inicio).
+
+Plantilla (.html): El "Cuerpo".
+
+Ejemplo: <ul>...</ul> (La lista visual).
+
+Estilo (.css): El "Traje".
+
+Ejemplo: li { color: red; } (Decoración).
