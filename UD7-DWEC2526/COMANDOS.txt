@@ -1,0 +1,26 @@
+
+🛠️ Comandos de Supervivencia
+
+Comando
+
+Qué hace
+
+ng new mi-app
+
+Crea el proyecto + npm install automático.
+
+ng serve --open
+
+Arranca la web en modo desarrollo (Puerto 4200).
+
+ng generate component X
+
+Crea una nueva pieza visual.
+
+ng generate service X
+
+Crea un nuevo mensajero de datos.
+
+ng build
+
+PRODUCCIÓN: Tritura y optimiza todo en la carpeta /dist.
