@@ -3,7 +3,7 @@
 namespace Acme\IntranetRestaurante\Controllers;
 
 use Acme\IntranetRestaurante\Models\Categoria;
-use Acme\IntranetRestaurante\Core\ControllerBase;
+use Acme\IntranetRestaurante\Libs\ControllerBase;
 
 class RestauranteController extends ControllerBase
 {

@@ -1,6 +1,6 @@
 <?php
 // src/Core/ControllerBase.php
-namespace Acme\IntranetRestaurante\Core;
+namespace Acme\IntranetRestaurante\Libs;
 
 
 abstract class ControllerBase

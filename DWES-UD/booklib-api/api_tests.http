@@ -1,0 +1,10 @@
+@baseUrl = http://localhost/curso/DWES-UD/booklib-api/public/index.php
+
+### Listado
+GET {{baseUrl}}/books
+Accept: application/json
+
+
+### Obtener un libro por un ID
+GET {{baseUrl}}/books/1
+Accept: application/json

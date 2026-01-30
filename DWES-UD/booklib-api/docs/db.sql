@@ -1,0 +1,29 @@
+
+CREATE DATABASE booklib_db;
+USE booklib_db;
+CREATE TABLE authors
+(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(150) NOT NULL
+	country VARCHAR(60),
+	birthdate DATE
+)ENGINE=INNODB;
+CREATE TABLE users
+(
+	id INT,
+	username VARCHAR(70) UNIQUE KEY,
+	email VARCHAR(255) UNIQUE KEY,
+	api_token VARCHAR(255) UNIQUE KEY,
+	CONSTRAINT pk_users PRIMARY KEY (id)
+)ENGINE=INNODB;
+CREATE TABLE books
+(
+	id INT AUTO_INCREMENT,
+	title VARCHAR(255) NOT NULL,
+	isbn VARCHAR(13) UNIQUE KEY,
+	published_year DATE DEFAULT '1999-12-31',
+	author_id INT,
+	summary TEXT,
+	CONSTRAINT pk_books PRIMARY KEY(id),
+	CONSTRAINT fk_books_author FOREIGN KEY(author_id) REFERENCES authors (id)
+)ENGINE=INNODB;

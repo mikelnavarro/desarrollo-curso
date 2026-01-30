@@ -1,0 +1,21 @@
+{
+    "name": "mnl/booklib-api",
+    "description": "Proyecto Books API REST en PHP MVC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mnl\\BooklibApi\\": "app/",
+            "Mnl\\BooklibApi\\": "src/",
+            "Mnl\\BooklibApi\\Core\\": "app/libs",
+            "Mnl\\BooklibApi\\Models\\": "app/models/",
+            "Mnl\\BooklibApi\\Controllers\\": "app/controllers/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mikel Navarro López",
+            "email": "mikelnaval2006@gmail.com"
+        }
+    ],
+    "require": {}
+}
