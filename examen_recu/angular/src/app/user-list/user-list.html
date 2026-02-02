@@ -1,0 +1,22 @@
+<ul>
+:<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Usuario</th>
+            <th>N. Comentarios</th>
+            <th>Tema más repetido</th>
+            <th>Palabra más repetida</th>
+            <th>N. apariciones</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td> {{ user.name }} </td>
+            </tr>
+            <tr *ngFor="let comment of comments">
+                <td> {{ comment.comment }} </td>
+            </tr>
+        </tbody>
+</table>
+</ul>
