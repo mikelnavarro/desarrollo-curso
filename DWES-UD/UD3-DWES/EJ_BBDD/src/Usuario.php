@@ -1,7 +1,7 @@
 <?php
 // src/Usuario.php
 
-use MNL\tools\Validador;
+use Acme\IntranetRestaurante\libs\Validador;
 
 require_once __DIR__ . '/../tools/Validador.php';
 

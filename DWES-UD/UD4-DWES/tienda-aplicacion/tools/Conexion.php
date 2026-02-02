@@ -1,6 +1,6 @@
 <?php
 namespace Mikelnavarro\TiendaAplicacion\Tools;
-use MNL\tools\Config;
+use Acme\IntranetRestaurante\libs\Config;
 use PDO;
 use PDOException;
 

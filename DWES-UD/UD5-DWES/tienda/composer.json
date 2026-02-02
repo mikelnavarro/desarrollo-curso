@@ -1,0 +1,14 @@
+{
+    "name": "mikelnavarro/tienda-app",
+    "description": "Tienda Aplicacion Completa",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+          "Acme\\IntranetRestaurante\\": "app/",
+          "Acme\\IntranetRestaurante\\Models\\": "app/models/",
+          "Acme\\IntranetRestaurante\\Controllers\\": "app/controllers/",
+          "Mnl\\Tools\\": "app/libs/"
+        }
+    },
+    "require": {}
+}

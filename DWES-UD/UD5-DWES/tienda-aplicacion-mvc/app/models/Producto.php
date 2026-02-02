@@ -1,6 +1,6 @@
 <?php
-namespace Mikelnavarro\TiendaAplicacion;
-use Acme\IntranetRestaurante\libs\Conexion;
+namespace Acme\IntranetRestaurante\Models;
+use Mnl\tools\Db;
 use PDO;
 
 class Producto {
@@ -12,9 +12,11 @@ class Producto {
     private $peso;
     private $stock;
     private $categoria;
+    protected $pdo;
 
     // Constructores
     public function __construct($codProd, $nombre, $descripcion, $peso, $stock, $categoria) {
+        $this->pdo = new Db();
         $this->codProd = $codProd;
         $this->nombre = $nombre;
         $this->descripcion = $descripcion;

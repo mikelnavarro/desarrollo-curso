@@ -1,4 +1,4 @@
-@baseUrl = http://localhost/ud6/mvccomposerapicar
+@baseUrl = http://localhost/desarrollo-curso/DWES-UD/UD6-DWES/mvccomposerapicar
 
 ### Listado
 GET {{baseUrl}}/apiCar/cars

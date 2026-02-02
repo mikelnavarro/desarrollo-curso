@@ -27,7 +27,7 @@ class Config
     {
         // Si no existe la instancia, la creamos
         if (self::$instancia === null) {
-            self::$instancia = new \MNL\tools\Config();
+            self::$instancia = new \Acme\IntranetRestaurante\libs\Config();
         }
 
         // Devolvemos siempre la misma instancia

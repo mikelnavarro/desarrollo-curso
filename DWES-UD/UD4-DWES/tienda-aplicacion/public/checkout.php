@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
+use Acme\IntranetRestaurante\libs\Mailer;
 use Mikelnavarro\TiendaAplicacion\Pedido;
-use MNL\tools\Mailer;
 
 session_start();
 

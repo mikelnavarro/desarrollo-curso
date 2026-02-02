@@ -4,10 +4,10 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Mikelnavarro\\TiendaAplicacion\\": "src/",
-            "Acme\\IntranetRestaurante\\Models\\": "models/",
-            "Acme\\IntranetRestaurante\\Controllers\\": "controllers/",
-            "Acme\\IntranetRestaurante\\Libs\\": "libs/"
+            "Acme\\IntranetRestaurante\\": "app/",
+            "Acme\\IntranetRestaurante\\Models\\": "app/models/",
+            "Acme\\IntranetRestaurante\\Controllers\\": "app/controllers/",
+            "Mnl\\tools\\": "app/libs/"
         }
     },
     "require": {}

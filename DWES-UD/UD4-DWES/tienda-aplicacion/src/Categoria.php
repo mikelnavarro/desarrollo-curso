@@ -2,7 +2,7 @@
 
 namespace Mikelnavarro\TiendaAplicacion;
 
-use MNL\tools\Conexion;
+use Acme\IntranetRestaurante\libs\Conexion;
 use PDO;
 
 class Categoria
