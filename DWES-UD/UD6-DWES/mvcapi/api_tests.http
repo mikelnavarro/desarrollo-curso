@@ -1,4 +1,5 @@
-@baseUrl = http://localhost/dwes/mvccomposer
+@baseUrl = http://localhost/desarrollo-curso/DWES-UD/UD6-DWES/mvcapi
+
 
 ### LISTAR
 GET {{baseUrl}}/apicar/cars
