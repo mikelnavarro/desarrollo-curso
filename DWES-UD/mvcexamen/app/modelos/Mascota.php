@@ -12,6 +12,7 @@ class Mascota
     protected $nombre;
     protected $tipo;
     protected $fecha_nacimiento;
+    protected $foto;
     protected $idPersona;
 
     // Constructor
@@ -118,4 +119,8 @@ class Mascota
         $this->idPersona = $idPersona;
     }
 
+
+    public function getFoto() {
+        return $this->foto;
+    }
 }

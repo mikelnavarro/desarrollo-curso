@@ -1,6 +1,6 @@
 <?php require_once __DIR__ . '/../inc/header.php'; ?>
 <h2>Página de inicio del Framework php MVC</h2>
-
+<?php echo $mascotas; ?>
 <a href="<?=RUTA_URL; ?>">Inicio</a>
 <a href="<?=RUTA_URL . "";?>">Artículos</a>
 <a href="<?=RUTA_URL . "/Articulos/index";?>">Artículos</a>
@@ -13,13 +13,14 @@
         <th>Fecha nacimiento</th>
         <th>Foto</th>
     </tr>
-</table>
-<?php foreach($datos["mascotas"] as $mascota): ?>
+
+<?php foreach($mascotas as $mascota): ?>
 <tr>
-    <td><?php echo $mascota['nombre']; ?></td>
-    <td><?php echo $mascota['tipo']; ?></td>
-    <td><?php echo $mascota['fecha_nacimiento'];?></td>
-    <!-- <td><img src="<?= $mascota["foto_url"] ?> alt="Foto de Mascota"></td>-->
+    <td><?= $mascota['nombre']; ?></td>
+    <td><?= $mascota['tipo']; ?></td>
+    <td><?= $mascota['fecha_nacimiento'];?></td>
+    <td><img src="<?= $mascota["foto_url"]; ?> alt="Foto de Mascota"></td>-->
 </tr>
+</table>
 <?php endforeach; ?>
 <?php require_once __DIR__ . '/../inc/footer.php'; ?>
