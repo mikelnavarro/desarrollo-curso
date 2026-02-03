@@ -1,16 +1,14 @@
 {
     "name": "mnl/mvcexamen",
-    "description": "Examen DWES",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Mnl\\Mvcexamen\\": [
-                "app/modelos/",
-                "app/controladores/",
-                "app/librerias/",
-                "app/vistas/"
-            ]
-        }
+          "Mnl\\Mvcexamen\\": [
+            "app/modelos/",
+            "app/controladores/",
+            "app/librerias/",
+            "app/vistas/"
+          ]        }
     },
     "require": {}
 }

@@ -16,12 +16,10 @@ class MascotaController extends Controlador
         // $mascotas = $this->modelo('Mascota')->todas();
         $mascotas = $this->mascotaModelo->todas();
         $datos = [
-            'nombre' => $mascotas['nombre'],
-            'tipo' => $mascotas['tipo'],
-            'fecha_nacimiento' => $mascotas['fecha_nacimiento'],
-            'foto_url' => $mascotas['foto_url'],
+            'titulo' => NOMBRESITIO,
+            'mascotas' => $mascotas
         ];
-        $this->vista("paginas/listadoMascotas", $mascotas);
+        $this->vista("paginas/inicio", $mascotas);
     }
 
 
@@ -34,6 +32,6 @@ class MascotaController extends Controlador
             "fecha_nacimiento" => $mascotaNueva['fecha_nacimiento'],
             "foto_url" => $mascotaNueva['foto_url'],
         ];
-        $this->vista("paginas/nuevoMascota", ['mascotaNueva' => $datos]);
+        $this->vista("paginas/registro", ['mascotaNueva' => $datos]);
     }
 }
