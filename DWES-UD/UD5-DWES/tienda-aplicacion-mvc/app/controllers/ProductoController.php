@@ -1,24 +1,22 @@
 <?php
 
-namespace Acme\IntranetRestaurante\controllers;
+namespace Acme\IntranetRestaurante\Controllers;
 
-use Acme\IntranetRestaurante\Models\Producto;
 use Mnl\tools\Controlador;
 
 class ProductoController extends Controlador
 {
 
-    private Producto $productoModel;
+    private $productoModel;
 
-    // Constructor
-    public function __construct(){
-        $this->productoModel = new Producto();
+    public function __construct()
+    {
+        $this->productoModel = $this->modelo('Producto');
     }
 
-    public function index(){
-        $productoModel = $this->modelo("Producto");
-        $productoModel->productosPorCategoria();
-
-        $this->vista('productos/index', ['productos' => $productos]);
+    public function index()
+    {
+        $productos = $this->productoModel->listar();
+        $this->vista('Producto/productos', ['productos' => $productos]);
     }
 }

@@ -1,44 +1,35 @@
 <?php
 
 namespace Acme\IntranetRestaurante\Controllers;
-use Acme\IntranetRestaurante\Models\Categoria;
-use Mnl\tools\Controlador;
 
+use Mnl\tools\Controlador;
 
 class CategoriaController extends Controlador
 {
+    private $categoriaModel;
 
     public function __construct()
     {
-        $this->categoriaModel = new Categoria();
+        $this->categoriaModel = $this->modelo('Categoria');
     }
-    public function index() {
-        $categoriaModel = $this->modelo('Articulo');
-        $categorias = $categoriaModel->getTodas();
 
-
-        $this->vista('categoria/index', ['categorias' => $articulos]);
-    }
-    /**
-     * Muestra la lista de todas las categorías.
-     */
-    public function categorias()
+    // Mostrar listado de categorias
+    public function index()
     {
         $categorias = $this->categoriaModel->getTodas();
         $this->vista('Categoria/listado', ['categorias' => $categorias]);
     }
 
-    /**
-     * Muestra los productos de una categoría específica.
-     *
-    * @param int $id ID de la categoría
-    */
+    // Alias para index
+    public function categorias()
+    {
+        $this->index();
+    }
+
+    // Listar productos por categoría
     public function listar(int $id)
     {
         $productos = $this->categoriaModel->getProductosPorCategoria($id);
-        $this->vista('categoria/listar', [
-            'productos' => $productos,
-            'categoriaId' => $id
-        ]);
+        $this->vista('Producto/productos', ['productos' => $productos]);
     }
 }

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Acme\IntranetRestaurante\libs;
+namespace Mnl\Tools;
 use PDO;
 use PDOException;
     //Clase para conectarse a la base de datos y ejecutar consultas PDO

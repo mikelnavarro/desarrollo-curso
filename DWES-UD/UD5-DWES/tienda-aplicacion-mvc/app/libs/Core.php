@@ -22,19 +22,15 @@ class Core
         //print_r($this->getUrl());
         $url = $this->getUrl();
 
-        //buscar en controladores si el controlador exite
-        //if (file_exists(__DIR__.'/../app/controllers/'.
-        if (isset($url) && file_exists('../app/controllers/' .
-                ucwords($url[0]) . '.php')) {
-            //si existe se define/setea como controlador por defecto.
-            $this->controladorActual = ucwords($url[0]);
-
-            //unset indice
+        // Buscar controlador: se espera que los archivos de controladores terminen en "Controller.php"
+        if (isset($url) && file_exists(__DIR__ . '/../controllers/' . ucwords($url[0]) . 'Controller.php')) {
+            $this->controladorActual = ucwords($url[0]) . 'Controller';
             unset($url[0]);
         }
 
-        //requerir el controlador
-        require_once '../app/controllers/' . $this->controladorActual . '.php';
+        // Requerir el archivo del controlador y crear la instancia
+        $controladorPath = __DIR__ . '/../controllers/' . $this->controladorActual . '.php';
+        require_once $controladorPath;
         $this->controladorActual = new $this->controladorActual;
 
         //comprobar la segunda parte de la url: el metodo

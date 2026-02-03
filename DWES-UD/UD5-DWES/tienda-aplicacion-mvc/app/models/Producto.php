@@ -4,81 +4,48 @@ use Mnl\tools\Db;
 use PDO;
 
 class Producto {
-    // Atributos
-    
-    private $codProd;
-    private $nombre;
-    private $descripcion;
-    private $peso;
-    private $stock;
-    private $categoria;
-    protected $pdo;
+    private Db $db;
 
-    // Constructores
-    public function __construct($codProd, $nombre, $descripcion, $peso, $stock, $categoria) {
-        $this->pdo = new Db();
-        $this->codProd = $codProd;
-        $this->nombre = $nombre;
-        $this->descripcion = $descripcion;
-        $this->peso = $peso;
-        $this->stock = $stock;
-        $this->categoria = $categoria;
-    }
-    // Acceder a la BD
-    public static function productosPorCategoria($categoria) {
-        $pdo = Conexion::getConexion();
-        $sql = "SELECT * FROM productos WHERE categoria = :categoria";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(["categoria" => $categoria]);
-        return $stmt->fetchAll();
-
-}
-
-    public static function buscarPorId(int $codProd) {
-        $pdo = Conexion::getConexion();
-        $sql = "SELECT * FROM productos WHERE codProd = :codProd";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(["codProd" => $codProd]);
-        // Devolver una sola fila (producto) en lugar de un array de filas.
-        // add_carrito.php espera un array asociativo con las columnas.
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    }
-    public function getCodProd() {
-        return $this->codProd;
-    }
-    public function getNombre() {
-        return $this->nombre;
-    }
-    public function getDescripcion() {
-        return $this->descripcion;
-    }
-    public function getPeso() {
-        return $this->peso;
-    }
-    public function getStock() {
-        return $this->stock;
-    }
-    public function getCategoria() {
-        return $this->categoria;
-    }
-    public function setCodProd($codProd) {
-        $this->codProd = $codProd;
-    }
-    public function setNombre($nombre) {
-        $this->nombre = $nombre;
-    }
-    public function setDescripcion($descripcion) {
-        $this->descripcion = $descripcion;
-    }
-    public function setPeso($peso) {
-        $this->peso = $peso;
-    }
-    public function setStock($stock) {
-        $this->stock = $stock;
-    }
-    public function setCategoria($categoria) {
-        $this->categoria = $categoria;
+    public function __construct()
+    {
+        $this->db = new Db();
     }
 
-    
+    // Devuelve todos los productos (array asociativo)
+    public function listar(): array
+    {
+        $sql = "SELECT CodProd AS id, Nombre AS nombre, Descripcion AS descripcion, Precio, Stock FROM productos ORDER BY Nombre";
+        $this->db->query($sql);
+        $rows = $this->db->registros();
+        $result = [];
+        foreach ($rows as $o) {
+            $result[] = (array)$o;
+        }
+        return $result;
+    }
+
+    // Productos por categoria
+    public function productosPorCategoria(int $categoria): array
+    {
+        $sql = "SELECT CodProd AS id, Nombre AS nombre, Descripcion AS descripcion, Precio, Stock FROM productos WHERE Categoria = :categoria ORDER BY Nombre";
+        $this->db->query($sql);
+        $this->db->bind(':categoria', $categoria);
+        $rows = $this->db->registros();
+        $result = [];
+        foreach ($rows as $o) {
+            $result[] = (array)$o;
+        }
+        return $result;
+    }
+
+    // Buscar producto por id
+    public function buscarPorId(int $codProd): ?array
+    {
+        $sql = "SELECT CodProd AS id, Nombre AS nombre, Descripcion AS descripcion, Precio, Stock FROM productos WHERE CodProd = :codProd";
+        $this->db->query($sql);
+        $this->db->bind(':codProd', $codProd);
+        $row = $this->db->registro();
+        if ($row === false || $row === null) return null;
+        return (array)$row;
+    }
 }
