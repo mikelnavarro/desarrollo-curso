@@ -6,47 +6,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <!-- Widget de accesibilidad UserWay -->
     <script src="https://cdn.userway.org/widget.js" data-account="yqAM5UB9ei"></script>
 </head>
 
 <body>
-    <header>
+
+
+    <header role="banner">
         <div class="logo">Tienda<span>Nova</span></div>
-        <nav>
+        <nav role="navigation" aria-label="Menú principal">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
-                <li><a href="">Quiénes somos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
-
     <!-- Contenido principal -->
     <main>
         <!-- Página de inicio -->
         <section id="inicio">
             <h1 class="page-title animate">Bienvenido a Tienda Nova</h1>
-            <p style="text-align:center; max-width:700px; margin:0 auto; color:#555;">
+            <p class="intro-text">
                 Descubre nuestra colección de productos innovadores, diseñados para simplificar tu vida y potenciar tu
                 creatividad.
             </p>
         </section>
-    </main>
 
 
 
-    <footer>
-        <div class="footer-content">
-            <div class="social-icons">
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
-                <a href="#"></a>
+        <main>
+            <div class="page-header">
+                <h1>Nuestras Soluciones</h1>
             </div>
-            <p class="copyright">© 2026 Tienda Nova. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+
+            <!-- PRODUCTOS -->
+            <section id="productos" tabindex="-1">
+                <div class="page-header">
+                    <h2>Nuestras Soluciones Tecnológicas</h2>
+                    <p>Diseñadas para casa, oficina o aventuras al aire libre.</p>
+                </div>
+                <div class="products-grid">
+                    <div class="card">
+                        <h3>Lámpara Inteligente Aura</h3>
+                        <p>Control por voz, ajuste automático de temperatura de color y programación horaria. Compatible
+                            con Alexa, Google Home y Apple HomeKit.</p>
+                        <div class="price">54,00</div>
+                    </div>
+                    <div class="card">
+                        <h3>Auriculares NovaSound Pro</h3>
+                        <p>Cancelación activa de ruido, sonido Hi-Res Audio, batería de 36 h y micrófonos con reducción
+                            de ruido ambiental.</p>
+                        <div class="price">139,00</div>
+                    </div>
+                    <div class="card">
+                        <h3>Cargador Solar EcoCharge</h3>
+                        <p>Panel solar plegable, resistente al agua IP67, salida USB-C PD y carga rápida para móviles,
+                            tablets y cámaras.</p>
+                        <div class="price">39,90</div>
+                    </div>
+                </div>
+            </section>
+            <section id="contacto" tabindex="-1">
+                <h2>¿Tienes alguna duda?</h2>
+                <p>Escrbíbenos. Nos encantará ayudarte</p>
+                <form aria-label="Formulario de contacto" action="#" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+                    <button type="submit">Enviar mensaje</button>
+                </form>
+            </section>
+        </main>
+        <footer>
+            <div class="footer-content">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"></a>
+                    <a href="#" aria-label="Twitter"></a>
+                    <a href="#" aria-label="Instagram"></a>
+                    <a href="#" aria-label="LinkedIn"></a>
+                </div>
+                <p>© 2026 Tienda Nova. Todos los derechos reservados.</p>
+            </div>
+        </footer>
 </body>
 
 </html>
