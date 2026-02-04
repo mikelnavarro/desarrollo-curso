@@ -14,6 +14,10 @@ class Mascotas extends Controlador
         // echo 'Controlador páginas cargado'.'<br>';
     }
     public function index(): void {
+        if (!isset($_SESSION['usuario'])) {
+            header("Location: " . RUTA_URL);
+            exit;
+        }
             $mascotas = $this->mascotaModelo->todas();
             $datos = [
                 "titulo" => "Listado de Mascotas",

@@ -1,3 +1,4 @@
+
 <h2>Listado de Mascotas</h2>
     <table>
         <thead>
@@ -11,8 +12,8 @@
         </tr>
         </thead>
         <tbody>
-        <?php if (!empty($datos['mascotas'])): ?>
-        <?php foreach ($datos['mascotas'] as $m): ?>
+        <?php if (!empty($mascotas)): ?>
+        <?php foreach ($mascotas as $m): ?>
                 <tr>
                     <td><?= htmlspecialchars($m['id']) ?></td>
                     <td><?= htmlspecialchars($m['nombre']) ?></td>
@@ -20,18 +21,16 @@
                     <td><?= htmlspecialchars($m['fecha_nacimiento']) ?></td>
                     <td><?php if(!empty($m['foto_url'])): ?><img src="<?= htmlspecialchars(RUTA_URL . ltrim($m['foto_url'], '/')) ?>" alt="<?= htmlspecialchars($m['nombre']) ?>" style="max-width:80px"><?php endif; ?></td>
                     <td class="acciones">
-                        <a href="/mascotas/show/<?= $m['id'] ?>">Ver</a>
-                        <a href="/mascotas/edit/<?= $m['id'] ?>">Editar</a>
-                        <a href="/mascotas/delete/<?= $m['id'] ?>"
-                           onclick="return confirm('¿Seguro que quieres eliminar esta mascota?')">
-                            Eliminar
-                        </a>
+                        <a href="<?= RUTA_URL ?>mascotas/show/<?= $m['id'] ?>">Ver</a>
+                        <a href="<?= RUTA_URL ?>mascotas/edit/<?= $m['id'] ?>">Editar</a>
+                        <a href="<?= RUTA_URL ?>mascotas/delete/<?= $m['id'] ?>" onclick="return confirm('¿Seguro que quieres eliminar esta mascota?')">Eliminar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>
-        <tr>
-            <td colspan="6" class="text-center">No hay mascotas registradas</td>
-        </tr>
+        <?php else: ?>
+            <tr>
+                <td colspan="6" class="text-center">No hay mascotas registradas</td>
+            </tr>
         <?php endif; ?>
         </tbody>
     </table>

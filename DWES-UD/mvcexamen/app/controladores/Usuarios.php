@@ -14,27 +14,25 @@ class Usuarios extends Controlador
     }
 
     // Muestra el formulario de login
-    public function login() {
+    public function autenticar() {
         // Si el metodo es POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = trim($_POST['email'] ?? '');
-            $clave = $_POST['clave'] ?? '';
+            $clave = $_POST['clave'];
             $usuario = $this->usuarioModelo->verificarCredenciales($email, $clave);
             if ($usuario) {
-                // ¡Login correcto!
-                $_SESSION['usuario_id'] = $usuario['id'];
-                $_SESSION['usuario_nombre'] = $usuario['nombre'];
+                // Guardar la sesión
+                $_SESSION['usuario'] = $usuario['nombre'];
                 $_SESSION['logueado'] = true;
 
                 // Redirigir
-                header('Location: ' . RUTA_URL . 'paginas/inicio');
+                header('Location: ' . RUTA_URL . 'mascotas/inicio');
                 exit;
             } else {
                 $datos = ['mensaje' => 'Email o contraseña incorrectos'];
                 $this->vista('paginas/login', $datos);
                 return;
             }
-            $this->vista('paginas/login', $datos);
         }
     }
 
@@ -46,16 +44,4 @@ class Usuarios extends Controlador
         exit;
     }
 
-
-    public function autenticar() {
-        $usuarioModel = $this->modelo('Usuario');
-        $user = $usuarioModel->verificarCredenciales($_POST['email'], $_POST['clave']);
-
-        if ($user && password_verify($_POST['clave'], $user['clave'])) {
-            $_SESSION['user'] = $user;
-            header('Location: /MascotasController');
-        } else {
-            echo "Credenciales incorrectas";
-        }
-    }
 }

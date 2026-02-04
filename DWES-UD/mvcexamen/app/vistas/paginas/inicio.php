@@ -1,6 +1,6 @@
 <?php
 include __DIR__ . '/../inc/header.php';
-
-include __DIR__ . '/../mascotas/inicio.php';
+?>
+<?php
 include __DIR__ . '/../inc/footer.php';
 ?>
