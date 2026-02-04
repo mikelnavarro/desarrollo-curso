@@ -12,10 +12,9 @@
     <h2><?php echo NOMBRESITIO; ?></h2>
     <div class="top-bar">
         <div>
-            <a href="<?php echo RUTA_URL?>/paginas/registro">Nueva Mascota</a>
-            <a href="<?php echo RUTA_URL?>/paginas/login">Iniciar sesión</a>
-            <a href="<?php echo RUTA_URL?>/paginas/logout">Cerrar sesión</a>
-            <a href="<?php echo RUTA_URL?>/mascotas/inicio">Listado de Mascotas</a>
+            <a href="<?php echo RUTA_URL?>/mascotas/inicio">Lista de Mascotas</a>
+            <a href="<?php echo RUTA_URL?>/Paginas/login">Iniciar sesión</a>
+            <a href="<?php echo RUTA_URL?>/Paginas/logout">Cerrar sesión</a>
         </div>
     </div>
 </nav>

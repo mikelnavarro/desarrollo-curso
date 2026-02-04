@@ -18,8 +18,8 @@ class Usuarios extends Controlador
         // Si el metodo es POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = trim($_POST['email'] ?? '');
-            $password = $_POST['password'] ?? '';
-            $usuario = $this->usuarioModelo->verificarCredenciales($email, $password);
+            $clave = $_POST['clave'] ?? '';
+            $usuario = $this->usuarioModelo->verificarCredenciales($email, $clave);
             if ($usuario) {
                 // ¡Login correcto!
                 $_SESSION['usuario_id'] = $usuario['id'];
@@ -44,5 +44,18 @@ class Usuarios extends Controlador
         session_destroy();
         header('Location: ' . RUTA_URL . '/paginas/login');
         exit;
+    }
+
+
+    public function autenticar() {
+        $usuarioModel = $this->modelo('Usuario');
+        $user = $usuarioModel->verificarCredenciales($_POST['email'], $_POST['clave']);
+
+        if ($user && password_verify($_POST['clave'], $user['clave'])) {
+            $_SESSION['user'] = $user;
+            header('Location: /MascotasController');
+        } else {
+            echo "Credenciales incorrectas";
+        }
     }
 }

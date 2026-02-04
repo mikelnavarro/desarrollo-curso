@@ -22,15 +22,15 @@ class Usuario
 
     // Funciones de los Usuarios (Veterinarios)
 
-    public function verificarCredenciales(string $email, string $password): ?array
+    public function verificarCredenciales(string $email, string $clave): ?array
     {
-        $sql = "SELECT id, email, password, nombre FROM usuarios WHERE email = :email";
+        $sql = "SELECT id, email, clave, nombre FROM usuarios WHERE email = :email";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute(['email' => $email]);
         $usuario = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-        if ($usuario && password_verify($password, $usuario['password'])) {
-            unset($usuario['password']);
+        if ($usuario && password_verify($password, $usuario['clave'])) {
+            unset($usuario['clave']);
             return $usuario;
         }
 

@@ -11,24 +11,30 @@ class Mascotas extends Controlador
     // Constructores
     public function __construct(){
         $this->mascotaModelo = $this->modelo('Mascota');
-        $this->vista = 'inicio';
+        $this->vista = 'mascotas/inicio';
         $this->datos = [
             "titulo" => "MASCOTAS"
         ];
         // echo 'Controlador páginas cargado'.'<br>';
     }
     public function index(): void {
-        $mascotas = $this->mascotaModelo->todas();
-        $this->datos = [
-            "mascotas" => $mascotas
-        ];
-        $this->vista("mascotas/inicio", $this->datos);
-
+            $mascotas = $this->mascotaModelo->todas();
+            $datos = [
+                "titulo" => "Listado de Mascotas",
+                "mascotas" => $mascotas,
+                "mensaje" => empty($mascotas) ? "No hay mascotas registradas." : null,
+                "error" => null
+            ];
+            $this->vista("mascotas/inicio", $datos);
     }
 
 
     // Mascota
     /*public function registrarMascota(): void {
+         if (!isset($_SESSION['user'])) {
+            header('Location: /LoginController');
+            exit;
+        }
         $mascotaNueva = $this->mascotaModelo->registrar();
         $datos = [
             "nombre" => $mascotaNueva['nombre'],
