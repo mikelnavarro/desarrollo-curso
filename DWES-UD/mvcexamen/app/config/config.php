@@ -11,12 +11,11 @@ define('RUTA_APP', (dirname(__DIR__)));
 // E:\Ampps\www\desarrollo-curso\DWES-UD\mvcexamen
 //Ruta url Ejemplo: http://localhost/ud5/mvc2app
 //define ('RUTA_URL', '_URL_');
-define ('RUTA_URL', 'http://localhost/desarrollo-curso/DWES-UD/mvcexamen/');
+define('RUTA_URL', 'http://localhost/desarrollo-curso/DWES-UD/mvcexamen');
 
 //define ('NOMBRESITIO', '_NOMBRE_SITIO');
 define ('NOMBRESITIO', 'MVC con Composer Examen');
 
 
 // Cargar archivo INI si es necesario.
-
 // Otras configuraciones iniciales pueden ir aquí

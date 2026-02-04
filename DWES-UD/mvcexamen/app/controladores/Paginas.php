@@ -7,13 +7,9 @@ use Mnl\Mvcexamen\Controlador;
         public function __construct(){
 
         }
-        public function login() {
 
-            $datos = [
-                'titulo' => NOMBRESITIO,
-            ];
-            $this->vista('paginas/login',$datos);
-        }
+        // Esto coge el título de datos, y puedes agregarlo a las vistas
+        // Qué se podrá hacer
         public function index(){
 
             $datos = [

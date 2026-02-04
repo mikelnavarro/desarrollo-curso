@@ -1,0 +1,26 @@
+table {
+    border-collapse: collapse;
+    width: 70%;
+    margin: 20px auto;
+}
+th, td {
+    border: 1px solid #999;
+    padding: 8px 12px;
+    text-align: left;
+}
+th {
+    background: #eee;
+}
+a {
+    text-decoration: none;
+    color: #0066cc;
+}
+.acciones a {
+    margin-right: 10px;
+}
+.top-bar {
+    width: 70%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+}

@@ -1,9 +1,17 @@
 <?php require_once __DIR__ . '/../inc/header.php'; ?>
-    <h2>LOGIN</h2>
-<?php if(!empty($error)) echo "<p style='color:red;'>$error</p>"; ?>
-    <form method="post" action="<?=BASE_URL?>Restaurante/login">
-        Correo: <input type="email" name="correo" required><br>
-        Clave: <input type="password" name="clave" required><br>
+
+
+    <h2>Iniciar sesión</h2>
+
+<?php if (!empty($mensaje)): ?>
+    <p style="color:red"><?= htmlspecialchars($mensaje) ?></p>
+<?php endif; ?>
+
+    <form method="POST" action="<?= RUTA_URL ?>/usuarios/login">
+        <label>Email: <input type="email" name="email" required></label><br>
+        <label>Contraseña: <input type="password" name="password" required></label><br>
         <button type="submit">Entrar</button>
     </form>
+
+<?php include __DIR__ . '/../inc/footer.php'; ?>
 <?php require_once __DIR__ . '/../inc/footer.php'; ?><?php

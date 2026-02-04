@@ -3,35 +3,40 @@
 namespace Mnl\Mvcexamen;
 use Mnl\Mvcexamen\Controlador;
 
-
-class MascotaController extends Controlador
+class Mascotas extends Controlador
 {
 
+
+    protected string $mascotaModelo;
     // Constructores
     public function __construct(){
         $this->mascotaModelo = $this->modelo('Mascota');
-        //echo 'Controlador páginas cargado'.'<br>';
-    }
-    public function index() {
-        // $mascotas = $this->modelo('Mascota')->todas();
-        $mascotas = $this->mascotaModelo->todas();
-        $datos = [
-            'titulo' => NOMBRESITIO,
-            'mascotas' => $mascotas
+        $this->vista = 'inicio';
+        $this->datos = [
+            "titulo" => "MASCOTAS"
         ];
-        $this->vista("paginas/inicio", $mascotas);
+        // echo 'Controlador páginas cargado'.'<br>';
+    }
+    public function index(): void {
+        $mascotas = $this->mascotaModelo->todas();
+        $this->datos = [
+            "mascotas" => $mascotas
+        ];
+        $this->vista("mascotas/inicio", $this->datos);
+
     }
 
 
     // Mascota
-    public function registrarMascota() {
+    /*public function registrarMascota(): void {
         $mascotaNueva = $this->mascotaModelo->registrar();
         $datos = [
             "nombre" => $mascotaNueva['nombre'],
             "tipo" => $mascotaNueva['tipo'],
             "fecha_nacimiento" => $mascotaNueva['fecha_nacimiento'],
             "foto_url" => $mascotaNueva['foto_url'],
+            "id_persona" => $mascotaNueva['id_persona']
         ];
-        $this->vista("paginas/registro", ['mascotaNueva' => $datos]);
-    }
+        $this->vista("mascotas/registro", ['mascotaNueva' => $datos]);
+    }*/
 }

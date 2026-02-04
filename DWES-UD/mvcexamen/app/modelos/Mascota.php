@@ -3,6 +3,8 @@
 namespace Mnl\Mvcexamen;
 use Mnl\Mvcexamen\Db;
 use PDO;
+use PDOException;
+
 
 class Mascota
 {
@@ -23,36 +25,24 @@ class Mascota
 
     // Funciones
     public function todas(): array {
-        $sql = "SELECT nombre, tipo, fecha_nacimiento, foto_url FROM mascotas";
+        $sql = "SELECT id, nombre, tipo, fecha_nacimiento, foto_url FROM mascotas";
         $this->pdo->query($sql);
-        return $this->pdo->registros($fetchMode = PDO::FETCH_OBJ);
+        return $this->pdo->registros($fetchMode = PDO::FETCH_ASSOC);
 
     }
     public function eliminar($id)
     {
         $sql = "DELETE FROM mascotas WHERE id = :id";
-        $stmt = $this->pdo->query($sql);
-        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
-        return $stmt->execute() . $this->pdo->query("ALTER TABLE mascotas AUTO_INCREMENT = 1")->execute();
+        $this->pdo->query($sql);
+        $this->pdo->bind(':id', $id, PDO::PARAM_INT);
+        $ok = $this->pdo->execute();
+        // reajustar AUTO_INCREMENT (opcional)
+        $this->pdo->query("ALTER TABLE mascotas AUTO_INCREMENT = 1");
+        $this->pdo->execute();
+        return $ok;
     }
-
-    public function registrar(array $datos)
-    {
-        try {
-            $sql = "INSERT INTO mascotas (nombre,tipo,fecha_nacimiento,foto_url,id_persona) VALUES
-    	(:nombre, :tipo, :fecha_nac, :foto_url, :id_persona)";
-            $stmt = $this->pdo->query($sql);
-            return $stmt->execute(array(
-                ":nombre" => $datos["nombre"],
-                ":tipo" => $datos["tipo"],
-                ":fecha_nac" => $datos["fecha_nac"],
-                ":foto_url" => $datos["foto_url"],
-                ":id_persona" => $datos["id_persona"]
-            ));
-        } catch (Exception $exception) {
-            echo $exception->getMessage();
-        }
-    }    // Accesores y Modificadores
+ 
+    // Accesores y Modificadores
 
 
     /**
