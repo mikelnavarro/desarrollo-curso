@@ -126,7 +126,7 @@ class Car
         return $row ?: null;
     }
 
-    public function create(array $data): bool {
+    public function crear(array $data): bool {
         $this->db->query(
             "INSERT INTO cars (brand, model, color, owner)
          VALUES (:brand, :model, :color, :owner)"

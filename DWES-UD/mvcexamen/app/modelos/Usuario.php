@@ -29,7 +29,7 @@ class Usuario
         $stmt->execute(['email' => $email]);
         $usuario = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-        if ($usuario && password_verify($password, $usuario['clave'])) {
+        if ($usuario && password_verify($clave, $usuario['clave'])) {
             unset($usuario['clave']);
             return $usuario;
         }
