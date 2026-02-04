@@ -11,19 +11,13 @@ class Mascotas extends Controlador
     // Constructores
     public function __construct(){
         $this->mascotaModelo = $this->modelo('Mascota');
-        $this->vista = 'mascotas/inicio';
-        $this->datos = [
-            "titulo" => "MASCOTAS"
-        ];
         // echo 'Controlador páginas cargado'.'<br>';
     }
     public function index(): void {
             $mascotas = $this->mascotaModelo->todas();
             $datos = [
                 "titulo" => "Listado de Mascotas",
-                "mascotas" => $mascotas,
-                "mensaje" => empty($mascotas) ? "No hay mascotas registradas." : null,
-                "error" => null
+                "mascotas" => $mascotas
             ];
             $this->vista("mascotas/inicio", $datos);
     }

@@ -18,7 +18,7 @@ define('DB_DSN', 'mysql:host=' . DB_HOST . ';dbname=' . DB_NAME . ';charset=' . 
 
 
 // Ruta base
-define('BASE_URL', 'http://localhost/desarrollo-curso/DWES-UD/UD5-DWES/tienda/');
+define('BASE_URL', 'http://localhost/desarrollo-curso/DWES-UD/UD5-DWES/tienda-otra-forma/');
 
 
 // Email del departamento de pedidos
