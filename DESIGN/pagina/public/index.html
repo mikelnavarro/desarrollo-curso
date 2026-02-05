@@ -21,6 +21,7 @@
                 <li><a href="#productos">Productos</a></li>
             </ul>
         </nav>
+
     </header>
     <!-- Contenido principal -->
     <main>
@@ -34,12 +35,7 @@
         </section>
 
 
-
         <main>
-            <div class="page-header">
-                <h1>Nuestras Soluciones</h1>
-            </div>
-
             <!-- PRODUCTOS -->
             <section id="productos" tabindex="-1">
                 <div class="page-header">
@@ -48,18 +44,21 @@
                 </div>
                 <div class="products-grid">
                     <div class="card">
+                        <!-- <img alt="Imagen 2" src="img/imagen.jpeg"> -->
                         <h3>Lámpara Inteligente Aura</h3>
                         <p>Control por voz, ajuste automático de temperatura de color y programación horaria. Compatible
                             con Alexa, Google Home y Apple HomeKit.</p>
                         <div class="price">54,00</div>
                     </div>
                     <div class="card">
+                        <!-- <img alt="Imagen 2" src="img/imagen.jpeg"> -->
                         <h3>Auriculares NovaSound Pro</h3>
                         <p>Cancelación activa de ruido, sonido Hi-Res Audio, batería de 36 h y micrófonos con reducción
                             de ruido ambiental.</p>
                         <div class="price">139,00</div>
                     </div>
                     <div class="card">
+                        <!-- <img alt="Imagen 2" src="img/imagen.jpeg"> -->
                         <h3>Cargador Solar EcoCharge</h3>
                         <p>Panel solar plegable, resistente al agua IP67, salida USB-C PD y carga rápida para móviles,
                             tablets y cámaras.</p>
@@ -70,7 +69,7 @@
             <section id="contacto" tabindex="-1">
                 <h2>¿Tienes alguna duda?</h2>
                 <p>Escrbíbenos. Nos encantará ayudarte</p>
-                <form aria-label="Formulario de contacto" action="#" method="post">
+                <form aria-label="Formulario de contacto" class="form-group" method="post">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required />
 
@@ -80,7 +79,8 @@
                     <label for="mensaje">Mensaje:</label>
                     <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-                    <button type="submit">Enviar mensaje</button>
+                    
+                    <button type="submit" class="submit-btn">Enviar mensaje</button>
                 </form>
             </section>
         </main>

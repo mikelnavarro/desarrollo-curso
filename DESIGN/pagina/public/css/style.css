@@ -193,20 +193,6 @@ section {
 .submit-btn:hover {
   background: #2980b9;
 }
-
-/* ——— MERCHANDISING ——— */
-#merchandising h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#merchandising p:nth-of-type(2) {
-  text-align: center;
-  color: var(--text-light);
-  margin-bottom: 2.5rem;
-}
-
 .productos-list {
   max-width: 800px;
   margin: 0 auto;
