@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+}
+
+.principal {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: #ccc;
+}
+
+.snake-panel {
+  background: #f7f7f7;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 2px 2px 0 #222;
+}
+
+.snake-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.snake-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(20, 18px);
+  grid-template-rows: repeat(20, 18px);
+  gap: 2px;
+  background: #222;
+  padding: 8px;
+  border-radius: 6px;
+  margin: 0 auto;
+  width: max-content;
+}
+
+.cell {
+  width: 18px;
+  height: 18px;
+  background: #f0f0f0;
+}
+
+.cell.snake {
+  background: #2f6f3a;
+}
+
+.cell.snake.head {
+  background: #1f4f28;
+}
+
+.cell.food {
+  background: #c94040;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.controls button,
+.mobile-pad button {
+  padding: 8px 12px;
+  border: 1px solid #222;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls button:active,
+.mobile-pad button:active {
+  background: #e7e7e7;
+}
+
+.help {
+  text-align: center;
+  font-size: 13px;
+  margin: 12px 0 0;
+}
+
+.mobile-pad {
+  display: none;
+  margin-top: 12px;
+  gap: 8px;
+  align-items: center;
+}
+
+.mobile-row {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .mobile-pad {
+    display: flex;
+    flex-direction: column;
+  }
+}
