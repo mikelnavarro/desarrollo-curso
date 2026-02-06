@@ -120,7 +120,7 @@ class ApiClinica
         } else {
             $this->jsonResponse(["error" => "Error al eliminar la mascota"], 500);
         }
-        $this->jsonResponde(["error"] => "El Método no es permitido");
+        $this->jsonResponde(["error" => "El Método no es permitido"], 300);
     }
 
 }
