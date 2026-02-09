@@ -1,0 +1,16 @@
+{
+    "name": "mikelnavarro/tienda",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mikelnavarro\\App\\": [
+              "app/",
+            "tools/",
+            "models/",
+            "controllers/",
+            "config/"
+            ]
+        }
+    },
+    "require": {}
+}
