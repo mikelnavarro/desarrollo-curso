@@ -2,6 +2,7 @@
 
 namespace Mikelnavarro\App;
 use Mikelnavarro\App\Db;
+use PDO;
 
 class Producto
 {
@@ -26,5 +27,36 @@ class Producto
         $sql = "SELECT * FROM productos";
         $this->db->query($sql);
         return $this->db->execute();
+    }
+
+
+    public function obtenerPorCategoria($CodCat): array {
+        $sql = "SELECT * FROM productos WHERE Categoria = :codCat";
+        $this->db->query($sql);
+        $this->db->bind(":codCat", $CodCat);
+        $this->db->execute();
+        return $this->db->registros(PDO::FETCH_ASSOC);
+    }
+
+
+
+    public function obtenerVariosPorId($ids) {
+        if (empty($ids)) {
+            return [];
+        }
+
+        // Creamos una cadena de marcadores: :id0, :id1, :id2...
+        $marcadores = [];
+        foreach ($ids as $i => $id) {
+            $marcadores[] = ":id$i";
+        }
+        $listaMarcadores = implode(', ', $marcadores);
+        $this->db->query("SELECT * FROM productos WHERE CodProd IN ($listaMarcadores)");
+        foreach ($ids as $i => $id) {
+            $this->db->bind(":id$i", $id);
+        }
+
+        // Retornamos todos los productos encontrados
+        return $this->db->registros();
     }
 }

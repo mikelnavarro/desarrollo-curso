@@ -1,0 +1,8 @@
+Options -Multiviews
+RewriteEngine On
+# Si lo que piden no es un archivo real (como una imagen o CSS)
+RewriteCond %{REQUEST_FILENAME} !-f
+# Y tampoco es una carpeta real
+RewriteCond %{REQUEST_FILENAME} !-d
+# Entonces mándalo todo al index.php como el parámetro "url"
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]

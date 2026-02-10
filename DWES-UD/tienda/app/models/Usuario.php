@@ -17,9 +17,25 @@ class Usuario
     }
 
     // Funciones
-    public function obtenerUsuarioPorEmail($email) {
-        $sql = "SELECT id, nombre, email, password FROM usuarios WHERE email = :email";
-        $this->db->query($sql, [$email]);
-        return $this->db->fetch();
 
+    public function iniciarSesion($email, $password) {
+        $this->db->query("SELECT * FROM restaurantes WHERE Correo = :Correo");
+        $this->db->bind(':Correo', $email);
+        $fila = $this->db->registro(); // Obtenemos el usuario
+
+
+        if ($fila) {
+            if ($password == $fila->Clave) {
+                return $fila;
+            }
+        }
+        return false;
+    }
+    public function obtenerUsuarioPorEmail($email) {
+        $this->db->query("SELECT * FROM restaurantes WHERE Correo = :email");
+        $this->db->bind(':email', $email);
+
+        // registro() devuelve el objeto con las propiedades
+        return $this->db->registro();
+    }
 }

@@ -5,10 +5,10 @@
         "psr-4": {
             "Mikelnavarro\\App\\": [
               "app/",
-            "tools/",
-            "models/",
-            "controllers/",
-            "config/"
+            "app/tools/",
+            "app/models/",
+            "app/controllers/",
+              "app/config/"
             ]
         }
     },
