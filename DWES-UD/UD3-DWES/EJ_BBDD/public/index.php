@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header('Location: principal.php');
             exit;
         } else {
-            $errores = "Usuario o contraseña incorrectos";
+            $errores = "Usuarios o contraseña incorrectos";
         }
 
     } catch (Exception $e) {

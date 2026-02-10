@@ -2,7 +2,7 @@
 <?php
 // Configuración de conexión a la base de datos
 $host = "localhost"; // o "127.0.0.1"
-$usuario = "root";  // Usuario por defecto en XAMPP
+$usuario = "root";  // Usuarios por defecto en XAMPP
 $clave = "";        // Contraseña por defecto en XAMPP (en blanco)
 $base_de_datos = "loteriadecimos";
 

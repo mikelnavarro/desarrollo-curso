@@ -5,7 +5,7 @@ class HtmlHelpers
     {
         $html  = "<table border='1' cellspacing='0' cellpadding='5'>\n";
         $html .= "  <tr>\n";
-        $html .= "    <th>Usuario</th>\n";
+        $html .= "    <th>Usuarios</th>\n";
         $html .= "    <th>\n";
         $html .= "      Nombre<br>\n";
         $html .= "      <a href=\"usuarios.php?orden=nombre&dir=asc\">ASC</a> | \n";

@@ -2,9 +2,13 @@
 // const jwt = require("jsonwebtoken");
 const Comment = require("../models/Comment");
 
-// Crear controlador
-
-exports.createComment = async (req, res) => {
+// Obtener todos
+const getAll = async (req, res) => {
+  const comments = await Comment.getAll();
+  res.json(comments);
+};
+// Crear
+const createComment = async (req, res) => {
   const validacion = Comment.validar(req.body);
   if (!validacion.valido) {
     return res.status(400).json({
@@ -17,18 +21,22 @@ exports.createComment = async (req, res) => {
   res.status(201).json({ msg: "Comment creado correctamente" });
 };
 
+
 // Borrar
-exports.deleteComment = async (req, res) => {
+const deleteComment = async (req, res) => {
   await Comment.deleteComment(req.params.id);
   res.json({ msg: "Comment eliminado" });
 };
 
-
 // Actualizar
-exports.actualizar = async (req, res) => {
-  if (resultado.matchedCount === 0) {
-    return res.status(404).json({ mensaje: "Libro no encontrado" });
-  }
-  await Comment.actualizar(req.params.id);
+const actualizar = async (req, res) => {
+  await Comment.actualizar(req.params.id, req.body);
   res.json({ msg: "Comment actualizado" });
+};
+
+module.exports = {
+  getAll,
+  createComment,
+  deleteComment,
+  actualizar,
 };

@@ -22,7 +22,7 @@ No se permite lógica en rutas directamente (usar controladores).
 - **En Angular 21**
 # MongoDB
 ```bash
-docker run -d --name comentariodb -e MONGO_INITDB_ROOT_USERNAME=mambo -e MONGO_INITDB_ROOT_PASSWORD=secretoexamen -e MONGO_INITDB_DATABASE=comentariodb -p 27017:27017 -v mongodb_data:/data/db mongo:latest
+docker run -d --name comentariodb -e MONGO_INITDB_ROOT_USERNAME=mambo -e MONGO_INITDB_ROOT_PASSWORD=secretoexamen -e MONGO_INITDB_DATABASE=comentariodb -p 27017:27017 -v mongodb_data:/data/db mongo:6
 ```
 ```
 docker exec -it comentariodb mongosh -u mambo -p secretoexamen

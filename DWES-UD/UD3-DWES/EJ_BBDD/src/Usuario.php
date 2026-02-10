@@ -1,5 +1,5 @@
 <?php
-// src/Usuario.php
+// src/Usuarios.php
 
 use Acme\IntranetRestaurante\libs\Validador;
 
@@ -50,7 +50,7 @@ class Usuario
      */
     public function __toString(): string
     {
-        return "Usuario: {$this->user}, Nombre: {$this->nombre}, Email: {$this->email}, Edad: {$this->edad}";
+        return "Usuarios: {$this->user}, Nombre: {$this->nombre}, Email: {$this->email}, Edad: {$this->edad}";
     }
 
     public function setNombre(string $nombre) {
@@ -94,7 +94,7 @@ class Usuario
     }
 
  public function mostrarDatos(): string {
-        return "Usuario: $this->nombre - $this->email - $this->edad años";
+        return "Usuarios: $this->nombre - $this->email - $this->edad años";
     }
 
 

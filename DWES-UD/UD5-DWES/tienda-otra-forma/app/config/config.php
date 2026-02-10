@@ -9,7 +9,7 @@ define('DB_HOST', 'localhost');
 define('DB_NAME', 'tienda');
 define('DB_CHARSET', 'utf8mb4');
 
-// Usuario y contraseña
+// Usuarios y contraseña
 define('DB_USER', 'dweb');
 define('DB_PASS', '12345');
 

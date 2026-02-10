@@ -262,7 +262,7 @@ services:
     
     # Variables de entorno dentro del contenedor
     environment:
-      # Usuario root de MongoDB
+      # Usuarios root de MongoDB
       MONGO_INITDB_ROOT_USERNAME: admin
       # Contraseña del usuario root
       MONGO_INITDB_ROOT_PASSWORD: password123

@@ -30,9 +30,9 @@ exports.login = async (req, res) => {
 exports.createUser = async (req, res) => {
   const user = new User({ ...req.body });
   await user.create();
-  res.status(201).json({ msg: "Usuario registrado" });
+  res.status(201).json({ msg: "Usuarios registrado" });
 };
 exports.deleteUser = async (req, res) => {
   await User.delete(req.params.id);
-  res.json({ msg: "Usuario eliminado" });
+  res.json({ msg: "Usuarios eliminado" });
 }

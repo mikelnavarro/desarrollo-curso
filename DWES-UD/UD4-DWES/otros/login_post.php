@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         Usuario::login($correo, $clave);
         $usu = Usuario::buscarPorCorreo($correo);
         if (!$usu) {
-            header("Location: login.php?mensaje=Usuario no encontrado");
+            header("Location: login.php?mensaje=Usuarios no encontrado");
             exit();
         }
 

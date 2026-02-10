@@ -417,7 +417,7 @@ docker run -d \
 ```bash
 docker run -d \
   --name mongodb-biblioteca              # Nombre que verás en "docker ps"
-  -e MONGO_INITDB_ROOT_USERNAME=admin    # Usuario root de MongoDB
+  -e MONGO_INITDB_ROOT_USERNAME=admin    # Usuarios root de MongoDB
   -e MONGO_INITDB_ROOT_PASSWORD=password123  # Contraseña (SECURA EN PRODUCCIÓN)
   -e MONGO_INITDB_DATABASE=biblioteca_api    # Base de datos inicial
   -p 27017:27017                         # Puerto: Windows:Contenedor

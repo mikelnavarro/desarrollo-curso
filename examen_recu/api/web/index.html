@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Práctica DWEC - Comentarios</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Comentarios</h1>
+
+      <section class="card">
+        <h2>Nuevo comentario</h2>
+        <form id="commentForm">
+          <label>
+            Tema
+            <input type="text" id="tema" required />
+          </label>
+          <label>
+            Comentario
+            <textarea id="comentario" rows="3" required></textarea>
+          </label>
+          <button type="submit">Crear</button>
+          <p id="formMsg" class="msg"></p>
+        </form>
+      </section>
+
+      <section class="card">
+        <div class="toolbar">
+          <h2>Lista</h2>
+          <button id="reload">Recargar</button>
+        </div>
+        <ul id="list" class="list"></ul>
+      </section>
+    </main>
+  </body>
+</html>

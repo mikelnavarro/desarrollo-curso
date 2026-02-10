@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 // Variables de Entorno
 const MONGO_URL =
   process.env.MONGO_URL ||
-  "mongodb://mambo:secretoexamen@localhost:7777/comentariodb";
+  "mongodb://mambo:secretoexamen@localhost:27017/comentariodb";
 const DB_NAME = process.env.DB_NAME || "comentariodb";
 let dbConnection;
 module.exports = {

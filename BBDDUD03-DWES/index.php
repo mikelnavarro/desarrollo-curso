@@ -2,12 +2,12 @@
 // index.php
 
 
-// 1. Incluir clases necesarias (Database y Usuario)
+// 1. Incluir clases necesarias (Database y Usuarios)
 require 'src/GestorLectura.php';
 
 
 
-// 3. Instanciar la clase Usuario
+// 3. Instanciar la clase Usuarios
 $GestorTareas = new GestorLectura();
 
 // 4. Obtener los datos (El método listar() nos devuelve el PDOStatement)

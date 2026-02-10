@@ -1,7 +1,7 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
-// Usuario de Modelos
+// Usuarios de Modelos
 const User = require("../models/User");
 // Como creamos el login a la Base de datos
 // Crear login

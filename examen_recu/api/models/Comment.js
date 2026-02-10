@@ -11,7 +11,7 @@ class Comment {
   }
 
   static async getAll() {
-    return await Comment.collection.find().toArray();
+    return await Comment.collection().tofind().toArray();
   }
   static async create() {
     return await Comment.collection().insertOne({

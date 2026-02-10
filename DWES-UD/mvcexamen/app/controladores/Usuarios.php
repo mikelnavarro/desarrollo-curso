@@ -1,8 +1,8 @@
 <?php
 
-namespace Mnl\Mvcexamen;
+namespace Mikelnavarro\App;
 
-use Mnl\Mvcexamen\Controlador;
+use Mikelnavarro\App\Controlador;
 
 class Usuarios extends Controlador
 {

@@ -1,5 +1,5 @@
 <?php
-// src/Usuario.php
+// src/Usuarios.php
 
 namespace Mikelnavarro\TiendaAplicacion;
 
