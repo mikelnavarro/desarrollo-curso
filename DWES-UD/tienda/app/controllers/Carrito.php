@@ -42,6 +42,6 @@ class Carrito extends Controlador
             'titulo' => 'Mi Carrito',
             'productos_carrito' => $productos_en_carrito
         ];
-        $this->vista('categorias/carrito');
+        $this->vista('categorias/carrito', $datos);
     }
 }

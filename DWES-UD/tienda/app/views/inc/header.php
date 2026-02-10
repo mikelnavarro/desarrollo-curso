@@ -19,7 +19,7 @@ if (isset($_SESSION['carrito'])) {
             <li><a href="<?php echo RUTA_URL; ?>/Categorias">Categorias</a></li>
 
             <?php if(isset($_SESSION['usuario_id'])) : ?>
-                <li>Bienvenido, <strong><?php echo $_SESSION['usuario_nombre']; ?></strong></li>
+                <li><a href="<?= RUTA_URL ?>/Usuarios/detalle">Bienvenido, <strong><?php echo $_SESSION['usuario_nombre']; ?></strong></li>
                 <li>
                     <a href="<?= RUTA_URL ?>/Carrito/ver" style="position: relative;">
                         🛒 Carrito

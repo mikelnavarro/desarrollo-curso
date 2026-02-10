@@ -1,8 +1,7 @@
 <?php require RUTA_APP . '/views/inc/header.php'; ?>
 
     <div class="contenedor-carrito">
-        <h2>🛒 Tu Pedido</h2>
-
+        <h2>Tu Pedido</h2>
         <?php if (empty($_SESSION['carrito'])): ?>
             <p>El carrito está vacío. <a href="<?= RUTA_URL ?>/Categorias">Volver a la tienda</a></p>
         <?php else: ?>
@@ -19,19 +18,25 @@
                 <tbody>
                 <?php
                 $granTotal = 0;
+                echo "<pre>";
+                print_r($datos['productos_carrito']);
+                echo "</pre>";
+
                 // Asumimos que $datos['productos_carrito'] contiene los detalles de la BD
-                foreach ($datos['productos_carrito'] as $item):
-                    $cantidad = $_SESSION['carrito'][$item['CodProd']];
-                    $subtotal = $item['Precio'] * $cantidad;
+                foreach ($datos['productos_carrito'] as $producto):
+                    $cantidad = $_SESSION['carrito'][$producto['CodProd']];
+                    $subtotal = $producto['Precio'] * $cantidad;
                     $granTotal += $subtotal;
                     ?>
                     <tr>
-                        <td><?= $item['Nombre']; ?></td>
+                        <td><?= $producto->Nombre; ?></td>
+                        <td><?= $producto->Descripcion; ?></td>
                         <td><?= $cantidad; ?></td>
-                        <td><?= number_format($item['precio'], 2); ?>€</td>
-                        <td><?= number_format($subtotal, 2); ?>€</td>
+                        <td><?= $producto->Peso; ?></td>
+                        <td><?= $producto->Precio; ?>€</td>
+                        <td><?= $producto->Precio * $cantidad; ?>€</td>
                         <td>
-                            <a href="<?= RUTA_URL ?>/Carrito/eliminar/<?= $item['CodProd']; ?>" class="text-danger">Eliminar</a>
+                            <a href="<?= RUTA_URL ?>/Carrito/eliminar/<?= $producto->CodProd; ?>" class="text-danger">Eliminar</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -46,7 +51,7 @@
 
             <div class="acciones-carrito">
                 <a href="<?= RUTA_URL ?>/Categorias" class="btn-secundario">Seguir Comprando</a>
-                <form action="<?= RUTA_URL ?>/Pedidos/confirmar" method="POST" style="display:inline;">
+                <form action="<?= RUTA_URL ?>/Pedidos/confirma" method="POST" style="display:inline;">
                     <button type="submit" class="btn-comprar">Confirmar Pedido</button>
                 </form>
             </div>

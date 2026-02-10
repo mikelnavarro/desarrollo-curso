@@ -36,6 +36,25 @@ class Usuarios extends Controlador
         }
     }
 
+
+    public function detalle()
+    {
+        // Verificamos que esté logueado
+        if (!isset($_SESSION['usuario_id'])) {
+            header('Location: ' . RUTA_URL . '/Usuarios/login');
+            exit;
+        }
+
+        $datos = [
+            'titulo' => 'Perfil del Restaurante',
+            // Pasamos los datos de la sesión al array de datos para la vista
+            'id'     => $_SESSION['usuario_id'],
+            'email'  => $_SESSION['usuario_nombre'],
+            'ciudad' => $_SESSION['usuario_ciudad']
+        ];
+
+        $this->vista('pages/detalle', $datos);
+    }
     public function logout() {
         unset($_SESSION['usuario_id']);
         unset($_SESSION['usuario_nombre']);

@@ -39,6 +39,11 @@ class Producto
     }
 
 
+    public function obtenerProductoId($id) {
+        $this->db->query("SELECT * FROM productos WHERE CodProd = :CodProd");
+        $this->db->bind(':CodProd', $id);
+        return $this->db->registro();
+    }
 
     public function obtenerVariosPorId($ids) {
         if (empty($ids)) {
