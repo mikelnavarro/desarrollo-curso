@@ -32,16 +32,41 @@ class Carrito extends Controlador
     public function ver() {
         $productoModelo = $this->modelo('Producto');
         $productos_en_carrito = [];
-
+        $granTotal = 0;
+        $itemsCarrito = [];
         if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
             // Sacamos solo los IDs de los productos que hay en el carrito
             $ids = array_keys($_SESSION['carrito']);
             $productos_en_carrito = $productoModelo->obtenerVariosPorId($ids);
+
+            // Procesamos los datos aquí para que la vista no tenga que calcular nada
+            foreach ($productos_en_carrito as $p) {
+                $cantidad = $_SESSION['carrito'][$p->CodProd];
+                $subtotal = $p->Precio * $cantidad;
+                $granTotal += $subtotal;
+                // Creamos un array limpio
+                $itemsCarrito[] = [
+                    'CodProd'  => $p->CodProd,
+                    'Nombre'   => $p->Nombre,
+                    'Precio'   => $p->Precio,
+                    'Cantidad' => $cantidad,
+                    'Subtotal' => $subtotal
+                ];
+            }
         }
         $datos = [
             'titulo' => 'Mi Carrito',
-            'productos_carrito' => $productos_en_carrito
+            'granTotal' => $granTotal,
+            'productos_carrito' => $itemsCarrito,
         ];
         $this->vista('categorias/carrito', $datos);
+    }
+
+    // MÉTODO PARA ELIMINAR UN PRODUCTO
+    public function eliminar($idProducto) {
+        if (isset($_SESSION['carrito'][$idProducto])) {
+            unset($_SESSION['carrito'][$idProducto]);
+        }
+        header('Location: ' . RUTA_URL . '/Carrito/ver');
     }
 }

@@ -24,6 +24,7 @@ class Usuarios extends Controlador
                 $_SESSION['usuario_id']     = $usuario->CodRes;
                 $_SESSION['usuario_nombre']  = $usuario->Correo;
                 $_SESSION['usuario_ciudad'] = $usuario->Ciudad;
+                $_SESSION['usuario_pass'] = $usuario->Clave;
 
                 header('Location: ' . RUTA_URL . '/Categorias');
             } else {
