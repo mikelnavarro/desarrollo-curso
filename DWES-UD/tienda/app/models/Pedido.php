@@ -31,6 +31,7 @@ class Pedido
         if ($this->db->execute()) {
             // Obtenemos el ID del pedido
             $sqlPedido = "SELECT CodPed FROM pedidos ORDER BY CodPed DESC LIMIT 1"; // Obtenemos el pedido que se acaba de insertar
+            // Ejecuta consulta
             $idPedido = $this->db->query($sqlPedido)->execute()->registro(PDO::FETCH_ASSOC);
             foreach ($carrito as $idProd => $cantidad) {
                 $this->db->query("INSERT INTO pedidosproductos (CodPedProd, Producto, Unidades) VALUES (:CodPedProd, :Producto, :Unidades)");

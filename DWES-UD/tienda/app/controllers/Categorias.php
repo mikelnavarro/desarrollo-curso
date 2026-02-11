@@ -6,6 +6,7 @@ class Categorias extends Controlador
 
 
     // Atributos
+    private $productoModelo;
     private $categoriaModelo;
 
     public function __construct() {
