@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="register.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <div class="form-container">
+            <h2>Añadir Nueva Canción</h2>
+            <form id="songForm">
+                <input type="text" id="titulo" placeholder="Título de la canción" required>
+                <input type="text" id="artista" placeholder="Artista / Banda" required>
+
+                <select id="genero">
+                    <option value="Rock">Rock</option>
+                    <option value="Pop">Pop</option>
+                    <option value="Electronic">Electronic</option>
+                    <option value="Indie">Indie</option>
+                </select>
+
+                <input type="number" id="anio" placeholder="Año de lanzamiento" min="1900" max="2026">
+
+                <button type="submit">Guardar Canción</button>
+            </form>
+            <div id="mensaje-feedback"></div>
+        </div>
+        <a href="songs.html" alt="Songs List Canciones">Lista Canciones</a>
+    </main>
+</body>
+
+</html>
