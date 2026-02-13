@@ -46,10 +46,14 @@
             </table>
 
             <div class="acciones-carrito">
-                <a href="<?= RUTA_URL ?>/Categorias" class="btn-secundario">Seguir Comprando</a>
-                <form action="<?= RUTA_URL ?>/Pedidos/confirma" method="POST">
-                    <button type="submit" class="btn-comprar">Confirmar Pedido</button>
+                <form action="<?= RUTA_URL ?>/Pedidos/crear" method="POST">
+                    <input type="hidden" name="title_pedido" value="<?= $datos['titulo']; ?>">
+                    <input type="hidden" name="name" value="<?= $datos['productos_carrito']; ?>">
+                <input type="hidden" name="usuario_nombre" value="<?= $_SESSION['usuario_nombre'] ?>">
+                    <input type="submit" id="ConfirmarPedido" value="Confirmar">
                 </form>
+                <a href="<?= RUTA_URL ?>/Pedidos/crear" class="btn-comprar">Confirmar Pedido</a>
+                <a href="<?= RUTA_URL ?>/Categorias" class="btn-secundario">Seguir Comprando</a>
             </div>
         <?php endif; ?>
     </div>
@@ -58,8 +62,8 @@
         .tabla-carrito {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px 0;
-        }e
+            margin: 50px 20px;
+        }
         .tabla-carrito th, .tabla-carrito td {
             padding: 12px;
             border-bottom: 1px solid #ddd;
