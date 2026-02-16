@@ -14,11 +14,21 @@ export class Storage {
     collection.push(item);
     localStorage.setItem(key, JSON.stringify(collection));
   }
+  
+  static encontrarByEmail(email) {
+
+    const users = this.getCollection("usuarios");
+    if (users.find((u) => u.email === email)){
+      let user = u;
+      return user;
+    } else 
+      return "Error";
+  }
   // Verificar si un usuario existe (para el login)
   static authenticate(email, password) {
     const users = this.getCollection("usuarios");
     // Buscamos un usuario que coincida con ambos campos
-    // Validación: ¿El usuario ya existe?
+    // Validación:
     if (users.some((u) => u.email === email)) {
       return { success: false, msg: "El usuario ya está registrado" };
     }
