@@ -54,6 +54,10 @@ class Carrito extends Controlador
                 ];
             }
         }
+        $_SESSION['resumen'] = [
+            'total' => $subtotal,
+            'cantidad_articulos' => $cantidad,
+        ];
         $datos = [
             'titulo' => 'Mi Carrito',
             'granTotal' => $granTotal,

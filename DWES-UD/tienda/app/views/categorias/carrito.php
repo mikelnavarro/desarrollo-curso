@@ -52,6 +52,7 @@
                     <label for="direccion">Dirección: </label>
                     <input type="text" id="direccion" name="direccion">
                     <select id="metodo_pago">
+                        <option value="transferencia">TRANSFERENCIA</option>
                         <option value="en_efectivo">EFECTIVO</option>
                         <option value="tarjeta_de_credito">TARJETA DE CRÉDITO</option>
                     </select>

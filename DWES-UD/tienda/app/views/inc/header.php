@@ -32,6 +32,7 @@ if (isset($_SESSION['carrito'])) {
                 <li><a href="<?php echo RUTA_URL; ?>/Usuarios/logout">Cerrar Sesión</a></li>
             <?php else : ?>
                 <li><a href="<?php echo RUTA_URL; ?>/Usuarios/login">Login</a></li>
+                <li><a href="<?php echo RUTA_URL; ?>/Usuarios/registrarse">Sign up</a></li>
             <?php endif; ?>
         </ul>
     </nav>

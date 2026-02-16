@@ -13,7 +13,7 @@ class Mailer
     public function __construct() {
         // $this->mail = new PHPMailer(true);
     }
-	public static function send(string $to, array $itemsCarrito, string $alt = null)
+	public static function send(string $to, array $itemsCarrito, array $resumen, array $envio, string $alt = null)
 	{
         $mail = new PHPMailer(true);
 
@@ -30,6 +30,7 @@ class Mailer
             $mail->setFrom(MAIL_FROM, MAIL_FROMNAME);
             // Direccion de correo electronico
 			$mail->addAddress($to);
+
             // Asunto del Correo
             $mail->Subject = "Confirmación de Pedido Tienda";
 
@@ -40,8 +41,12 @@ class Mailer
                         <tr><th>Producto</th><th>Cant.</th><th>Precio</th></tr>";
 
             foreach ($itemsCarrito as $producto) {
-                $html .= "<tr><td>{$producto['nombre']}</td><td>{$producto['Cantidad']}</td><td>\${$producto['Precio']}</td></tr>";
+                $html .= "<tr><td>{$producto['nombre']}</td><td>{$producto['Cantidad']}</td><td>{$producto['Precio']}</td></tr>";
             }
+            $html .= "</table>";
+            $html .= "<p><b>Método de Pago: - {$envio["metodo_pago"]}</b></p>";
+            $html .= "<p><strong>Total a pagar:</strong>${$resumen['total']}</p>"
+            $html .= "<p><b>{$envio["direccion"]}</b></p>";
 			$mail->isHTML(true);
 			$mail->Body = $html;
 			$mail->AltBody = $alt ?? strip_tags($html);

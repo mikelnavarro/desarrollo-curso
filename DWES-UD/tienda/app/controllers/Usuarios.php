@@ -11,6 +11,27 @@ class Usuarios extends Controlador
     public function __construct() {
         $this->usuarioModelo = $this->modelo('Usuario');
     }
+    public function registrarse() {
+
+            if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                $email = trim($_POST['email']);
+                $password = trim($_POST['password']);
+                $usuarioRegistro = $this->usuarioModelo->registrarse($email, $password);
+                $usuario = $this->usuarioModelo->obtenerUsuarioPorEmail($email);
+                if ($usuarioRegistro) {
+                    $_SESSION['usuario_id'] = $usuario->CodRes;
+                    $_SESSION['usuario_nombre'] = $usuario->Correo;
+                    $_SESSION['usuario_ciudad'] = $usuario->Ciudad;
+                    $_SESSION['usuario_pass'] = $usuario->Clave;
+                    header('Location: ' . RUTA_URL . "/Categorias");
+                } else {
+                    $datos = ["error" => 'No se ha podido registrar el usuario'];
+                    $this->vista('pages/registrarse', $datos);
+                }
+            } else {
+                $this->vista('pages/registrarse');
+            }
+    }
     public function login() {
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Procesar el formulario
