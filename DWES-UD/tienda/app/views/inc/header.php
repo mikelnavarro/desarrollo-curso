@@ -21,8 +21,7 @@ if (isset($_SESSION['carrito'])) {
             <?php if(isset($_SESSION['usuario_id'])) : ?>
                 <li><a href="<?= RUTA_URL ?>/Usuarios/detalle">Bienvenido, <strong><?php echo $_SESSION['usuario_nombre']; ?></strong></li>
                 <li>
-                    <a href="<?= RUTA_URL ?>/Carrito/ver" style="position: relative;">
-                        🛒 Carrito
+                    <a href="<?= RUTA_URL ?>/Carrito/ver" style="position: relative;">Carrito
                         <?php if($totalProductos > 0): ?>
                             <span style="background: var(--acentuado); color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px;">
                 <?= $totalProductos ?>

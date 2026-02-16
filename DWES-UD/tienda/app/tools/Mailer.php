@@ -13,7 +13,7 @@ class Mailer
     public function __construct() {
         // $this->mail = new PHPMailer(true);
     }
-	public static function send(string $to, string $subject, string $body, string $alt = null)
+	public static function send(string $to, array $itemsCarrito, string $alt = null)
 	{
         $mail = new PHPMailer(true);
 
@@ -28,13 +28,23 @@ class Mailer
             $mail->Port       = MAIL_PORT;
 			$mail->CharSet = 'UTF-8';
             $mail->setFrom(MAIL_FROM, MAIL_FROMNAME);
+            // Direccion de correo electronico
 			$mail->addAddress($to);
-			$mail->Subject = $subject;
+            // Asunto del Correo
+            $mail->Subject = "Confirmación de Pedido Tienda";
+
+            // Construcción del cuerpo del mensaje
+            $html = "<h1>¡Gracias por tu compra, {$to['usuario_nombre']}!</h1>";
+            $html .= "<p>Tu pedido ha sido recibido.</p>";
+            $html .= "<table border='1' cellpadding='10' style='border-collapse: collapse;'>
+                        <tr><th>Producto</th><th>Cant.</th><th>Precio</th></tr>";
+
+            foreach ($itemsCarrito as $producto) {
+                $html .= "<tr><td>{$producto['nombre']}</td><td>{$producto['Cantidad']}</td><td>\${$producto['Precio']}</td></tr>";
+            }
 			$mail->isHTML(true);
-			$mail->Body = $body;
-			$mail->AltBody = $alt ?? strip_tags($body);
-
-
+			$mail->Body = $html;
+			$mail->AltBody = $alt ?? strip_tags($html);
 
 			$mail->send();
 			return true;

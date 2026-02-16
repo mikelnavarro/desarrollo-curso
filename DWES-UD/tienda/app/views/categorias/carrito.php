@@ -49,7 +49,12 @@
                 <form action="<?= RUTA_URL ?>/Pedidos/crear" method="POST">
                     <input type="hidden" name="title_pedido" value="<?= $datos['titulo']; ?>">
                     <input type="hidden" name="name" value="<?= $datos['productos_carrito']; ?>">
-                <input type="hidden" name="usuario_nombre" value="<?= $_SESSION['usuario_nombre'] ?>">
+                    <label for="direccion">Dirección: </label>
+                    <input type="text" id="direccion" name="direccion">
+                    <select id="metodo_pago">
+                        <option value="en_efectivo">EFECTIVO</option>
+                        <option value="tarjeta_de_credito">TARJETA DE CRÉDITO</option>
+                    </select>
                     <input type="submit" id="ConfirmarPedido" value="Confirmar">
                 </form>
                 <a href="<?= RUTA_URL ?>/Pedidos/crear" class="btn-comprar">Confirmar Pedido</a>
