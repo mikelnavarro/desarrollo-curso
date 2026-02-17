@@ -13,7 +13,7 @@ class Mailer
     public function __construct() {
         // $this->mail = new PHPMailer(true);
     }
-	public static function send(string $to, array $itemsCarrito, array $resumen, array $envio, string $alt = null)
+	public static function send(string $to, $idPedido, array $itemsCarrito, array $resumen, array $envio, string $alt = null)
 	{
         $mail = new PHPMailer(true);
 
@@ -35,7 +35,7 @@ class Mailer
             $mail->Subject = "Confirmación de Pedido Tienda";
 
             // Construcción del cuerpo del mensaje
-            $html = "<h1>¡Gracias por tu compra, {$to['usuario_nombre']}!</h1>";
+            $html = "<h1>¡Gracias por tu compra, {$to}!</h1>";
             $html .= "<p>Tu pedido ha sido recibido.</p>";
             $html .= "<table border='1' cellpadding='10' style='border-collapse: collapse;'>
                         <tr><th>Producto</th><th>Cant.</th><th>Precio</th></tr>";
@@ -44,8 +44,8 @@ class Mailer
                 $html .= "<tr><td>{$producto['nombre']}</td><td>{$producto['Cantidad']}</td><td>{$producto['Precio']}</td></tr>";
             }
             $html .= "</table>";
-            $html .= "<p><b>Método de Pago: - {$envio["metodo_pago"]}</b></p>";
-            $html .= "<p><strong>Total a pagar:</strong>${$resumen['total']}</p>"
+            $html .= "<p><b>Método de Pago: - {$envio["metodo"]}</b></p>";
+            $html .= "<p><strong>Total a pagar:</strong>${$resumen['total']}</p>";
             $html .= "<p><b>{$envio["direccion"]}</b></p>";
 			$mail->isHTML(true);
 			$mail->Body = $html;

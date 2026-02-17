@@ -18,6 +18,9 @@
                 </thead>
                 <tbody>
                 <?php
+                // echo "<pre>";
+                // print_r($_SESSION['carrito']);
+                // echo "</pre>";
                 $granTotal = 0;
                 // echo "<pre>";
                 // print_r($datos['productos_carrito']);
@@ -47,18 +50,15 @@
 
             <div class="acciones-carrito">
                 <form action="<?= RUTA_URL ?>/Pedidos/crear" method="POST">
-                    <input type="hidden" name="title_pedido" value="<?= $datos['titulo']; ?>">
-                    <input type="hidden" name="name" value="<?= $datos['productos_carrito']; ?>">
                     <label for="direccion">Dirección: </label>
                     <input type="text" id="direccion" name="direccion">
-                    <select id="metodo_pago">
+                    <select name="metodo_pago">
                         <option value="transferencia">TRANSFERENCIA</option>
                         <option value="en_efectivo">EFECTIVO</option>
                         <option value="tarjeta_de_credito">TARJETA DE CRÉDITO</option>
                     </select>
                     <input type="submit" id="ConfirmarPedido" value="Confirmar">
                 </form>
-                <a href="<?= RUTA_URL ?>/Pedidos/crear" class="btn-comprar">Confirmar Pedido</a>
                 <a href="<?= RUTA_URL ?>/Categorias" class="btn-secundario">Seguir Comprando</a>
             </div>
         <?php endif; ?>

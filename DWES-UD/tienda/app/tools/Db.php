@@ -35,6 +35,17 @@ use PDOException;
             }
         }
 
+
+        // Transacciones Db
+        public function beginTransaction() {
+            return $this->dbh->beginTransaction();
+        }
+        public function commit() {
+            return $this->dbh->commit();
+        }
+        public function rollBack() {
+            return $this->dbh->rollBack();
+        }
         //Preparamos la consulta
         public function query($sql){
             $this->stmt = $this->dbh->prepare($sql);
@@ -60,6 +71,7 @@ use PDOException;
             }
             $this->stmt->bindValue($parametro, $valor, $tipo);
         }
+
 
         //Ejecutamos la consulta
         public function execute(){
@@ -104,5 +116,7 @@ use PDOException;
             return $this->registro(PDO::FETCH_ASSOC);
         }
 
-
+        public function lastInsertId() {
+            return $this->dbh->lastInsertId();
+        }
     }
