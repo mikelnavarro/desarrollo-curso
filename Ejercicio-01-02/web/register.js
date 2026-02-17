@@ -1,6 +1,7 @@
 import { Storage } from "./Storage.js";
 import { Cancion } from "./Cancion.js";
-import { renderSongs } from "./mostrar.js";
+
+// Referencias
 const songForm = document.getElementById('songForm');
 const feedback = document.getElementById('mensaje-feedback');
 

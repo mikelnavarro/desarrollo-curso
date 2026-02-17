@@ -1,9 +1,10 @@
 import { Storage } from "./Storage.js";
 import { Cancion } from "./Cancion.js";
+// Referencias
+const cuerpoTabla = document.getElementById("cuerpo-tabla");
 
 // Función que renderiza canciones
-export function renderSongs() {
-  const cuerpoTabla = document.getElementById("cuerpo-tabla");
+function renderSongs() {
   // Obtenemos
   const canciones = Storage.getCollection("mis_canciones");
   // Limpiamos por si acaso
@@ -35,7 +36,6 @@ document.addEventListener("click", (e) => {
     const idParaBorrar = e.target.getAttribute("data-id");
     // Obtenemos canciones
     const canciones = Storage.getCollection("mis_canciones");
-    // La de ese ID
     const filtradas = canciones.filter((c) => c.id !== idParaBorrar);
     localStorage.setItem("mis_canciones", JSON.stringify(filtradas));
 

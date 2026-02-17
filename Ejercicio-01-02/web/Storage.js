@@ -14,14 +14,4 @@ export class Storage {
     collection.push(item);
     localStorage.setItem(key, JSON.stringify(collection));
   }
-  
-  static encontrarByEmail(email) {
-
-    const users = this.getCollection("usuarios");
-    if (users.find((u) => u.email === email)){
-      let user = u;
-      return user;
-    } else 
-      return "Error";
-  }
 }

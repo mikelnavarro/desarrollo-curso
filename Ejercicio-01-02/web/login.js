@@ -1,5 +1,6 @@
+import { User } from "./User.js";
 import { Storage  } from "./Storage.js";
-
+// Referencias
 const loginForm = document.getElementById("loginForm");
 const errorMsg = document.getElementById("error-msg");
 
@@ -24,7 +25,7 @@ loginForm.addEventListener("submit", (e) => {
     return;
   }
   // VALIDACION DEL LOCALSTORAGE
-  const user = Storage.authenticate(email, password);
+  const user = User.authenticate(email, password);
   if (user) {
     localStorage.setItem(
       "session",
@@ -32,7 +33,7 @@ loginForm.addEventListener("submit", (e) => {
     );
     window.location.href = "formSong.html";
   } else {
-    showError("Email o contraseña incorrectos");
+    showError("Correo o contraseña incorrectos");
   }
 });
 

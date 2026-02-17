@@ -1,6 +1,6 @@
 import { User } from "./User.js";
 import { Storage  } from "./Storage.js";
-
+// Referencias
 const loginForm = document.getElementById("loginForm");
 const errorMsg = document.getElementById("error-msg");
 
@@ -32,7 +32,7 @@ loginForm.addEventListener("submit", (e) => {
   if (user) {
     localStorage.setItem(
       "session",
-      JSON.stringify({ correo: user.correo, active: true }),
+      JSON.stringify({ email: user.email, active: true }),
     );
     window.location.href = "formSong.html";
   } else {

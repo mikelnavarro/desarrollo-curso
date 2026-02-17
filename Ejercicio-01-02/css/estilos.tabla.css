@@ -1,0 +1,131 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f5f5f5;
+        color: #333;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+
+    /* Encabezado estilo Gobierno de España */
+    main::before {
+        content: '';
+        display: block;
+        height: 8px;
+        background: linear-gradient(to right, #c60b1e 0%, #c60b1e 50%, #ffc400 50%, #ffc400 100%);
+        margin-bottom: 30px;
+        border-radius: 0;
+    }
+
+    h3 {
+        font-size: 2.5em;
+        color: #c60b1e;
+        margin-bottom: 10px;
+        font-weight: 700;
+        letter-spacing: -0.5px;
+    }
+
+    /* Subtítulo ministerio */
+    main::after {
+        content: 'Ministerio de Trabajo';
+        display: block;
+        font-size: 0.95em;
+        color: #666;
+        margin-bottom: 30px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    a {
+        display: inline-block;
+        background-color: #c60b1e;
+        color: white;
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(198, 11, 30, 0.2);
+    }
+
+    a:hover {
+        background-color: #a10a1a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(198, 11, 30, 0.3);
+    }
+
+    #lista-canciones {
+        background-color: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        overflow-x: auto;
+    }
+
+    #tabla-canciones {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+    }
+
+    #tabla-canciones thead {
+        background: linear-gradient(135deg, #c60b1e 0%, #a10a1a 100%);
+        color: white;
+    }
+
+    #tabla-canciones th {
+        padding: 16px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        border: none;
+    }
+
+    #tabla-canciones tbody tr {
+        border-bottom: 1px solid #e0e0e0;
+        transition: background-color 0.2s ease;
+    }
+
+    #tabla-canciones tbody tr:hover {
+        background-color: #f9f9f9;
+    }
+
+    #tabla-canciones td {
+        padding: 14px 16px;
+        color: #555;
+    }
+
+    #tabla-canciones tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+    }
+
+    /* Estilos para botones de acciones */
+    button, input[type="button"], input[type="submit"] {
+        background-color: #c60b1e;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        margin: 0 4px;
+    }
+
+    button:hover, input[type="button"]:hover, input[type="submit"]:hover {
+        background-color: #a10a1a;
+        transform: scale(1.05);
+    }
+
+    button:active, input[type="button"]:active, input[type="submit"]:active {
+        transform: scale(0.98);
+    }
