@@ -24,20 +24,4 @@ export class Storage {
     } else 
       return "Error";
   }
-  // Verificar si un usuario existe (para el login)
-  static authenticate(email, password) {
-    const users = this.getCollection("usuarios");
-    // Buscamos un usuario que coincida con ambos campos
-    // Validación:
-    if (users.some((u) => u.email === email)) {
-      return { success: false, msg: "El usuario ya está registrado" };
-    }
-    if (users.find((u) => u.email === email && u.password === password)) {
-      return true;
-    } else {
-      // Si es nuevo, lo guardamos
-      this.pushToCollection("usuarios", { email, password });
-      return { success: true, msg: "Usuario creado con éxito" };
-    }
-  }
 }
