@@ -38,9 +38,13 @@
         background-color: #f1f1f1;
     }
     table {
-        margin: auto;
-        border-collapse: collapse;
+        margin: 20px 20px;
         width: 50%;
+        border: solid 2px #000000;
+
+    }
+    tr td {
+        border: solid 2px #000000;
     }
     thead tr {
         background-color: #000000;
@@ -48,6 +52,8 @@
         padding: 1rem;
         font-weight: bold;
         text-align: center;
+        border: solid 2px #000000;
+
     }
     tbody tr td {
         background-color: #ffffff;

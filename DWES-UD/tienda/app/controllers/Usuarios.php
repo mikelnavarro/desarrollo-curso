@@ -16,7 +16,16 @@ class Usuarios extends Controlador
             if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $email = trim($_POST['email']);
                 $password = trim($_POST['password']);
-                $usuarioRegistro = $this->usuarioModelo->registrarse($email, $password);
+                $pais = trim($_POST['pais']);
+                $codigopostal = trim($_POST['codigopostal']);
+                $ciudad = trim($_POST['ciudad']);
+                $direccion = trim($_POST['direccion']);
+                $usuarioIgual = $this->usuarioModelo->obtenerUsuarioPorEmail($email);
+                if ($usuarioIgual) {
+                    $datos = [ "error" => "El correo electrónico " . $email . " ya existe."];
+                    $this->vista('pages/registrarse', $datos);
+                }
+                $usuarioRegistro = $this->usuarioModelo->registrarse($email, $password, $pais, $codigopostal, $ciudad, $direccion);
                 $usuario = $this->usuarioModelo->obtenerUsuarioPorEmail($email);
                 if ($usuarioRegistro) {
                     $_SESSION['usuario_id'] = $usuario->CodRes;

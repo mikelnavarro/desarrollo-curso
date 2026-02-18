@@ -1,8 +1,8 @@
 <?php require RUTA_APP . '/views/inc/header.php'; ?>
-
+<link rel="stylesheet" href="<?= RUTA_URL ?>styles.css">
     <div class="contenedor-carrito">
-        <h2>Tu Pedido</h2>
         <h2><?php echo $datos['titulo']; ?></h2>
+        <h4><em>Tu pedido</em></h4>
         <?php if (empty($_SESSION['carrito'])): ?>
             <p>El carrito está vacío. <a href="<?= RUTA_URL ?>/Categorias">Volver a la tienda</a></p>
         <?php else: ?>
@@ -59,40 +59,8 @@
                     </select>
                     <input type="submit" id="ConfirmarPedido" value="Confirmar">
                 </form>
-                <a href="<?= RUTA_URL ?>/Categorias" class="btn-secundario">Seguir Comprando</a>
             </div>
         <?php endif; ?>
+        <a href="<?= RUTA_URL ?>/Categorias" class="btn-secundario">Seguir Comprando</a>
     </div>
 
-    <style>
-        .tabla-carrito {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 50px 20px;
-        }
-        .tabla-carrito th, .tabla-carrito td {
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-        }
-        .text-danger { color: #e74c3c; text-decoration: none; }
-        .acciones-carrito {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        .btn-comprar {
-            background: #95a5a6;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .btn-secundario {
-            background: #95a5a6;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-    </style>

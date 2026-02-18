@@ -23,7 +23,7 @@ if (isset($_SESSION['carrito'])) {
                 <li>
                     <a href="<?= RUTA_URL ?>/Carrito/ver" style="position: relative;">Carrito
                         <?php if($totalProductos > 0): ?>
-                            <span style="background: var(--acentuado); color: white; border-radius: 50%; padding: 2px 6px; font-size: 10px;">
+                            <span style="background: var(--acentuado); color: blue; border-radius: 50%; padding: 2px 6px; font-size: 10px; font-weight: bold;">
                 <?= $totalProductos ?>
             </span>
                         <?php endif; ?>

@@ -38,11 +38,15 @@ class Usuario
         // registro() devuelve el objeto con las propiedades
         return $this->db->registro();
     }
-    public function registrarse($email, $password) {
-        $this->db->query("INSERT INTO restaurantes (Correo, Clave) VALUES (:email, :password)");
+    public function registrarse($email, $password, $pais, $codigopostal, $ciudad, $direccion) {
+        $this->db->query("INSERT INTO restaurantes (Correo, Clave, Pais, CP, Ciudad, Direccion) VALUES (:email, :password, :pais, :codigopostal, :ciudad, :direccion)");
 
         $this->db->bind(':email', $email);
         $this->db->bind(':password', $password);
+        $this->db->bind(':pais', $pais);
+        $this->db->bind(':codigopostal', $codigopostal);
+        $this->db->bind(':ciudad', $ciudad);
+        $this->db->bind(':direccion', $direccion);
         return $this->db->execute();
     }
 }
