@@ -64,4 +64,11 @@ class Producto
         // Retornamos todos los productos encontrados
         return $this->db->registros();
     }
+    public function cambiarStock($codProd, $productosCarrito) {
+
+        $sqlStock = "UPDATE productos WHERE CodProd = :CodProd";
+        $this->db->query($sqlStock);
+        $this->db->bind(":CodProd", $codProd);
+        return $this->db->execute();
+    }
 }

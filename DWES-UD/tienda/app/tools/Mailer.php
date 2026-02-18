@@ -35,22 +35,8 @@ class Mailer
 
             // Construcción del cuerpo del mensaje
             $html = "<h3>¡Gracias por tu compra, {$to}!</h3>";
-            $html .= "<p>Tu pedido #$idPedido ha sido procesado</p>";
+            $html .= "<p>Tu pedido <strong>$idPedido</strong> ha sido procesado</p>";
             $html .= "<table>";
-            $html .= "<tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Peso</th>
-            <th>Cantidad</th>
-            <th>ID</th>
-            </tr>";
-            foreach ($itemsCarrito as $idProducto => $cantidad => $product) {
-                $html .= "<tr>
-                <td>{$product['Nombre']}</td>
-                <td>{$product['Precio']}</td>
-                <td>{$product['Peso']}</td>
-                </tr>";
-            }
 
             $html .= "<p><b>Método de Pago: - {$envio["metodo"]}</b></p>";
             $html .= "<p><strong>Cantidad de artículos: {$resumen['cantidad_articulos']}</strong></b>";

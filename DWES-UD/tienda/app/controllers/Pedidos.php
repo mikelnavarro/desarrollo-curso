@@ -48,12 +48,15 @@ class Pedidos extends Controlador
                 echo print_r($_SESSION['carrito']);
                 echo print_r($resumen);
                 echo "</pre>";
-
-
                 echo "pedido creado con exito";
+                // Llamamos al modelo de producto para restar unidades
+                foreach ($productosCarrito as $idProd => $cantidad) {
+                    $this->pedidoModelo->guardarLinea($exito, $idProd, $cantidad);
+                    $this->productoModelo->cambiarStock($idProd, $cantidad);
+                }
+                // $cambiarStockP = $this->productoModelo->cambiarStock($productos_en_carrito['CodProd'], $_SESSION['carrito']);
                 // Método Mailer -> enviar correos
                 $enviado = Mailer::send($email,$exito,$productos_en_carrito,$resumen,$envio);
-                unset($_SESSION['carrito']);
                 if ($enviado) {
                     $this->pedidoModelo->marcarComoEnviado($exito);
                     $datos = [
@@ -61,9 +64,9 @@ class Pedidos extends Controlador
                         'resumen' => $resumen
                     ];
                     $this->vista('categorias/pedido', $datos);
-                } else {
-                    $this->vista('categorias/pedido', "Error al enviar el correo del pedido");
                 }
+                unset($_SESSION['resumen']);
+                unset($_SESSION['carrito']);
             } else {
                 die("Algo salió mal");
             }
