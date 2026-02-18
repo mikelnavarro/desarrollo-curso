@@ -1,6 +1,6 @@
 import { Storage } from "./Storage.js";
 export class User {
-  constructor(nombre, apellidos, email, password, globos) {
+  constructor(nombre, email, password) {
     // Atributos autogenerados
     this.id = crypto.randomUUID();
     this.registro = new Date().toLocaleString;
@@ -11,9 +11,9 @@ export class User {
   }
 
   // si tenemos que autenticar el usuario
-  static authenticate(email, password) {
-    const users = Storage.obtener("usuarios");
-    if (users.find((u) => u.email === email && u.password === password)) {
+  static authenticate (email, password) {
+    const users = Storage.obtener("usuarios") || [];
+    if (users.find((u)=> u.email === email && u.password === password)) {
       return true;
     }
   }
