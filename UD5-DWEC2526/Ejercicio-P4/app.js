@@ -1,34 +1,39 @@
-import { Img } from './Img.js';
-
-
+import { Img } from "./Img.js";
+import { Storage } from "./Storage.js";
+import { User } from "./User.js";
 // Referencias
-const nuevaImagen = document.createElement('img');
-// --- IMAGEN DOM ---
-// Tendremos que agregar la fuente donde se ubican las bolitas
-nuevaImagen.src = "//img/Green_Circle.png"; // indicar fuente url
-// provisional
-nuevaImagen.alt = 'Una imagen de la carpeta';
-nuevaImagen.style.position = "absolute";
-document.getElementById("principal").appendChild(nuevaImagen);
+const nuevaImagen = document.createElement("img");
 
-// Velocidad de movimiento de la imagen
-let vx = 3;
-let vy = 2;
+const formulario = document.getElementById("formInput");
 
-// Posición inicial
-let imgX = 50;
-let imgY = 50;
+// Formulario
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const numeroGlobos = document.getElementById("nglobos").value;
+  let fechaActual = new Date().getDate(); // fecha de hoy
 
-function moverImagen() {
-    imgX += vx;
-    imgY += vy;
+  if (numeroGlobos <= fechaActual && numeroGlobos >= 15) {
+    numeroGlobos = Math.max(15, fechaActual);
+  }
+  let miImagen = generarNumeroGlobos(numeroGlobos);
+  // Llama a moverImagen cada 100ms
+  setInterval(() => {
+    miImagen.move(container, 50, 50);
+  }, 20);
+});
 
-    // Rebote en los bordes de la ventana
-    if (imgX + nuevaImagen.width > window.innerWidth || imgX < 0) vx = -vx;
-    if (imgY + nuevaImagen.height > window.innerHeight || imgY < 0) vy = -vy;
-
-    nuevaImagen.style.left = imgX + "px";
-    nuevaImagen.style.top = imgY + "px";
+// funcion para generar numero de globos
+function generarNumeroGlobos(numeroGlobos) {
+  const GREEN = 0;
+  const BLUE = 1;
+  const RED = 2;
+  const YELLOW = 3;
+  for (const color = 0; color <= 3; color++) {
+    for (const i = 0; i <= numeroGlobos; i++) {
+      const i = new Img(`//img/${color}Circle`, `bola de Color${color}`, 50, 50, 3, 2);
+      // indicar fuente url
+    }
+  }
+  // Una sola bola
+  const container = document.getElementById("canvas2"); // puede ser <main>
 }
-// Llama a moverImagen cada 100ms
-setInterval(moverImagen, 100);

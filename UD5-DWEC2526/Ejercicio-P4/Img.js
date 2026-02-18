@@ -11,7 +11,7 @@ export class Img {
     this.img = document.createElement('img');
     this.img.src = src;
     this.img.alt = alt;
-    this.img.style.position = "absolute"; // imprescindible para moverla con top/left
+    this.img.style.position = "absolute";
   }
   // width/height para mover
   move(container, width, height) {

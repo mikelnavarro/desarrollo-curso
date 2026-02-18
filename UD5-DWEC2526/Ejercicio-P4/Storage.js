@@ -1,5 +1,5 @@
 export class Storage {
-  obtener(key) {
+  static obtener(key) {
     const data = localStorage.getItem(key);
     if (data) {
       return JSON.parse(data); // data

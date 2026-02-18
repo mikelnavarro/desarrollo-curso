@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="estilos.css">
-    <script src="app.js" type="module"></script>
+    <script src="login.js" type="module"></script>
 </head>
 
 <body>
-    <main class="principal" id="principal">
-        <h2>Mover</h2>
-        <h4>Cuantas direcciones es posible</h4>
+    <form id="formLogin" action="" method="">
 
-        
-        <div id="imagen1"></div>
-        <div id="imagen2"></div>
-        <div id="imagen3"></div>
-    </main>
+        <!-- Campos introducidos -->
+         <label>Nombre: </label><br>
+         <input type="text" id="nombre" placeholder="Juan o Maria">
+         <label>Email: </label><br>
+         <input type="email" id="email" placeholder="correo@smtp.es">
+         <label>Password: </label>
+         <input type="password" id="password">
+         <button type="submit" id="inicio_form" value="Loguearse"></button>
+    </form>
 </body>
 
 </html>

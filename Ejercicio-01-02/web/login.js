@@ -6,10 +6,10 @@ const errorMsg = document.getElementById("error-msg");
 
 // 1. Crear un usuario de prueba si no existe nada en el storage
 if (Storage.getCollection("usuarios").length === 0) {
-  Storage.pushToCollection("usuarios", {
-    email: "admin@test.com",
-    password: "123",
-  });
+  const usuarioTest = User.create("admin","admin","admin@test.com","1234");
+  usuarioTest = new User("admin","admin","admin@test.com","1234");
+  Storage.pushToCollection("usuarios", { usuarioTest });
+  localStorage.setItem("session",JSON.stringify({ email: usuarioTest.email, active: false}))
   console.log("Usuario de prueba creado: admin@test.com / 123");
 }
 

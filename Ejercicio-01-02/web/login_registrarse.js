@@ -4,16 +4,6 @@ import { Storage  } from "./Storage.js";
 const loginForm = document.getElementById("loginForm");
 const errorMsg = document.getElementById("error-msg");
 
-// 1. Crear un usuario de prueba si no existe nada en el storage
-if (Storage.getCollection("usuarios").length === 0) {
-  Storage.pushToCollection("usuarios", {
-    nomrbre: "Admin",
-    email: "admin@test.com",
-    password: "1234",
-  });
-  console.log("Usuario de prueba creado: admin@test.com / 1234");
-}
-
 loginForm.addEventListener("submit", (e) => {
   e.preventDefault(); // Evita que la página se recargue
 
