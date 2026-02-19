@@ -20,9 +20,8 @@ img {
 
 /* Estilo base para las imágenes */
 div {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    position: absolute;
-    /* para poder moverlas con top/left */
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: antiquewhite;
 }

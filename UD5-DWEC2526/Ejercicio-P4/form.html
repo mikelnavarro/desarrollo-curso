@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario Globos</title>
+    <link rel="stylesheet" href="estilos.css">
     <script src="app.js" type="module"></script>
 </head>
 <body>
-
-    <canvas id="canvas2" width="500" height="300"></canvas>
     <main>
         <form id="formInput">
+            <div id="errorMsg"></div>
             <label for="nglobos">N. de Globos: </label>
             <input type="number" id="nglobos" placeholder="Número entero">
             <button type="submit" id="globo_form" value="Start">Start</button>
         </form>
     </main>
+    <div id="user-info-bar" class="user-card">
+    <h3>Bienvenido, <span id="email"></span></h3>
+    <div class="">
+        <p>Vidas: <span id="vidas">3</span></p>
+        <p>Última Puntuación: <span id="puntos">0</span></p>
+    </div>
+</div>
 </body>
 </html>

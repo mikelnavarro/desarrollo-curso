@@ -26,6 +26,7 @@ export class Img {
     } else if (this.y + height > window.innerHeight || this.y < 0) {
       this.vy = -this.vy;
     }
+    
     // actualizamos la posicion
     this.img.style.left = this.x + "px";
     this.img.style.top = this.y + "px";

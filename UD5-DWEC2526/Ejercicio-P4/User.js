@@ -8,6 +8,9 @@ export class User {
     this.nombre = nombre;
     this.email = email;
     this.password = password;
+    // juego
+    this.puntos = 0;
+    this.partidas = [];
   }
 
   // si tenemos que autenticar el usuario
@@ -18,10 +21,8 @@ export class User {
     }
   }
   static create(nombre, email, password) {
-    const users = Storage.getCollection("usuarios");
+    const users = Storage.obtener("usuarios");
     if (users.some((u) => (u.email = email))) {
-      return { success: false, msg: "El correo ya existe" };
-    } else {
       let newUser = new User(nombre, email, password);
       Storage.pushToCollection("usuarios", { newUser });
       return { success: true, msg: "Usuario creado con éxito" };
@@ -30,8 +31,13 @@ export class User {
     }
   }
   // Obtener usuario
-  static obtenerUsuarioPorEmail(email) {
+  obtenerUsuarioPorEmail(email) {
     let users = Storage.obtener("usuarios");
     return users.find((u) => u.email === email);
   }
+  guardarPartida(puntuacion, tiempo) {
+        const registro = { puntuacion, tiempo, fecha: new Date().toLocaleDateString() };
+        this.partidas.push(registro);
+        localStorage.setItem(this.email, JSON.stringify(this));
+    }
 }

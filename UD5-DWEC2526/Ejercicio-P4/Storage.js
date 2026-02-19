@@ -4,8 +4,7 @@ export class Storage {
     if (data) {
       return JSON.parse(data); // data
     } else {
-      return "false";
-      // devolvemos false
+      return [];
     }
   }
   // si tenemos que guardar
