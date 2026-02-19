@@ -9,39 +9,45 @@ const formulario = document.getElementById("formInput");
 // Formulario
 formulario.addEventListener("submit", (e) => {
   e.preventDefault();
-  let numeroGlobos = document.getElementById("nglobos").value;
-  let fechaActual = new Date().getDate(); // fecha de hoy
 
-  if (numeroGlobos <= fechaActual && numeroGlobos >= 15) {
-    numeroGlobos = Math.max(15, fechaActual);
-  }
-  const container = document.getElementById("canvas2");
-  // 1.Guardamos el ARRAY de globos
-  let listaDeGlobos = generarNumeroGlobos(numeroGlobos, container); 
+  let numeroGlobos = Number(document.getElementById("nglobos").value);
+  let fechaActual = new Date().getDate(); // fecha de hoy
+  const maxNumeroGlobos = Math.max(15, fechaActual);
+
+
+  // Contenedor donde se insertarán los Globos
+  const container = document.getElementsByTagName("body")[0];// elemento parecido
+  
+  // Guardamos el ARRAY de globos
+  let listaDeGlobos = generarNumeroGlobos(numeroGlobos, maxNumeroGlobos); 
+  
+  
   // Llama a moverImagen cada 100ms
   setInterval(() => {
   listaDeGlobos.forEach(g => g.move(container, 50, 50));
-  },20);
-  console.log("moviendose lgobo" + listaDeGlobos.forEach((g)=> g.src));
+  },100);
+  console.log("moviendose globo");
 });
 
 // funcion para generar numero de globos
-function generarNumeroGlobos(numeroGlobos,container) {
-  const GREEN = 0;
-  const BLUE = 1;
-  const RED = 2;
-  const YELLOW = 3;
-
+function generarNumeroGlobos(numeroGlobos, maxNumeroGlobos) {
+  const arrayRutas = [
+    "img/redCircle.jpg",
+    "img/BLUECircle.png",
+    "img/GREENCircle.png",
+    "img/YELLOWCircle.png"
+  ];
   let listaGlobos = [];
-  for (let color = 0; color <= 3; color++) {
-    for (let i = 0; i <= numeroGlobos; i++) {
-      const newGlobo = new Img(`img/GREENCircle.png`, `bola de Color${color}`, 50, 50, 3, 2);
-      // Suponiendo que tu clase Img tiene una propiedad .element (o similar)
-      if (newGlobo) { 
-          container.appendChild(newGlobo.img); 
-      }
-      listaGlobos.push(newGlobo);
-    }
+
+  // Bucle para generar los Globos automáticamente
+  for (let i = 0; i < maxNumeroGlobos; i++){
+    let color = Math.floor(Math.random() * arrayRutas.length);
+    let ruta = arrayRutas[color];
+
+    let newGlobo = new Img(ruta,"GLOBO",50,50,3,3);
+    listaGlobos.push(newGlobo);
   }
-    return listaGlobos;
+  
+  return listaGlobos;
+  
 }
