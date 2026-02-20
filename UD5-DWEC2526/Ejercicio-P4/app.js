@@ -26,7 +26,6 @@ formulario.addEventListener("submit", (e) => {
   }
   iniciarMovimiento(numeroGlobos, maxNumeroGlobos);
 });
-
 // funcion para generar numero de globos
 function generarNumeroGlobos(numeroGlobos, maxNumeroGlobos) {
   // estas son las rutas de imágenes
@@ -48,7 +47,6 @@ function generarNumeroGlobos(numeroGlobos, maxNumeroGlobos) {
 
   return listaGlobos;
 }
-
 // Mover
 
 let tiempoInicio;
@@ -76,7 +74,6 @@ function congelarJuego() {
   clearInterval(gameInterval); // Detiene el movimiento
   gameInterval = null;
   juegoCongelado = true;
-
   // Pasados 2000ms
   setTimeout(() => {
     juegoCongelado = false;
@@ -85,20 +82,18 @@ function congelarJuego() {
   }, 2000);
 }
 
-// Función para calcular puntuación después de explotar los globitos
+// Función para calcular puntuaciolokookojmmmn
 function calcularPuntuacionFinal() {
   const tiempoFin = Date.now();
   const tiempoTotalSegundos = (tiempoFin - tiempoInicio) / 1000;
-
-  // Aplicamos la fórmula especificada del docume
   let puntuacion = 1000 / tiempoTotalSegundos + aciertos * 10 - fallos * 5;
-
-  // Aplicamos multiplicador si pillaste el amarillo
   puntuacion = puntuacion * multiplicadorAmarillo;
 }
 
+// Cargar datos de USUARIO
 function cargarDatos(numeroGlobos) {
   const emailSesion = localStorage.getItem("session");
+
   // lista usuarios
   const listaUsuarios = Storage.obtener("usuarios");
   const userActual = listaUsuarios.find((u) => u.email === emailSesion);
@@ -112,6 +107,33 @@ function cargarDatos(numeroGlobos) {
   }
 }
 
+const arrayRutas = [
+  "img/redCircle.jpg",
+  "img/BLUECircle.png",
+  "img/GREENCircle.png",
+  "img/YELLOWCircle.png",
+];
+
+function pulsar() {
+  arrayRutas.forEach((gl) => {
+    document.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      if (gl === "img/GREENCircle.png") {
+        calcularPuntuacionFinal();
+      } else if (gl === "img/BLUECircle.png") {
+        congelarJuego();
+      } else if (gl === "img/YELLOWCircle.png") {
+        const doblePuntos = calcularPuntuacionFinal();
+        doblePuntos = doblePuntos * 2;
+      } else if (gl === "img/redCircle.png") {
+        penalizacion;
+      } else {
+        console.log("No se pulso ninguno.");
+      }
+    });
+  });
+}
 // Función para mostrar los errores
 function showError(text) {
   errorMsg.innerText = text;
