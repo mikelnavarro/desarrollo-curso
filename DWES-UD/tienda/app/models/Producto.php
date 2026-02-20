@@ -45,7 +45,7 @@ class Producto
         return $this->db->registro();
     }
 
-    public function obtenerVariosPorId($ids) {
+    public function obtenerVariosPorId(array $ids) {
         if (empty($ids)) {
             return [];
         }

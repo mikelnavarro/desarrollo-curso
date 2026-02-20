@@ -21,7 +21,7 @@ class Pedido
     }
 
     // Funciones para Pedido
-    public function marcarComoEnviado($idPedido)
+    public function marcarComoEnviado(int $idPedido)
     {
         $sql = "UPDATE pedidos SET Enviado = 1 WHERE CodPed = :idPedido";
         $this->db->query($sql);
@@ -32,7 +32,7 @@ class Pedido
     /**
      * Inserta una línea individual de producto asociada a un pedido
      */
-    public function guardarLinea($idP, $idProd, $unidades) {
+    public function guardarLinea(int $idP, int $idProd, int $unidades) {
         // Especificamos las columnas para evitar el error de conteo (SQLSTATE[21S01])
         $sql = "INSERT INTO pedidosproductos (Pedido, Producto, Unidades) 
             VALUES (:Pedido, :Producto, :cantidad)";
@@ -46,7 +46,7 @@ class Pedido
     }
 
     // Necesitamos insertar pedidos (generales) no contrendrán mucha información
-    public function guardarPedido($CodRes, $carrito)
+    public function guardarPedido(int $CodRes, array $carrito)
     {
         try {
 

@@ -52,7 +52,7 @@ class Pedidos extends Controlador
                 // Llamamos al modelo de producto para restar unidades
                 foreach ($productosCarrito as $idProd => $cantidad) {
                     $this->pedidoModelo->guardarLinea($exito, $idProd, $cantidad);
-                    $this->productoModelo->cambiarStock($idProd, $cantidad);
+                    $this->productoModelo->cambiarStock($idProd, $productosCarrito);
                 }
                 // $cambiarStockP = $this->productoModelo->cambiarStock($productos_en_carrito['CodProd'], $_SESSION['carrito']);
                 // Método Mailer -> enviar correos
