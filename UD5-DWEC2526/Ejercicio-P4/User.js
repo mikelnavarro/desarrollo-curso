@@ -24,7 +24,7 @@ export class User {
     const users = Storage.obtener("usuarios");
     if (users.some((u) => (u.email = email))) {
       let newUser = new User(nombre, email, password);
-      Storage.pushToCollection("usuarios", { newUser });
+      Storage.pushToCollection("usuarios",newUser);
       return { success: true, msg: "Usuario creado con éxito" };
       // quremos agregar a la coleccion
       // 1.en que colección se añade

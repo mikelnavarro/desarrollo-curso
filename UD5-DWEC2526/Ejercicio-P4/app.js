@@ -92,7 +92,7 @@ function calcularPuntuacionFinal() {
 
 // Cargar datos de USUARIO
 function cargarDatos(numeroGlobos) {
-  const emailSesion = localStorage.getItem("session");
+  const emailSesion = JSON.parse(localStorage.getItem("session"));
 
   // lista usuarios
   const listaUsuarios = Storage.obtener("usuarios");
