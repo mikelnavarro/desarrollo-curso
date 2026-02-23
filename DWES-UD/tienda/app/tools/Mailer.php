@@ -6,32 +6,30 @@ use PHPMailer\PHPMailer\PHPMailer;
 class Mailer
 {
     // Atributos de Correo
-    // private $mail;
+    private $mail;
 
     public function __construct() {
-        // $this->mail = new PHPMailer(true);
+        $this->mail = new PHPMailer(true);
+
+        // Configuración usando las constantes de config.php
+        $this->mail->isSMTP();
+        $this->mail->Host       = MAIL_HOST;
+        $this->mail->SMTPAuth   = true;
+        $this->mail->Username   = MAIL_USER;
+        $this->mail->Password   = MAIL_PASS;
+        $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $this->mail->Port       = MAIL_PORT;
+        $this->mail->CharSet = 'UTF-8';
+        $this->mail->setFrom(MAIL_FROM, MAIL_FROMNAME);
+
     }
 	public static function send(string $to, $idPedido, array $itemsCarrito, array $resumen, array $envio, string $alt = null)
 	{
-        $mail = new PHPMailer(true);
-
         try {
-            // Configuración usando las constantes de config.php
-            $mail->isSMTP();
-            $mail->Host       = MAIL_HOST;
-            $mail->SMTPAuth   = true;
-            $mail->Username   = MAIL_USER;
-            $mail->Password   = MAIL_PASS;
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-            $mail->Port       = MAIL_PORT;
-			$mail->CharSet = 'UTF-8';
-            $mail->setFrom(MAIL_FROM, MAIL_FROMNAME);
             // Direccion de correo electronico
 			$mail->addAddress($to);
-
             // Asunto del Correo
             $mail->Subject = "Confirmación de Pedido Tienda";
-
 
             // Construcción del cuerpo del mensaje
             $html = "<h3>¡Gracias por tu compra, {$to}!</h3>";
