@@ -49,6 +49,8 @@ class Pedidos extends Controlador
                 echo print_r($resumen);
                 echo "</pre>";
                 echo "pedido creado con exito";
+                // Instancia clase Mailer
+                $mailer = new Mailer();
                 // Llamamos al modelo de producto para restar unidades
                 foreach ($productosCarrito as $idProd => $cantidad) {
                     $this->pedidoModelo->guardarLinea($exito, $idProd, $cantidad);
@@ -56,7 +58,7 @@ class Pedidos extends Controlador
                 }
                 // $cambiarStockP = $this->productoModelo->cambiarStock($productos_en_carrito['CodProd'], $_SESSION['carrito']);
                 // Método Mailer -> enviar correos
-                $enviado = Mailer::send($email,$exito,$productos_en_carrito,$resumen,$envio);
+                $enviado = $mailer->send($email,$exito,$productos_en_carrito,$resumen,$envio);
                 if ($enviado) {
                     $this->pedidoModelo->marcarComoEnviado($exito);
                     $datos = [

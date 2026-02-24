@@ -65,9 +65,12 @@ class Producto
         return $this->db->registros();
     }
     public function cambiarStock($codProd, $productosCarrito) {
-
-        $sqlStock = "UPDATE productos WHERE CodProd = :CodProd";
+        // Aqui restamos la cantidad comprada al stock actual
+        $sqlStock = "UPDATE productos SET Stock = Stock - :cantidad WHERE CodProd = :CodProd";
         $this->db->query($sqlStock);
+        // 2. Necesitas pasar cuánto vas a restar
+        $cantidad = $productosCarrito[$codProd];
+        $this->db->bind(":cantidad", $cantidad);
         $this->db->bind(":CodProd", $codProd);
         return $this->db->execute();
     }

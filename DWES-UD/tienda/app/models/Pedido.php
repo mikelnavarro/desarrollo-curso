@@ -33,7 +33,6 @@ class Pedido
      * Inserta una línea individual de producto asociada a un pedido
      */
     public function guardarLinea(int $idP, int $idProd, int $unidades) {
-        // Especificamos las columnas para evitar el error de conteo (SQLSTATE[21S01])
         $sql = "INSERT INTO pedidosproductos (Pedido, Producto, Unidades) 
             VALUES (:Pedido, :Producto, :cantidad)";
 
@@ -53,10 +52,15 @@ class Pedido
             $sql = "INSERT INTO pedidos (Fecha, Enviado, Restaurante) VALUES (NOW(), 0, :CodRes)";
             $this->db->query($sql);
             $this->db->bind(":CodRes", $CodRes);
+
+
+            // En lugar de lastInsertId() de PDO, pedimos el ID a MySQL directamente
             if ($this->db->execute()) {
                 // Obtenemos el ID del pedido
-                $idPedido = $this->db->lastInsertId(); // Obtenemos el pedido que se acaba de insertar
-                return $idPedido;
+                $this->db->query("SELECT LAST_INSERT_ID() as id");
+                // Usa el método que tengas para obtener una fila
+                $res = $this->db->registro();
+                return $res->id;
             }
         } catch (PDOException $e) {
             return false;

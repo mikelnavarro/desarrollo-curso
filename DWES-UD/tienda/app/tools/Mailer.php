@@ -23,35 +23,30 @@ class Mailer
         $this->mail->setFrom(MAIL_FROM, MAIL_FROMNAME);
 
     }
-	public static function send(string $to, $idPedido, array $itemsCarrito, array $resumen, array $envio, string $alt = null)
+	public function send(string $to, $idPedido, array $itemsCarrito, array $resumen, array $envio, string $alt = null)
 	{
         try {
             // Direccion de correo electronico
-			$mail->addAddress($to);
+			$this->mail->addAddress($to);
             // Asunto del Correo
-            $mail->Subject = "Confirmación de Pedido Tienda";
+            $this->mail->Subject = "Confirmación de Pedido Tienda";
 
             // Construcción del cuerpo del mensaje
-            $html = "<h3>¡Gracias por tu compra, {$to}!</h3>";
-            $html .= "<p>Tu pedido <strong>$idPedido</strong> ha sido procesado</p>";
-            $html .= "<table>";
-
+            $html = "<h4>¡Gracias por tu compra, {$to}!</h4> <p>Tu pedido <strong>$idPedido</strong> ha sido procesado</p>";
             $html .= "<p><b>Método de Pago: - {$envio["metodo"]}</b></p>";
             $html .= "<p><strong>Cantidad de artículos: {$resumen['cantidad_articulos']}</strong></b>";
             $html .= "<p><strong>Total a pagar:</strong>{$resumen['total']}</p>";
             $html .= "<p><b>Dirección de Envío: {$envio["direccion"]}</b></p>";
             // es html
-			$mail->isHTML(true);
-
+			$this->mail->isHTML(true);
             // cuerpo del mensaje
-			$mail->Body = $html;
+			$this->mail->Body = $html;
             // el cuerpo alternativo
-			$mail->AltBody = $alt ?? strip_tags($html);
-
-			$mail->send();
+			$this->mail->AltBody = $alt ?? strip_tags($html);
+			$this->mail->send();
 			return true;
 		} catch (Exception $e) {
-			return $mail->ErrorInfo ?: $e->getMessage();
+			return $this->mail->ErrorInfo ?: $e->getMessage();
             error_log("Error de correo: " . $mail->ErrorInfo);
 		}
 	}
