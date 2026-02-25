@@ -5,13 +5,15 @@ import { User } from "./User.js";
 const formularioLogin = document.getElementById("formLogin");
 const errorMsg = document.getElementById("errorMsg");
 
-
 const usuarioPrueba = User.create("Admin", "admin@gmail.com", "12345");
-Storage.pushToCollection("usuarios",usuarioPrueba);
-localStorage.setItem("session", JSON.stringify({
-  nombre: usuarioPrueba.nombre,
-  email: usuarioPrueba.email,
-}));
+Storage.pushToCollection("usuarios", usuarioPrueba);
+localStorage.setItem(
+  "session",
+  JSON.stringify({
+    nombre: usuarioPrueba.nombre,
+    email: usuarioPrueba.email,
+  }),
+);
 // escucha formulario
 formularioLogin.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -27,10 +29,13 @@ formularioLogin.addEventListener("submit", (e) => {
   const user = User.authenticate(email, password);
   if (user) {
     window.location.href = "form.html";
-    localStorage.setItem("session", JSON.stringify({
+    localStorage.setItem(
+      "session",
+      JSON.stringify({
         nombre: user.nombre,
         email: user.email,
-      }));
+      }),
+    );
   } else {
     const newUser = User.create(nombre, email, password);
     localStorage.setItem(
