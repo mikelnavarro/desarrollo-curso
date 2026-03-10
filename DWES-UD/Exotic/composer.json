@@ -1,0 +1,12 @@
+{
+    "name": "mikelnavarro/exotic",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Mikelnavarro\\Exotic\\": "app/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^7.0"
+    }
+}
