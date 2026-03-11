@@ -1,5 +1,5 @@
 <?php
-namespace Mikelnavarro\App;
+namespace Mikelnavarro\Exotic;
 class Controlador
 {
     // Cargar modelo

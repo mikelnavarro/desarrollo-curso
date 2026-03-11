@@ -1,5 +1,5 @@
 <?php
-namespace Mikelnavarro\App;
+namespace Mikelnavarro\Exotic;
 /**
 Mapear URL desde el navegador
 1- controlador

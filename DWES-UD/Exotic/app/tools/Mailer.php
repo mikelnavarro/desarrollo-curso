@@ -1,5 +1,5 @@
 <?php
-namespace Mikelnavarro\App;
+namespace Mikelnavarro\Exotic;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 

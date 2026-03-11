@@ -1,5 +1,5 @@
 <?php
-namespace Mikelnavarro\App;
+namespace Mikelnavarro\Exotic;
 use PDO;
 use PDOException;
 
